@@ -67,7 +67,9 @@
   position: relative;
   min-height: 85vh;
   display: flex;
-  align-items: flex-end;
+  /* mobile: anchor content near the top so it sits just below the nav.
+     On tall phones, flex-end created a large empty band above the eyebrow. */
+  align-items: flex-start;
   isolation: isolate;
   overflow: hidden;
 }
@@ -133,7 +135,9 @@
   width: 100%;
   max-width: var(--max-w-content);
   margin-inline: auto;
-  padding: 120px var(--space-6) 160px;
+  /* mobile: tight top padding — `.page-top-offset` on the section already
+     clears the nav. Bottom padding holds room for the absolute trust bar. */
+  padding: var(--space-2) var(--space-6) 160px;
   z-index: 1;
 }
 @media (min-width: 768px) {
