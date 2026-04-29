@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "pgwp",
+    "photographer": "Vitaly Gariev",
+    "unsplashPage": "https://unsplash.com/photos/woman-wearing-glasses-smiling-in-an-office-setting-hHjpxDBZ-9k",
+    "alt": "A young professional smiling in a warm modern office, working at her desk"
+  },
+  {
+    "slug": "spousal",
+    "photographer": "James Pere",
+    "unsplashPage": "https://unsplash.com/photos/a-man-and-a-woman-walking-down-a-street-holding-hands-VWsh-t-LTEA",
+    "alt": "A couple walking together down a city street, holding hands"
+  },
+  {
+    "slug": "partner-schools",
+    "photographer": "DuoNguyen",
+    "unsplashPage": "https://unsplash.com/photos/a-young-girl-sitting-in-a-classroom-with-a-book-frGf5WHXzZI",
+    "alt": "A student studying in a sunlit classroom with an open book"
+  },
+  {
+    "slug": "study-permit",
+    "photographer": "Brelyn Bashrum",
+    "unsplashPage": "https://unsplash.com/photos/a-student-walks-on-campus-with-a-backpack-J64wCIFoEws",
+    "alt": "A student walking across a sunlit university campus with a backpack"
+  }
+]

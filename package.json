@@ -1,0 +1,13 @@
+{
+  "name": "mvc-immigration",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node serve.mjs",
+    "dev": "node serve.mjs"
+  },
+  "dependencies": {
+    "puppeteer": "^24.42.0"
+  }
+}

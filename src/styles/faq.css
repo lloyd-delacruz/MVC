@@ -1,0 +1,91 @@
+/* ===========================================================
+   Phase 3 — FAQ page
+   Accordion CSS comes from homepage.css (.faq-item, .faq-q,
+   .faq-icon, .faq-a). This file adds: category tabs and bottom CTA.
+   =========================================================== */
+
+.faq-tabs {
+  background: var(--color-base-100);
+  position: sticky;
+  top: var(--nav-h-mobile);
+  z-index: 5;
+  border-bottom: 1px solid var(--color-border-subtle);
+  -webkit-backdrop-filter: saturate(140%) blur(12px);
+  backdrop-filter: saturate(140%) blur(12px);
+  background: rgba(251, 249, 246, 0.92);
+}
+@media (min-width: 768px) {
+  .faq-tabs { top: var(--nav-h-desktop); }
+}
+.faq-tabs__inner {
+  max-width: var(--max-w-content);
+  margin-inline: auto;
+  padding: 0 var(--space-6);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.faq-tabs__inner::-webkit-scrollbar { display: none; }
+@media (min-width: 768px) {
+  .faq-tabs__inner { padding: 0 var(--space-12); }
+}
+.faq-tabs__list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  white-space: nowrap;
+  padding: 14px 0;
+}
+
+.faq-tab {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 14px;
+  border: 0;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  color: var(--color-ink-secondary);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  border-radius: 4px 4px 0 0;
+  transition:
+    color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
+}
+.faq-tab:hover {
+  color: var(--color-ink-strong);
+}
+.faq-tab.is-active {
+  color: var(--color-ink-strong);
+  border-bottom-color: var(--color-amber);
+}
+
+/* category groups (toggle on tab click) */
+.faq-category {
+  display: none;
+}
+.faq-category.is-active {
+  display: block;
+}
+
+/* center the head, like homepage faq-preview */
+.faq-page .section-head {
+  margin-inline: auto;
+  text-align: center;
+}
+.faq-page .section-head__lede {
+  margin-inline: auto;
+}
+
+/* override the accordion list cap so the page version uses full width */
+.faq-page .faq-list {
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+/* inline the accordion classes here as a fallback in case homepage.css
+   isn't loaded — but homepage.css IS loaded on this page, so these are
+   no-ops unless the loader changes. */

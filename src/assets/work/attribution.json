@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "lmia",
+    "photographer": "Roman",
+    "unsplashPage": "https://unsplash.com/photos/pizza-makers-working-in-a-busy-restaurant-kitchen-XVOjIZr4rI4",
+    "alt": "Workers in a busy restaurant kitchen preparing food at the line"
+  },
+  {
+    "slug": "caregiver",
+    "photographer": "Junior REIS",
+    "unsplashPage": "https://unsplash.com/photos/an-older-person-holding-the-hand-of-a-younger-person-R1H2Y7T7m3I",
+    "alt": "An older person holding the hand of a younger person — a quiet caregiving moment"
+  },
+  {
+    "slug": "iec",
+    "photographer": "Andre Furtado",
+    "unsplashPage": "https://unsplash.com/photos/lU9HtGZSia8",
+    "alt": "A young traveller with a Canadian flag on their backpack"
+  }
+]

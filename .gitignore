@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# macOS
+.DS_Store
+
+# Screenshot captures (large, regeneratable)
+.screenshots/
+.screenshots-phase4/
+temporary screenshots/
+
+# Lighthouse reports (large JSON dumps)
+lh-*.json
+lighthouse/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+
+# Env
+.env
+.env.local
+.env.*.local

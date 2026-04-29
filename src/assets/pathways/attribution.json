@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "cec",
+    "photographer": "Vitaly Gariev",
+    "unsplashPage": "https://unsplash.com/photos/woman-working-on-a-laptop-in-a-modern-office-WrlIRaC9t-A",
+    "alt": "A young professional working on a laptop in a modern, sunlit office — already at home in Canada"
+  },
+  {
+    "slug": "fswp",
+    "photographer": "Vitaly Gariev",
+    "unsplashPage": "https://unsplash.com/photos/diverse-group-of-people-in-a-modern-office-meeting-YyJNda7nsPo",
+    "alt": "A diverse, multinational team in a bright modern office — collaborating across backgrounds"
+  },
+  {
+    "slug": "fstp",
+    "photographer": "Unsplash",
+    "unsplashPage": "https://unsplash.com/photos/welder-is-working-creating-sparks-in-the-dark-ymJNSGAQ0rw",
+    "alt": "A welder at work, sparks flying in the dark — the craft of skilled trades"
+  },
+  {
+    "slug": "citizenship",
+    "photographer": "Hermes Rivera",
+    "unsplashPage": "https://unsplash.com/photos/flag-of-canada-ahHn48-zKWo",
+    "alt": "The Canadian flag flying — the final step of the immigration journey"
+  },
+  {
+    "slug": "entrepreneur-base",
+    "photographer": "Adrian Yu",
+    "unsplashPage": "https://unsplash.com/photos/an-aerial-view-of-a-city-and-a-harbor-Wc45W-dQFlA",
+    "alt": "Aerial view of Vancouver's downtown harbour — where new businesses begin"
+  },
+  {
+    "slug": "regional-pilot",
+    "photographer": "Unsplash",
+    "unsplashPage": "https://unsplash.com/photos/village-nestled-by-a-lake-with-a-large-mountain-behind-CvS9dAu3DEE",
+    "alt": "A small mountain-side community nestled by a lake — the heart of regional B.C."
+  }
+]

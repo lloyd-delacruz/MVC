@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "bc-skyline-ocean",
+    "photographer": "Dan Dennis",
+    "unsplashPage": "https://unsplash.com/photos/city-skyline-with-mountains-and-ocean-in-foreground-s3U6zDKVXtU",
+    "alt": "North Shore mountains rising over the Pacific, viewed from downtown Vancouver"
+  },
+  {
+    "slug": "bc-garibaldi-lake",
+    "photographer": "Lesly Derksen",
+    "unsplashPage": "https://unsplash.com/photos/blue-body-of-water-between-mountain-during-daytime-YCDA8z-ultA",
+    "alt": "Garibaldi Lake's turquoise water surrounded by snow-capped peaks near Whistler, BC"
+  },
+  {
+    "slug": "bc-mountains-water",
+    "photographer": "Unsplash",
+    "unsplashPage": "https://unsplash.com/photos/body-of-water-across-mountains-xVmhuV2MAeA",
+    "alt": "Emerald Lake reflecting the Rockies in Yoho National Park, BC"
+  },
+  {
+    "slug": "bc-pacific-wave",
+    "photographer": "Kristin Charleton",
+    "unsplashPage": "https://unsplash.com/photos/a-blurry-photo-of-a-wave-in-the-ocean-gTE8_d8mnLE",
+    "alt": "Sunset light on a Pacific wave breaking off Vancouver Island, BC"
+  }
+]
