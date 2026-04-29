@@ -808,6 +808,46 @@ main:has(> .bottom-cta:last-child) + .site-footer {
   margin-bottom: 0 !important;
 }
 
+.site-footer__social {
+  margin-top: var(--space-6);
+}
+.site-footer__social h3 {
+  margin-bottom: var(--space-3);
+}
+.site-footer__social-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.site-footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: var(--color-amber);
+  color: #FFFFFF;
+  transition: transform var(--duration-fast) var(--ease-out),
+              background var(--duration-fast) var(--ease-out),
+              box-shadow var(--duration-fast) var(--ease-out);
+}
+.site-footer__social-link:hover,
+.site-footer__social-link:focus-visible {
+  transform: translateY(-2px);
+  background: var(--color-amber-deep);
+  box-shadow: var(--shadow-btn-amber-hover);
+}
+.site-footer__social-link svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  display: block;
+}
+
 .site-footer h3 {
   font-family: var(--font-body);
   font-size: 12px;
