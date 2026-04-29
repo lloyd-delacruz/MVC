@@ -39,7 +39,7 @@
   <link rel="stylesheet" href="/src/styles/inner-shared.css">
   <link rel="stylesheet" href="/src/styles/contact.css">
 
-  <link rel="icon" type="image/svg+xml" href="/src/assets/logo.svg">
+  <link rel="icon" type="image/png" href="/src/assets/logo.png">
 
   <script type="application/ld+json">
   {
@@ -156,7 +156,7 @@
           </ul>
         </li>
 
-        <li><a class="site-nav__link" href="#">How To Get Started</a></li>
+        <li><a class="site-nav__link" href="/pages/get-started.html">How To Get Started</a></li>
         <li><a class="site-nav__link" href="/pages/blog.html">Blog</a></li>
         <li><a class="site-nav__link is-active" href="/pages/contact.html" aria-current="page">Contact</a></li>
       </ul>
@@ -249,7 +249,7 @@
           </ul>
         </li>
 
-        <li><a class="site-nav__overlay-link" href="#">How To Get Started</a></li>
+        <li><a class="site-nav__overlay-link" href="/pages/get-started.html">How To Get Started</a></li>
         <li><a class="site-nav__overlay-link" href="/pages/blog.html">Blog</a></li>
         <li><a class="site-nav__overlay-link" href="/pages/contact.html">Contact</a></li>
       </ul>
@@ -482,6 +482,132 @@
       </div>
     </section>
 
+    <!-- ===========================================================
+         c) BOOK A 1:1 CONSULTATION (Calendly)
+         ----------------------------------------------------------
+         TODO before going to production:
+           1. Get the live Calendly URLs from MVC for each event type
+              (virtual + in-office consultation).
+           2. Replace REPLACE-WITH-MVC-CALENDLY in the data-calendly-url
+              attributes below — that is the ONLY change required.
+           3. Optional: customize Calendly popup theming via
+              prefill / utm_* params or the Calendly admin dashboard.
+         The Calendly widget script at the end of <body> auto-binds to
+         every link with [data-calendly-url] and opens it in a popup
+         modal. If the script fails to load, the link still works as a
+         normal target="_blank" anchor.
+         =========================================================== -->
+    <section class="section bg-base-200 contact-booking" id="consultation"
+             aria-labelledby="booking-title">
+      <div class="section__inner">
+        <header class="section-head section-head--center">
+          <p class="eyebrow">Book a 1:1 consultation</p>
+          <h2 id="booking-title" class="section-head__title">
+            Talk to a Regulated Canadian <em>Immigration Consultant.</em>
+          </h2>
+          <p class="section-head__lede">
+            For specific case questions and a binding RCIC opinion, book a paid 1:1
+            consultation. All questions about your file will be addressed in the session.
+          </p>
+        </header>
+
+        <div class="booking-cards">
+
+          <!-- VIRTUAL -->
+          <article class="booking-card">
+            <header class="booking-card__head">
+              <span class="booking-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 28 28" fill="none" stroke="currentColor"
+                     stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="6" width="18" height="13" rx="2"/>
+                  <path d="M21 11l4-2v9l-4-2z"/>
+                  <circle cx="9" cy="12" r="2"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="booking-card__title">1:1 Virtual Consultation</h3>
+                <p class="booking-card__sub">Online · secure video call</p>
+              </div>
+            </header>
+            <div class="booking-card__price">
+              <span class="booking-card__amount">$250</span>
+              <span class="booking-card__currency">CAD · 60 minutes</span>
+            </div>
+            <p class="booking-card__body">
+              Talk to a Regulated Canadian Immigration Consultant from anywhere in the
+              world. We discuss your immigration plan or answer specific questions about
+              your case. You leave the session with a clear next step.
+            </p>
+            <ul class="booking-card__list">
+              <li>Direct access to an RCIC for a full hour</li>
+              <li>Secure video call — Zoom or Google Meet</li>
+              <li>Notes &amp; recommended next steps emailed afterwards</li>
+              <li>Best for clients outside the Vancouver area</li>
+            </ul>
+            <a class="btn-primary booking-card__cta"
+               href="https://calendly.com/REPLACE-WITH-MVC-CALENDLY/virtual-consultation"
+               data-calendly-url="https://calendly.com/REPLACE-WITH-MVC-CALENDLY/virtual-consultation"
+               target="_blank" rel="noopener">
+              Book virtual consultation
+              <svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16"><path d="M2 8h12 m-5 -5 l5 5 -5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </article>
+
+          <!-- IN-OFFICE -->
+          <article class="booking-card booking-card--featured">
+            <span class="booking-card__badge">Most personal</span>
+            <header class="booking-card__head">
+              <span class="booking-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 28 28" fill="none" stroke="currentColor"
+                     stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 25 c -7 -8 -10 -12 -10 -16 a 10 10 0 0 1 20 0 c 0 4 -3 8 -10 16z"/>
+                  <circle cx="14" cy="9" r="3.2"/>
+                </svg>
+              </span>
+              <div>
+                <h3 class="booking-card__title">1:1 In-Office Consultation</h3>
+                <p class="booking-card__sub">Burnaby, BC · in person</p>
+              </div>
+            </header>
+            <div class="booking-card__price">
+              <span class="booking-card__amount">$350</span>
+              <span class="booking-card__currency">CAD · 60 minutes</span>
+            </div>
+            <p class="booking-card__body">
+              Meet your RCIC face-to-face at our Burnaby office. Bring documents, ask
+              every question, and leave with a written plan. Ideal for complex cases
+              or when you want to put a name to a face before signing on.
+            </p>
+            <ul class="booking-card__list">
+              <li>Suite 900 – 2025 Willingdon Avenue, Burnaby, BC</li>
+              <li>Bring documents — we'll review on the spot</li>
+              <li>Notes &amp; written recommendations emailed afterwards</li>
+              <li>Free parking on site · transit-accessible</li>
+            </ul>
+            <a class="btn-primary booking-card__cta"
+               href="https://calendly.com/REPLACE-WITH-MVC-CALENDLY/in-office-consultation"
+               data-calendly-url="https://calendly.com/REPLACE-WITH-MVC-CALENDLY/in-office-consultation"
+               target="_blank" rel="noopener">
+              Book in-office consultation
+              <svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16"><path d="M2 8h12 m-5 -5 l5 5 -5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </article>
+        </div>
+
+        <p class="contact-booking__note">
+          Not ready to book a paid session?
+          <a href="#main">Send us a message</a> for a free 30-minute discovery call —
+          we'll tell you whether a 1:1 consultation is the right next step.
+        </p>
+
+        <p class="contact-booking__legal">
+          Consultation fees are non-refundable but are credited toward your retainer
+          if you choose to engage MVC for full representation.
+          Payments processed securely by Calendly · Visa · Mastercard · Amex · Discover.
+        </p>
+      </div>
+    </section>
+
   </main>
 
   <footer class="site-footer">
@@ -547,5 +673,25 @@
 
   <script src="/src/scripts/nav.js" defer></script>
   <script src="/src/scripts/contact.js" defer></script>
+
+  <!-- Calendly popup widget. Auto-binds to every <a data-calendly-url="..."> on
+       the page. If the script fails to load (offline / blocked), the link still
+       works as a normal target="_blank" anchor.
+       Docs: https://help.calendly.com/hc/en-us/articles/223147027 -->
+  <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css">
+  <script src="https://assets.calendly.com/assets/external/widget.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('a[data-calendly-url]').forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          // Only intercept when the Calendly popup script has loaded.
+          if (window.Calendly && typeof window.Calendly.initPopupWidget === 'function') {
+            e.preventDefault();
+            window.Calendly.initPopupWidget({ url: a.getAttribute('data-calendly-url') });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
