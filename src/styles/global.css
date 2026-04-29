@@ -560,6 +560,9 @@ main {
   flex-direction: column;
   padding: calc(68px + var(--space-8))
            var(--space-6) var(--space-12);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-12px);
@@ -710,8 +713,13 @@ main {
   text-transform: uppercase;
 }
 
-/* lock body scroll when overlay open */
+/* lock body scroll when overlay open — position: fixed pattern keeps
+   iOS Safari from scrolling the page behind the overlay. JS sets `top`
+   to the negative of scrollY before opening, then restores on close. */
 body.is-menu-open {
+  position: fixed;
+  inset-inline: 0;
+  width: 100%;
   overflow: hidden;
 }
 

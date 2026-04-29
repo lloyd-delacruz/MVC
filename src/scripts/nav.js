@@ -33,9 +33,29 @@
   window.addEventListener('scroll', onScroll, { passive: true });
 
   /* ----- mobile menu ----- */
+  /* Scroll lock: iOS Safari ignores `overflow: hidden` on body, so we
+     pin the body with position: fixed at the negative scroll offset
+     and restore it on close. Stored on the body itself to survive any
+     re-entry into setMenu(). */
+  let savedScrollY = 0;
+  function lockScroll() {
+    savedScrollY = window.scrollY || window.pageYOffset || 0;
+    body.style.top = `-${savedScrollY}px`;
+  }
+  function unlockScroll() {
+    body.style.top = '';
+    window.scrollTo(0, savedScrollY);
+  }
+
   function setMenu(open) {
+    const wasOpen = nav.classList.contains('is-menu-open');
+    if (open === wasOpen) return;
+
+    if (open) lockScroll();
     nav.classList.toggle('is-menu-open', open);
     body.classList.toggle('is-menu-open', open);
+    if (!open) unlockScroll();
+
     if (hamburger) {
       hamburger.setAttribute('aria-expanded', String(open));
       hamburger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
