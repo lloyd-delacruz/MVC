@@ -252,6 +252,83 @@
 }
 
 /* ---------- Credentials strip ---------- */
+/* recognition row — third-party award badges, each linked to source.
+   flex-wrap centers any orphan items naturally, so the layout doesn't
+   leave a lone badge stranded in a grid cell. */
+.about-recognition__row {
+  list-style: none;
+  margin: var(--space-10) 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-6) var(--space-8);
+}
+@media (min-width: 768px) {
+  .about-recognition__row { gap: var(--space-8) var(--space-10); }
+}
+@media (min-width: 1024px) {
+  .about-recognition__row {
+    flex-wrap: nowrap;
+    gap: var(--space-10);
+  }
+}
+
+.about-recognition__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  min-height: 120px;
+}
+
+.about-recognition__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2);
+  border-radius: 12px;
+  transition:
+    transform var(--duration-base) var(--ease-out),
+    filter var(--duration-base) var(--ease-out);
+  filter: saturate(0.92);
+}
+.about-recognition__link:hover,
+.about-recognition__link:focus-visible {
+  transform: translateY(-2px);
+  filter: saturate(1.05);
+}
+.about-recognition__link:focus-visible {
+  outline: 2px solid var(--color-amber);
+  outline-offset: 4px;
+}
+
+.about-recognition__img {
+  display: block;
+  width: auto;
+  height: 96px;
+  max-width: 100%;
+  object-fit: contain;
+}
+@media (min-width: 768px) {
+  .about-recognition__img { height: 110px; }
+}
+@media (min-width: 1024px) {
+  .about-recognition__img { height: 120px; }
+}
+
+/* CICC logo is a horizontal lockup — give it more horizontal room */
+.about-recognition__img--wide {
+  height: 64px;
+}
+@media (min-width: 768px) {
+  .about-recognition__img--wide { height: 72px; }
+}
+@media (min-width: 1024px) {
+  .about-recognition__img--wide { height: 80px; }
+}
+
 .about-credentials {
   background: var(--color-base-200);
   border-top: 1px solid var(--color-border-subtle);

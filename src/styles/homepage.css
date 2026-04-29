@@ -65,10 +65,11 @@
    =========================================================== */
 .hero {
   position: relative;
-  min-height: 85vh;
+  /* mobile: let the section auto-size to its content (nav clearance +
+     content + trust bar). 85vh on tall phones produced a half-screen
+     dead band between the eyebrow and the trust bar. */
   display: flex;
-  /* mobile: anchor content near the top so it sits just below the nav.
-     On tall phones, flex-end created a large empty band above the eyebrow. */
+  flex-direction: column;
   align-items: flex-start;
   isolation: isolate;
   overflow: hidden;
@@ -76,7 +77,15 @@
 @media (min-width: 768px) {
   .hero {
     min-height: 92vh;
+    flex-direction: row;
     align-items: center;
+  }
+}
+/* Mobile only: tighten the nav-to-eyebrow gap. .page-top-offset adds
+   116px (68 + space-12); we want 100px (68 + 32). */
+@media (max-width: 767px) {
+  .hero.page-top-offset {
+    padding-top: 100px !important;
   }
 }
 
@@ -135,9 +144,9 @@
   width: 100%;
   max-width: var(--max-w-content);
   margin-inline: auto;
-  /* mobile: tight top padding — `.page-top-offset` on the section already
-     clears the nav. Bottom padding holds room for the absolute trust bar. */
-  padding: var(--space-2) var(--space-6) 160px;
+  /* mobile: no inner top/bottom padding — the section's page-top-offset
+     handles top clearance and the trust bar flows naturally below. */
+  padding: 0 var(--space-6);
   z-index: 1;
 }
 @media (min-width: 768px) {
@@ -187,18 +196,25 @@
 }
 
 .hero__trust-bar {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  /* mobile: in flow, sits directly below CTAs with a 32px gap. */
+  position: relative;
+  width: 100%;
   z-index: 1;
+  margin-top: var(--space-8);
   background: linear-gradient(to top,
     rgba(0,0,0,0.60) 0%,
     rgba(0,0,0,0.0) 100%);
   padding: var(--space-5) var(--space-6);
 }
 @media (min-width: 768px) {
-  .hero__trust-bar { padding: var(--space-6) var(--space-12); }
+  .hero__trust-bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-top: 0;
+    padding: var(--space-6) var(--space-12);
+  }
 }
 
 .hero__trust-inner {
