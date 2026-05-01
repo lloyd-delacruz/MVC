@@ -60,7 +60,7 @@
   inset: 0;
   z-index: 1;
   background:
-    radial-gradient(ellipse at 18% 75%, rgba(193, 83, 42, 0.25) 0%, rgba(193, 83, 42, 0) 55%);
+    radial-gradient(ellipse at 18% 75%, rgba(27, 53, 87, 0.25) 0%, rgba(27, 53, 87, 0) 55%);
   mix-blend-mode: screen;
   pointer-events: none;
 }
@@ -120,7 +120,7 @@
   display: inline-block;
   font-style: italic;
   font-weight: 400;
-  color: var(--color-amber-light);
+  color: var(--color-red-light);
   transition:
     opacity 350ms var(--ease-out),
     transform 350ms var(--ease-out),
@@ -362,13 +362,13 @@
   height: 22px;
   align-items: center;
   justify-content: center;
-  color: var(--color-amber);
+  color: var(--color-red);
   flex-shrink: 0;
 }
 .wc-chip__icon svg { width: 18px; height: 18px; }
 .wc-chip:hover {
-  border-color: var(--color-amber);
-  color: var(--color-amber-deep);
+  border-color: var(--color-red);
+  color: var(--color-red-deep);
   transform: translateY(-1px);
 }
 .wc-chip:focus-visible {
@@ -381,7 +381,7 @@
   color: #FFFFFF;
   box-shadow: 0 6px 16px -6px rgba(15, 11, 7, 0.4);
 }
-.wc-chip.is-active .wc-chip__icon { color: var(--color-amber-light); }
+.wc-chip.is-active .wc-chip__icon { color: var(--color-red-light); }
 
 .wc-matters__panels {
   position: relative;
@@ -435,7 +435,7 @@
   inset: 0;
   background: linear-gradient(160deg,
     rgba(15, 30, 46, 0) 30%,
-    rgba(193, 83, 42, 0.20) 100%);
+    rgba(27, 53, 87, 0.20) 100%);
   mix-blend-mode: multiply;
   pointer-events: none;
 }
@@ -452,8 +452,8 @@
   align-self: flex-start;
   padding: 6px 14px;
   border-radius: 999px;
-  background: rgba(193, 83, 42, 0.10);
-  color: var(--color-amber-deep);
+  background: rgba(27, 53, 87, 0.10);
+  color: var(--color-red-deep);
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.12em;
@@ -614,12 +614,12 @@
   line-height: 1.6;
 }
 .wc-region__footer a {
-  color: var(--color-amber-deep);
+  color: var(--color-red-deep);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 .wc-region__footer a:hover {
-  color: var(--color-amber);
+  color: var(--color-red);
 }
 
 .wc-hotspot {
@@ -647,7 +647,7 @@
   border-radius: 50%;
   background: var(--color-amber);
   border: 3px solid #FFFFFF;
-  box-shadow: 0 6px 14px -4px rgba(193, 83, 42, 0.5);
+  box-shadow: 0 6px 14px -4px rgba(27, 53, 87, 0.5);
   transition: transform var(--duration-fast) var(--ease-out), background-color var(--duration-fast) var(--ease-out);
 }
 .wc-hotspot__pulse {
@@ -865,7 +865,7 @@
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--color-amber-light);
+  color: var(--color-red-light);
   margin-bottom: var(--space-2);
 }
 .wc-city__name {
@@ -999,7 +999,7 @@
   font-family: var(--font-display);
   font-style: italic;
   font-size: 13px;
-  color: var(--color-amber);
+  color: var(--color-red);
 }
 .wc-season-tab__name {
   font-family: var(--font-display);
@@ -1067,7 +1067,7 @@
   font-family: var(--font-display);
   font-style: italic;
   font-size: 14px;
-  color: var(--color-amber-deep);
+  color: var(--color-red-deep);
   margin-bottom: var(--space-4);
   letter-spacing: -0.005em;
 }
@@ -1109,7 +1109,7 @@
   top: -2px;
   font-size: 22px;
   line-height: 1;
-  color: var(--color-amber);
+  color: var(--color-red);
 }
 
 /* ============================================================
@@ -1188,8 +1188,8 @@
   align-items: center;
   justify-content: center;
   border-radius: 12px;
-  background: rgba(193, 83, 42, 0.10);
-  color: var(--color-amber);
+  background: rgba(27, 53, 87, 0.10);
+  color: var(--color-red);
 }
 .wc-fact__icon svg { width: 22px; height: 22px; }
 .wc-fact__q {
@@ -1208,13 +1208,13 @@
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-amber-deep);
+  color: var(--color-red-deep);
 }
 .wc-fact__cta::after {
   content: '↻';
   margin-left: 8px;
   font-size: 16px;
-  color: var(--color-amber);
+  color: var(--color-red);
 }
 
 .wc-fact__a {
@@ -1223,7 +1223,7 @@
   font-size: clamp(2.25rem, 1.6rem + 2.6vw, 3.5rem);
   line-height: 1;
   letter-spacing: -0.03em;
-  color: var(--color-amber-light);
+  color: var(--color-red-light);
   margin-bottom: var(--space-4);
 }
 .wc-fact__detail {
@@ -1235,7 +1235,7 @@
 }
 .wc-fact__detail em {
   font-style: italic;
-  color: var(--color-amber-light);
+  color: var(--color-red-light);
 }
 
 /* ============================================================

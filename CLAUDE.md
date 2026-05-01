@@ -2,7 +2,7 @@
 
 Production rules for building bespoke client websites from a shared template. Speed comes from the template; soul comes from these rules.
 
-**The vibe:** warm, human, hopeful, trustworthy. Sites should feel like a conversation with someone who genuinely cares — people are making life-changing decisions here. Grounded warmth, not corporate coldness. Never sterile, never bureaucratic, never intimidating.
+**The vibe:** trustworthy, human, hopeful, warm. Sites should feel like a conversation with someone who genuinely cares — people are making life-changing decisions here. Grounded confidence, not corporate coldness. Never sterile, never bureaucratic, never intimidating. The palette is a two-accent system: **deep navy blue** carries the structure (hero, stats band, footer, ambient tints) and **terracotta red** carries the action (CTA buttons, eyebrow labels, italic emphasis, link arrows). Blue is the institution that has earned trust; red is the warm hand reaching out to guide you through the door.
 
 **The bar:** FAANG-grade. Lighthouse 90+, WCAG 2.1 AA, fully responsive across mobile/tablet/desktop, SEO-structured, zero console noise. Every interactive element has four states. No exceptions.
 
@@ -79,7 +79,7 @@ Rare. Triggered when the user explicitly says "make it look like [site]" or prov
 ### Mode C — From-scratch text brief
 
 No reference at all. Design DNA does the heavy lifting.
-- Default to the warm/human/trustworthy aesthetic unless the brief says otherwise.
+- Default to the navy-structure / red-action aesthetic (cream base, navy `#1B3557` for structural sections and ambient tints, terracotta red `#C1532A` for buttons / eyebrows / italic emphasis / arrows) unless the brief says otherwise.
 - Self-critique your output before declaring done.
 
 If reference and text brief conflict in any mode, **ask** — don't guess.
@@ -120,12 +120,12 @@ The hero is the most important section on the site. It must immediately communic
               md:bg-gradient-to-r md:from-black/65 md:via-black/30 md:to-transparent">
   </div>
 
-  <!-- 3. Optional: subtle warm color wash over the image -->
-  <div class="absolute inset-0 bg-[#8B2E16]/15 mix-blend-multiply"></div>
+  <!-- 3. Optional: subtle navy color wash over the image -->
+  <div class="absolute inset-0 bg-[#1B3557]/22 mix-blend-multiply"></div>
 
   <!-- 4. Content — left-aligned desktop, bottom-anchored mobile -->
   <div class="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 pb-24 md:pb-0">
-    <p class="eyebrow text-white/70 mb-4">RCIC · Regulated Canadian Immigration Consultant</p>
+    <p class="eyebrow text-[#E8A87C] mb-4">RCIC · Regulated Canadian Immigration Consultant</p>
     <h1 class="display-heading text-white max-w-2xl mb-6">
       Your path to Canada, <em class="text-[#E8A87C]">guided with care.</em>
     </h1>
@@ -178,19 +178,19 @@ The hero is the most important section on the site. It must immediately communic
 - Never `loading="lazy"` on the hero image.
 - Mobile: `object-position: center top` to keep faces in frame.
 - Photo direction: real people, human moments — families arriving at airports, consultants meeting clients, Canadian cityscapes (Toronto, Vancouver, Calgary). Never generic stock-photo handshakes.
-- Placeholder: `https://placehold.co/1920x1080/8B2E16/E8A87C` — brand palette so it looks intentional.
+- Placeholder: `https://placehold.co/1920x1080/1B3557/7FB1E8` — brand palette so it looks intentional.
 
 **Overlay:**
 - Always a gradient overlay — text on an unprotected image is inaccessible.
 - Mobile: `from-black/70` bottom-up (text is at the bottom).
 - Desktop: `from-black/65` left-to-right (text is on the left).
-- Optional warm wash: `bg-[#8B2E16]/15 mix-blend-multiply` to pull image into brand palette.
+- Optional navy wash: `bg-[#1B3557]/15 mix-blend-multiply` to pull image into brand palette.
 
 **Typography on hero:**
 - Headline: `text-white` or bone `#F4EFE6`.
-- Italic accent word: `text-[#E8A87C]` (warm amber) — pops on dark, feels human not corporate.
+- Italic accent word: `text-[#E8A87C]` (warm peach, the action accent's light tone) — pops on dark navy, reads as hopeful and human.
 - Subheadline: `text-white/80`.
-- Eyebrow: `text-white/60` — always include RCIC credential here.
+- Eyebrow: `text-[#E8A87C]` (action red, light) — always include RCIC credential here. Eyebrows site-wide use the red action accent, not white.
 
 **Fallback (no client photo):**
 ```html
@@ -372,21 +372,28 @@ Footer:  py-12 / py-16  ← fixed, tight
 
 ---
 
-## Design DNA — Warm, Human, Trustworthy
+## Design DNA — Trustworthy, Human, Warm
 
 This is an immigration consultancy. People come here in hope, in uncertainty, sometimes in fear. The design must communicate: *you are in safe hands. We've done this before. We care about you specifically.*
 
-### Color
+### Color — a two-accent system
 
-**Palette direction: warm navy + amber + cream. Grounded, human, trustworthy.**
+**Palette direction: navy structure + red action + cream base. Both accents come from the brand reference photo.**
 
-- **Base:** `#FBF9F6`, `#F5F0EA`, `#EEE8DF`, `#E7DDD0`. **Never pure `#FFFFFF`.**
-- **Primary accent:** warm amber / terracotta — `#C1532A`, `#E8A87C`, `#D4734A`. Conveys warmth and approachability.
-- **Secondary accent:** deep navy — `#1B3557`, `#243B55`, `#2E4A6B`. Conveys trust, stability, professionalism.
-- **Text:** `#1A1612`, `#2A221A`, `#3A2E24` body. `#6B5A4A` secondary.
-- **Forbidden:** Tailwind blue/indigo as primary · neon · pure black on pure white · overly "government" greys that feel cold and bureaucratic.
+The reference is the brand photo: a deep navy blue band closing out structural sections (hero, stats, footer), with a warm terracotta red carrying every interactive element (CTA buttons, eyebrow labels, italic emphasis, card arrows, testimonial quote marks, social icons). The two colors do separate jobs and rarely overlap — that separation is what gives the site its rhythm.
 
-**Avoid the government-website trap.** Canadian immigration sites often look like IRCC forms — sterile blue-and-white, dense text, intimidating. This site should feel like the *opposite*: the warm, knowledgeable friend who guides you through the process.
+- **Base:** `#FBF9F6`, `#F5F0EA`, `#EEE8DF`, `#E7DDD0`. **Never pure `#FFFFFF`.** Cream is the warm counterweight that prevents the navy from reading as cold or institutional and the red from reading as loud.
+- **Structural accent (navy):** `#1B3557` (the brand blue, matched to the reference photo), `#0F2742` (deeper, hover/active), `#7FB1E8` (light sky blue, used sparingly on dark for ambient highlights). Tokens: `--color-amber`, `--color-amber-deep`, `--color-amber-light`. *Names are historical — values are navy.* Use for: hero background washes, stats-band background, ambient card-tint backgrounds (`rgba(27, 53, 87, 0.10)`), focus surfaces on dark sections, structural fills.
+- **Action accent (red):** `#C1532A` (terracotta red, matched to the photo's CTA buttons and eyebrow labels), `#A04420` (deeper, hover/active), `#E8A87C` (light peach, used on dark navy backgrounds for italic emphasis and eyebrow labels). Tokens: `--color-red`, `--color-red-deep`, `--color-red-light`. Use for: every primary CTA button, every `.eyebrow` label, every `<em>` italic emphasis on display headings, "Learn more →" arrows, testimonial quote marks, FAQ open-state icons, focus rings, social-icon backgrounds, nav active underlines.
+- **Footer navy:** `#0F1E2E` (deepest, for the footer and any closing dark band). Slightly darker than the structural navy, so the two read as distinct steps in the same family.
+- **Text:** `#1A1612` body, `#0F0B07` strongest. `#6B5A4A` secondary — kept slightly warm to bridge between the cool navy and the warm red.
+- **Forbidden:** electric Tailwind indigo/sky as the brand blue (use the navy tokens) · neon · pure black on pure white · cold institutional greys that read as IRCC · using red for structural fills (the red is small and specific — large red blocks break the system).
+
+**The decision rule when reaching for an accent:**
+- Is the user supposed to *interact* with this thing, or is it the thing that names/highlights an action? → **Red** (button, eyebrow, italic, arrow, hover state).
+- Is this a structural surface, an ambient fill, or a calm-colored decoration? → **Navy** (background tint, full-bleed band, footer, focus surface).
+
+**Avoid the government-website trap.** Canadian immigration sites often look like IRCC forms — sterile blue-and-white, dense text, intimidating. This site keeps navy structural but lets the red do the welcoming. The blue is the institution; the red is the human reaching out. The cream holds them both.
 
 ### Typography
 - Always two fonts: serif display + humanist sans.
@@ -395,7 +402,7 @@ This is an immigration consultancy. People come here in hope, in uncertainty, so
 - Display tracking: `-0.02em` to `-0.04em`. Line-height: `1.05–1.15`.
 - Body: `16–18px`, `line-height: 1.65–1.8`, `max-w-[65ch]`.
 - Weight: `500–600` headings (not 700+). `400` body.
-- Italics on serif for soft emphasis — especially on emotional phrases and pathway names.
+- Italics on serif for soft emphasis — especially on emotional phrases and pathway names. On dark backgrounds the italic accent uses `#E8A87C` (light peach, the red's light tone); on light backgrounds it uses `#C1532A` (brand terracotta red). Italics always use the red action accent, never navy.
 - Fluid type with `clamp()`.
 
 ### Surfaces & Depth
@@ -436,7 +443,7 @@ Every immigration stream gets a card. Consistent structure:
   <div class="flex items-center justify-between">
     <span class="text-xs text-[#6B5A4A]/70 uppercase tracking-widest">Avg. 6 months</span>
     <a href="/express-entry" class="text-[#C1532A] text-sm font-medium 
-       hover:text-[#D4734A] transition-colors duration-200">
+       hover:text-[#A04420] transition-colors duration-200">
       Learn more →
     </a>
   </div>
@@ -563,7 +570,9 @@ WCAG 2.1 AA: semantic HTML, 4.5:1 contrast body, 3:1 large text, skip-to-content
 - Do **not** add `mt-` or `mb-` to `<section>` elements.
 - Do **not** use a white or page-colored footer — it must be dark and distinct.
 - Do **not** use `transition-all`.
-- Do **not** use Tailwind blue/indigo as primary.
+- Do **not** use warm amber / terracotta for *structural* fills — red is small and specific (buttons, eyebrows, italics, arrows). Large red blocks break the system. Structural fills are navy.
+- Do **not** substitute generic Tailwind blue / indigo / sky for the brand navy — use the tokens (`--color-amber` resolves to `#1B3557`).
+- Do **not** use navy for `.eyebrow`, `.btn-primary`, `<em>` italic emphasis, or "Learn more →" links — these are the action accent and must be red (`--color-red`).
 - Do **not** use pure `#FFFFFF` for page backgrounds.
 - Do **not** ship with console errors or warnings.
 - Do **not** invent brand colors when `assets/brand/` defines them.

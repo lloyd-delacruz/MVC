@@ -61,7 +61,7 @@
   font-size: 4.6em;
   line-height: 0.85;
   font-weight: 500;
-  color: var(--color-amber-deep);
+  color: var(--color-red-deep);
   padding: 0.08em 0.12em 0 0;
   font-style: normal;
 }
@@ -104,14 +104,14 @@
   font-style: italic;
 }
 .post-prose a {
-  color: var(--color-amber-deep);
+  color: var(--color-red-deep);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
   transition: color var(--duration-fast) var(--ease-out);
 }
 .post-prose a:hover {
-  color: var(--color-amber);
+  color: var(--color-red);
 }
 
 /* Pull quote */
@@ -143,7 +143,7 @@
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--color-amber-deep);
+  color: var(--color-red-deep);
   font-weight: 600;
   margin-bottom: var(--space-2);
 }
@@ -205,7 +205,7 @@
   text-underline-offset: 2px;
 }
 .post-photo-credit a:hover {
-  color: var(--color-amber-deep);
+  color: var(--color-red-deep);
 }
 
 /* Related articles strip */

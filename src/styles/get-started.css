@@ -53,12 +53,12 @@
   will-change: transform;
 }
 .gs-hero__blob--amber {
-  background: radial-gradient(circle, #C1532A 0%, #C1532A00 70%);
+  background: radial-gradient(circle, #1B3557 0%, #1B355700 70%);
   top: -10%; left: -8%;
   animation: gs-drift-a 22s ease-in-out infinite alternate;
 }
 .gs-hero__blob--rose {
-  background: radial-gradient(circle, #E8A87C 0%, #E8A87C00 70%);
+  background: radial-gradient(circle, #7FB1E8 0%, #7FB1E800 70%);
   bottom: -20%; right: 8%;
   width: 65%;
   animation: gs-drift-b 28s ease-in-out infinite alternate;
@@ -104,7 +104,7 @@
 }
 .gs-hero__journey-dot {
   filter: drop-shadow(0 0 12px rgba(255, 220, 180, 0.85))
-          drop-shadow(0 0 22px rgba(232, 168, 124, 0.55));
+          drop-shadow(0 0 22px rgba(127, 177, 232, 0.55));
 }
 .gs-hero__journey-end {
   transform-origin: 360px 80px;
@@ -188,14 +188,14 @@
   white-space: nowrap;
   font-style: italic;
   font-weight: 400;
-  color: var(--color-amber-light);
+  color: var(--color-red-light);
   opacity: 0;
   transform: translateY(0.4em);
   filter: blur(6px);
   transition: opacity 480ms var(--ease-out),
               transform 600ms var(--ease-out),
               filter 480ms var(--ease-out);
-  background: linear-gradient(180deg, #FFE0BD 0%, #E8A87C 100%);
+  background: linear-gradient(180deg, #D8E8F8 0%, #7FB1E8 100%);
   -webkit-background-clip: text;
           background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -219,7 +219,7 @@
 .gs-hero__lede strong {
   color: #FFFFFF;
   font-weight: 500;
-  border-bottom: 1px dashed rgba(232, 168, 124, 0.55);
+  border-bottom: 1px dashed rgba(127, 177, 232, 0.55);
 }
 
 /* ---------- Quick start pills ---------- */
@@ -262,16 +262,16 @@
 .gs-pill svg {
   width: 18px;
   height: 18px;
-  color: var(--color-amber-light);
+  color: var(--color-red-light);
   flex-shrink: 0;
   transition: transform var(--duration-base) var(--ease-out);
 }
 .gs-pill:hover {
-  background: rgba(232, 168, 124, 0.15);
-  border-color: var(--color-amber-light);
+  background: rgba(127, 177, 232, 0.15);
+  border-color: var(--color-red-light);
   color: #FFFFFF;
   transform: translateY(-2px);
-  box-shadow: 0 12px 28px -16px rgba(232, 168, 124, 0.6);
+  box-shadow: 0 12px 28px -16px rgba(127, 177, 232, 0.6);
 }
 .gs-pill:hover svg {
   transform: scale(1.15) rotate(-4deg);
@@ -315,7 +315,7 @@
   font-size: clamp(1.65rem, 1.3rem + 1.4vw, 2.4rem);
   line-height: 1;
   letter-spacing: var(--tracking-tight);
-  background: linear-gradient(180deg, #FFFFFF 0%, #E8A87C 120%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #7FB1E8 120%);
   -webkit-background-clip: text;
           background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -492,17 +492,17 @@
 }
 .gs-option:hover {
   background: var(--color-surface);
-  border-color: var(--color-amber-light);
+  border-color: var(--color-red-light);
   transform: translateY(-1px);
-  box-shadow: 0 12px 24px -16px rgba(193, 83, 42, 0.25);
+  box-shadow: 0 12px 24px -16px rgba(27, 53, 87, 0.25);
 }
 .gs-option:has(input:checked) {
   background: linear-gradient(180deg, #FFF7EE 0%, var(--color-surface) 100%);
-  border-color: var(--color-amber);
-  box-shadow: 0 0 0 3px rgba(193, 83, 42, 0.10), 0 12px 24px -16px rgba(193, 83, 42, 0.25);
+  border-color: var(--color-red);
+  box-shadow: 0 0 0 3px rgba(27, 53, 87, 0.10), 0 12px 24px -16px rgba(27, 53, 87, 0.25);
 }
 .gs-option:has(input:checked)::before {
-  border-color: var(--color-amber);
+  border-color: var(--color-red);
   background: var(--color-amber);
   box-shadow: inset 0 0 0 4px var(--color-surface);
 }
@@ -558,7 +558,7 @@
   gap: 6px;
 }
 .gs-field__label > span[aria-hidden] {
-  color: var(--color-amber);
+  color: var(--color-red);
   font-weight: 500;
 }
 .gs-field__optional {
@@ -584,14 +584,14 @@
   color: rgba(26, 22, 18, 0.35);
 }
 .gs-input:hover {
-  border-color: var(--color-amber-light);
+  border-color: var(--color-red-light);
   background: var(--color-surface);
 }
 .gs-input:focus-visible {
   outline: none;
-  border-color: var(--color-amber);
+  border-color: var(--color-red);
   background: var(--color-surface);
-  box-shadow: 0 0 0 3px rgba(193, 83, 42, 0.18);
+  box-shadow: 0 0 0 3px rgba(27, 53, 87, 0.18);
 }
 .gs-textarea {
   resize: vertical;
@@ -624,16 +624,16 @@
   line-height: 1.4;
 }
 .gs-privacy svg {
-  color: var(--color-amber);
+  color: var(--color-red);
   flex-shrink: 0;
 }
 .gs-privacy a {
-  color: var(--color-amber-deep);
+  color: var(--color-red-deep);
   text-decoration: underline;
   text-underline-offset: 2px;
   margin-left: 2px;
 }
-.gs-privacy a:hover { color: var(--color-amber); }
+.gs-privacy a:hover { color: var(--color-red); }
 
 /* ---------- Continue button — single button, dynamic label/icon ---------- */
 #gs-continue:not([hidden]) {
@@ -703,12 +703,12 @@
   padding: 0;
   font: inherit;
   font-size: 0.85rem;
-  color: var(--color-amber-deep);
+  color: var(--color-red-deep);
   text-decoration: underline;
   text-underline-offset: 3px;
   cursor: pointer;
 }
-.gs-sent__retry:hover { color: var(--color-amber); }
+.gs-sent__retry:hover { color: var(--color-red); }
 .gs-sent__retry:focus-visible {
   outline: 2px solid var(--color-amber);
   outline-offset: 3px;
@@ -745,12 +745,12 @@
               box-shadow var(--duration-fast) var(--ease-out);
 }
 .gs-select:hover {
-  border-color: var(--color-amber-light);
+  border-color: var(--color-red-light);
 }
 .gs-select:focus-visible {
   outline: none;
-  border-color: var(--color-amber);
-  box-shadow: 0 0 0 3px rgba(193, 83, 42, 0.18);
+  border-color: var(--color-red);
+  box-shadow: 0 0 0 3px rgba(27, 53, 87, 0.18);
 }
 .gs-select-wrap__chevron {
   position: absolute;
@@ -826,7 +826,7 @@
   font-size: 0.78rem;
   letter-spacing: var(--tracking-eyebrow);
   text-transform: uppercase;
-  color: var(--color-amber-deep);
+  color: var(--color-red-deep);
   margin: 0 0 var(--space-3);
   font-weight: 500;
 }
@@ -840,7 +840,7 @@
   margin: 0 0 var(--space-4);
 }
 .gs-result__title em {
-  color: var(--color-amber);
+  color: var(--color-red);
   font-style: italic;
 }
 .gs-result__lede {
@@ -917,13 +917,13 @@
   border: 0;
   padding: 8px 4px;
   cursor: pointer;
-  color: var(--color-amber-deep);
+  color: var(--color-red-deep);
   text-decoration: underline;
   text-underline-offset: 4px;
   transition: color var(--duration-fast) var(--ease-out);
 }
 .gs-result__reset:hover {
-  color: var(--color-amber);
+  color: var(--color-red);
 }
 .gs-result__reset:focus-visible {
   outline: 2px solid var(--color-amber);
@@ -958,7 +958,7 @@
   margin: 0 auto;
 }
 .gs-divider__text em {
-  color: var(--color-amber-deep);
+  color: var(--color-red-deep);
   font-style: italic;
 }
 
@@ -1014,7 +1014,7 @@
   font-weight: 500;
   font-size: 1.5rem;
   letter-spacing: var(--tracking-tight);
-  color: var(--color-amber);
+  color: var(--color-red);
   line-height: 1;
   min-width: 36px;
 }
@@ -1066,7 +1066,7 @@
   font-size: 0.78rem;
   letter-spacing: var(--tracking-eyebrow);
   text-transform: uppercase;
-  color: var(--color-amber-deep);
+  color: var(--color-red-deep);
   margin: 0 0 var(--space-2);
 }
 .gs-step-acc__cols p {
@@ -1143,12 +1143,12 @@
   line-height: 1.6;
 }
 .gs-checklist__note a {
-  color: var(--color-amber-deep);
+  color: var(--color-red-deep);
   text-decoration: underline;
   text-underline-offset: 3px;
   transition: color var(--duration-fast) var(--ease-out);
 }
-.gs-checklist__note a:hover { color: var(--color-amber); }
+.gs-checklist__note a:hover { color: var(--color-red); }
 
 /* ===========================================================
    RESPONSIVE — TABLET +

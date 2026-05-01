@@ -60,7 +60,7 @@
 }
 .faq-tab.is-active {
   color: var(--color-ink-strong);
-  border-bottom-color: var(--color-amber);
+  border-bottom-color: var(--color-red);
 }
 
 /* category groups (toggle on tab click) */

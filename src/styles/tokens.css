@@ -5,7 +5,7 @@
 
 :root {
   /* ----------------------------------------------------------
-     Color — warm navy + amber + cream
+     Color — prominent blue + navy + cream
      Never pure #FFFFFF for page backgrounds.
      ---------------------------------------------------------- */
   --color-base-100: #FBF9F6;
@@ -19,9 +19,20 @@
   --color-ink-secondary: #6B5A4A;
   --color-ink-muted:     rgba(26, 22, 18, 0.55);
 
-  --color-amber:       #C1532A;
-  --color-amber-light: #E8A87C;
-  --color-amber-deep:  #A04420;
+  /* Structural accent — deep navy blue, matched to the brand reference photo.
+     Used for ambient tints, focus surfaces, structural sections, and italic
+     emphasis on light backgrounds where a calm tone reads better than red.
+     Names retain --color-amber-* for compatibility with existing references. */
+  --color-amber:       #1B3557;
+  --color-amber-light: #7FB1E8;
+  --color-amber-deep:  #0F2742;
+
+  /* Action accent — saturated brand red. The "punch" color from the brand photo.
+     Used for primary CTA buttons, eyebrow labels, italic emphasis, card
+     arrows, focus rings, and any element that should grab attention. */
+  --color-red:       #D81E17;
+  --color-red-light: #D81E17;
+  --color-red-deep:  #A81610;
 
   --color-navy:      #1B3557;
   --color-navy-mid:  #243B55;
@@ -33,8 +44,7 @@
   --color-border-strong: rgba(0, 0, 0, 0.16);
 
   --color-success: #2E7D5B;
-  --color-warn:    #B86A1A;
-  --color-error:   #B23A2C;
+  --color-error:   #D81E17;
 
   /* ----------------------------------------------------------
      Typography
@@ -87,8 +97,10 @@
   --shadow-card:       0 24px 48px -16px rgba(40, 30, 20, 0.12);
   --shadow-card-hover: 0 32px 64px -20px rgba(40, 30, 20, 0.18);
   --shadow-nav:        0 1px 0 rgba(0, 0, 0, 0.04), 0 8px 24px -12px rgba(40, 30, 20, 0.08);
-  --shadow-btn-amber:  0 1px 2px rgba(0,0,0,0.08), 0 8px 16px -8px rgba(193, 83, 42, 0.40);
-  --shadow-btn-amber-hover: 0 1px 2px rgba(0,0,0,0.08), 0 14px 28px -10px rgba(193, 83, 42, 0.55);
+  --shadow-btn-amber:  0 1px 2px rgba(0,0,0,0.08), 0 8px 16px -8px rgba(27, 53, 87, 0.40);
+  --shadow-btn-amber-hover: 0 1px 2px rgba(0,0,0,0.08), 0 14px 28px -10px rgba(27, 53, 87, 0.55);
+  --shadow-btn-red:        0 1px 2px rgba(0,0,0,0.08), 0 8px 16px -8px rgba(216, 30, 23, 0.40);
+  --shadow-btn-red-hover:  0 1px 2px rgba(0,0,0,0.08), 0 14px 28px -10px rgba(216, 30, 23, 0.55);
 
   /* ----------------------------------------------------------
      Motion

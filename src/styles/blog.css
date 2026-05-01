@@ -109,8 +109,8 @@
   display: inline-flex;
   align-items: center;
   padding: 4px 10px;
-  background: rgba(193, 83, 42, 0.12);
-  color: var(--color-amber-deep);
+  background: rgba(27, 53, 87, 0.12);
+  color: var(--color-red-deep);
   border-radius: 999px;
   font-weight: 500;
   font-size: 11px;
@@ -149,12 +149,12 @@
 .blog-card__cta {
   margin-top: auto;
   padding-top: var(--space-3);
-  color: var(--color-amber-deep);
+  color: var(--color-red-deep);
   font-size: 14px;
   font-weight: 500;
   align-self: flex-start;
   transition: color var(--duration-fast) var(--ease-out);
 }
 .blog-card-link:hover .blog-card__cta {
-  color: var(--color-amber);
+  color: var(--color-red);
 }

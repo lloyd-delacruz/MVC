@@ -48,7 +48,7 @@
 .section-head__title em {
   font-style: italic;
   font-weight: 400;
-  color: var(--color-amber);
+  color: var(--color-red);
 }
 .section-head__lede {
   font-size: clamp(1rem, 0.95rem + 0.25vw, 1.0625rem);
@@ -57,7 +57,7 @@
   max-width: 60ch;
 }
 .bg-navy .section-head__title    { color: #FFFFFF; }
-.bg-navy .section-head__title em { color: var(--color-amber-light); }
+.bg-navy .section-head__title em { color: var(--color-red-light); }
 .bg-navy .section-head__lede     { color: rgba(255,255,255,0.70); }
 .bg-navy .eyebrow                { color: rgba(255,255,255,0.55); }
 
@@ -105,7 +105,7 @@
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(ellipse at 20% 50%, rgba(193,83,42,0.18) 0%, rgba(193,83,42,0) 55%);
+    radial-gradient(ellipse at 20% 50%, rgba(27, 53, 87,0.18) 0%, rgba(27, 53, 87,0) 55%);
   pointer-events: none;
 }
 
@@ -141,7 +141,7 @@
 .page-hero__title em {
   font-style: italic;
   font-weight: 400;
-  color: var(--color-amber-light);
+  color: var(--color-red-light);
 }
 
 .page-hero__lede {
@@ -218,7 +218,7 @@
 /* Layered amber wash to pull the photo into brand palette */
 .page-hero--photo::after {
   background:
-    radial-gradient(ellipse at 25% 60%, rgba(193, 83, 42, 0.22) 0%, rgba(193, 83, 42, 0) 60%);
+    radial-gradient(ellipse at 25% 60%, rgba(27, 53, 87, 0.22) 0%, rgba(27, 53, 87, 0) 60%);
   mix-blend-mode: multiply;
 }
 
@@ -284,7 +284,7 @@
 .bottom-cta__title em {
   font-style: italic;
   font-weight: 400;
-  color: var(--color-amber-light);
+  color: var(--color-red-light);
 }
 .bottom-cta__lede {
   font-size: clamp(1rem, 0.95rem + 0.25vw, 1.0625rem);

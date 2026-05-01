@@ -61,7 +61,7 @@
   color: var(--color-ink-strong);
 }
 .contact-label__required {
-  color: var(--color-amber);
+  color: var(--color-red);
   margin-left: 2px;
 }
 .contact-label__optional {
@@ -101,8 +101,8 @@
 .contact-select:focus-visible,
 .contact-textarea:focus-visible {
   outline: none;
-  border-color: var(--color-amber);
-  box-shadow: 0 0 0 3px rgba(193, 83, 42, 0.18);
+  border-color: var(--color-red);
+  box-shadow: 0 0 0 3px rgba(27, 53, 87, 0.18);
 }
 .contact-input:user-invalid,
 .contact-textarea:user-invalid {
@@ -136,14 +136,14 @@
   max-width: 56ch;
 }
 .contact-privacy a {
-  color: var(--color-amber);
+  color: var(--color-red);
   border-radius: 2px;
   text-decoration: underline;
   text-underline-offset: 2px;
   transition: color var(--duration-fast) var(--ease-out);
 }
 .contact-privacy a:hover {
-  color: var(--color-amber-deep);
+  color: var(--color-red-deep);
 }
 
 /* success state */
@@ -212,8 +212,8 @@
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  background: rgba(193, 83, 42, 0.10);
-  color: var(--color-amber);
+  background: rgba(27, 53, 87, 0.10);
+  color: var(--color-red);
   flex-shrink: 0;
   margin-top: 1px;
 }
@@ -238,7 +238,7 @@
   transition: color var(--duration-fast) var(--ease-out);
 }
 .contact-detail__value a:hover {
-  color: var(--color-amber);
+  color: var(--color-red);
 }
 
 /* office location maps */
@@ -299,7 +299,7 @@
 .booking-card__head {
   padding: var(--space-7) clamp(20px, 4vw, 36px) var(--space-6);
   background:
-    radial-gradient(ellipse 80% 100% at 0% 0%, rgba(232, 168, 124, 0.18), transparent 60%),
+    radial-gradient(ellipse 80% 100% at 0% 0%, rgba(127, 177, 232, 0.18), transparent 60%),
     var(--color-base-100);
   border-bottom: 1px solid var(--color-border-subtle);
 }
@@ -323,7 +323,7 @@
   font-size: 0.92rem;
   letter-spacing: 0.05em;
   border-radius: var(--radius-card);
-  box-shadow: 0 8px 16px -8px rgba(193, 83, 42, 0.55);
+  box-shadow: 0 8px 16px -8px rgba(27, 53, 87, 0.55);
 }
 .booking-card__brand-name {
   font-family: var(--font-display);
@@ -415,7 +415,7 @@
 .booking-option__price {
   font-style: italic;
   font-weight: 400;
-  color: var(--color-amber-deep);
+  color: var(--color-red-deep);
   white-space: nowrap;
 }
 .booking-option__desc {
@@ -434,7 +434,7 @@
 }
 .booking-option:hover .booking-option__chevron {
   transform: translateX(4px);
-  color: var(--color-amber-deep);
+  color: var(--color-red-deep);
 }
 
 /* --- Footer (Calendly attribution + payment methods) --- */
@@ -457,7 +457,7 @@
   letter-spacing: var(--tracking-snug);
 }
 .booking-card__powered svg {
-  color: var(--color-amber);
+  color: var(--color-red);
 }
 .booking-card__payments {
   display: inline-flex;
@@ -490,12 +490,12 @@
   max-width: 56ch;
 }
 .contact-booking__note a {
-  color: var(--color-amber-deep);
+  color: var(--color-red-deep);
   text-decoration: underline;
   text-underline-offset: 3px;
   transition: color var(--duration-fast) var(--ease-out);
 }
-.contact-booking__note a:hover { color: var(--color-amber); }
+.contact-booking__note a:hover { color: var(--color-red); }
 
 .contact-booking__legal {
   margin: var(--space-4) auto 0;
