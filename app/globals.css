@@ -6,12 +6,20 @@
   html {
     scroll-behavior: smooth;
   }
+  html,
+  body {
+    overflow-x: hidden;
+  }
   body {
     @apply bg-white text-navy-800 antialiased;
     font-feature-settings: "ss01", "cv11";
   }
   ::selection {
     @apply bg-brand-red text-white;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
   }
 }
 
@@ -27,6 +35,10 @@
 }
 
 @layer components {
+  .prose-mvc {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
   .prose-mvc h2 {
     font-family: var(--font-display), "Playfair Display", Georgia, serif;
     @apply mt-10 text-[26px] font-medium leading-tight text-navy-800;

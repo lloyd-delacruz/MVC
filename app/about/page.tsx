@@ -23,7 +23,7 @@ export default function AboutPage() {
       />
 
       <section className="bg-white py-16 lg:py-20">
-        <div className="container-x grid items-center gap-12 lg:grid-cols-[1fr_1.1fr]">
+        <div className="container-x grid grid-cols-[minmax(0,1fr)] items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]">
           <div className="relative">
             <div className="overflow-hidden rounded-[24px] bg-[#8a6f5d] shadow-portrait">
               <Image

@@ -27,17 +27,20 @@ export function PageHero({
           backgroundSize: "30px 30px",
         }}
       />
-      <div className={`container-x relative py-16 lg:py-20 ${alignment} max-w-3xl`}>
+      <div className={`container-x relative py-12 sm:py-16 lg:py-20 ${alignment} max-w-3xl`}>
         {eyebrow && (
-          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-red">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-brand-red sm:text-[11px] sm:tracking-[0.22em]">
             {eyebrow}
           </p>
         )}
-        <h1 className="headline-serif mt-3 text-[40px] font-medium leading-[1.1] sm:text-[52px]">
+        <h1
+          className="headline-serif mt-3 text-[24px] font-medium leading-[1.2] sm:text-[40px] sm:leading-[1.15] lg:text-[52px] lg:leading-[1.1]"
+          style={{ overflowWrap: "anywhere", wordBreak: "normal" }}
+        >
           {title}
         </h1>
         {lede && (
-          <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-relaxed text-slate-300">
+          <p className="mx-auto mt-4 max-w-2xl text-[14px] leading-relaxed text-slate-300 sm:text-[15px]">
             {lede}
           </p>
         )}

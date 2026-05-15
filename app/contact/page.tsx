@@ -94,7 +94,7 @@ export default function ContactPage() {
       />
 
       <section id="main" className="bg-white py-16 lg:py-20">
-        <div className="container-x grid gap-12 lg:grid-cols-[1.15fr_1fr] lg:gap-16">
+        <div className="container-x grid grid-cols-[minmax(0,1fr)] gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-16">
           {/* FORM */}
           <div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-red">

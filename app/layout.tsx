@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Playfair_Display, DM_Sans } from "next/font/google";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
@@ -25,6 +25,12 @@ export const metadata: Metadata = {
   },
   description:
     "Licensed RCIC consultancy in Vancouver, BC. Personal review and real guidance for families, workers, students, and businesses moving to Canada.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
 };
 
 export default function RootLayout({

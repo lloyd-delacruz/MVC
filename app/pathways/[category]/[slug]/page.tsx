@@ -49,7 +49,7 @@ export default function PathwayPage({ params }: { params: Params }) {
 
       {(data.overview || data.keyFacts) && (
         <section className="bg-white py-16 lg:py-20">
-          <div className="container-x grid gap-10 lg:grid-cols-[1.4fr_1fr]">
+          <div className="container-x grid grid-cols-[minmax(0,1fr)] gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
             {data.overview && (
               <div>
                 {data.overview.heading && (
