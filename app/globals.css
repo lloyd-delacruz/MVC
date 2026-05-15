@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-navy-800 antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+  ::selection {
+    @apply bg-brand-red text-white;
+  }
+}
+
+@layer utilities {
+  .container-x {
+    @apply mx-auto w-full max-w-container px-6 sm:px-8 lg:px-10;
+  }
+  .headline-serif {
+    font-family: var(--font-display), "Playfair Display", Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  .prose-mvc h2 {
+    font-family: var(--font-display), "Playfair Display", Georgia, serif;
+    @apply mt-10 text-[26px] font-medium leading-tight text-navy-800;
+  }
+  .prose-mvc h3 {
+    font-family: var(--font-display), "Playfair Display", Georgia, serif;
+    @apply mt-8 text-[20px] font-semibold leading-tight text-navy-800;
+  }
+  .prose-mvc p {
+    @apply mt-4;
+  }
+  .prose-mvc ul {
+    @apply mt-4 list-disc space-y-1.5 pl-6;
+  }
+  .prose-mvc ol {
+    @apply mt-4 list-decimal space-y-1.5 pl-6;
+  }
+  .prose-mvc strong {
+    @apply font-semibold text-navy-800;
+  }
+  .prose-mvc a {
+    @apply text-brand-red underline underline-offset-4 hover:text-brand-redDark;
+  }
+  .prose-mvc blockquote {
+    @apply mt-6 border-l-4 border-brand-red bg-cream-50 px-5 py-4 italic text-navy-800;
+  }
+}

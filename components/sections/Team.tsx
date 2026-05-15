@@ -1,0 +1,74 @@
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+
+const team = [
+  {
+    name: "Adrienne Omega",
+    role: "Marketing",
+    src: "/team/adrienne.png",
+  },
+  {
+    name: "Carisse Solatorio",
+    role: "Operations",
+    src: "/team/carisse.png",
+  },
+  {
+    name: "Khristine Arancta",
+    role: "Operations",
+    src: "/team/khristine.png",
+  },
+  {
+    name: "Marianne Folgurinas",
+    role: "Admin",
+    src: "/team/marianne.png",
+  },
+];
+
+export function Team() {
+  return (
+    <section className="bg-white pb-14 pt-2 lg:pb-20">
+      <div className="container-x">
+        <div className="text-center">
+          <h2 className="headline-serif text-[30px] font-medium text-navy-800 sm:text-[36px]">
+            Meet the Team
+          </h2>
+        </div>
+
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {team.map((m) => (
+            <div key={m.name} className="flex items-center gap-3">
+              <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full ring-2 ring-white shadow-card">
+                <Image
+                  src={m.src}
+                  alt={m.name}
+                  width={140}
+                  height={140}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div>
+                <div className="headline-serif text-[15px] font-semibold leading-tight text-navy-800">
+                  {m.name}
+                </div>
+                <div className="mt-0.5 text-[12px] font-medium text-brand-red">
+                  {m.role}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-10 text-center">
+          <Link
+            href="#contact"
+            className="inline-flex items-center gap-1.5 text-[13px] font-medium text-navy-800 underline underline-offset-4 hover:text-brand-red"
+          >
+            Meet the full team
+            <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
