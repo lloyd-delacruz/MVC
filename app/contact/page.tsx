@@ -1,9 +1,11 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin, Clock, Languages, CalendarDays, CreditCard } from "lucide-react";
+import { CalendarDays, CreditCard } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { BottomCta } from "@/components/ui/BottomCta";
 import { Button } from "@/components/ui/Button";
+import { resolveIcon } from "@/lib/cms/icons";
+import { getContact } from "@/lib/cms/repositories/contact";
 
 export const metadata = {
   title: "Contact MVC Immigration",
@@ -22,69 +24,14 @@ const pathwayOptions = [
   { value: "not-sure", label: "Not sure yet" },
 ];
 
-const contactDetails = [
-  {
-    icon: MapPin,
-    label: "Canada Office",
-    lines: [
-      "Suite 900 – 2025 Willingdon Avenue",
-      "Burnaby, BC V5C 0J3",
-      "Canada",
-      "+1 778 288 7388",
-    ],
-  },
-  {
-    icon: MapPin,
-    label: "Philippines Office",
-    lines: [
-      "Unit 610B Oakridge IT Centre 2",
-      "880 A.S. Fortuna St., Mandaue City",
-      "Cebu 6014, Philippines",
-      "+63 917 794 9960 (Mobile / WhatsApp)",
-      "+63 939 922 4533 (Mobile)",
-      "+63 32 253 0843 (Landline)",
-    ],
-  },
-  {
-    icon: Mail,
-    label: "Email",
-    lines: ["info@myvisa4canada.com"],
-  },
-  {
-    icon: Clock,
-    label: "Hours",
-    lines: ["9:00am – 5:00pm", "By appointment only"],
-  },
-  {
-    icon: Languages,
-    label: "Languages",
-    lines: ["English, Spanish, Filipino, Hebrew"],
-  },
-];
-
-const bookingOptions = [
-  {
-    title: "MVC 1:1 Virtual Consultation",
-    price: "$250 CAD",
-    description:
-      "Talk to a Regulated Canadian Immigration Consultant online (Zoom or Google Meet) and discuss your immigration plan or ask specific case-related questions. 60 minutes. Notes & next steps emailed afterwards.",
-    href: "https://calendly.com/REPLACE-WITH-MVC-CALENDLY/virtual-consultation",
-  },
-  {
-    title: "MVC 1:1 In-Office Consultation",
-    price: "$350 CAD",
-    description:
-      "Meet your RCIC face-to-face at our Burnaby, BC office. Bring documents, ask every question, and leave with a written plan. 60 minutes. Free parking on site, transit-accessible.",
-    href: "https://calendly.com/REPLACE-WITH-MVC-CALENDLY/in-office-consultation",
-  },
-];
-
 const inputClass =
   "w-full rounded-md border border-slate-200 bg-white px-3.5 py-2.5 text-[14px] text-navy-800 placeholder:text-slate-400 outline-none transition focus:border-brand-red focus:ring-2 focus:ring-brand-red/15";
 const labelClass =
   "block text-[12.5px] font-semibold uppercase tracking-[0.12em] text-navy-800";
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const contact = await getContact();
+
   return (
     <>
       <PageHero
@@ -224,23 +171,26 @@ export default function ContactPage() {
             </h2>
 
             <div className="mt-8 divide-y divide-slate-100 rounded-2xl border border-slate-100 bg-white shadow-card">
-              {contactDetails.map(({ icon: Icon, label, lines }) => (
-                <div key={label} className="flex gap-4 p-5">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-cream-50 text-brand-red">
-                    <Icon className="h-4.5 w-4.5" strokeWidth={1.8} />
-                  </span>
-                  <div>
-                    <h3 className="text-[12.5px] font-semibold uppercase tracking-[0.14em] text-navy-800">
-                      {label}
-                    </h3>
-                    <div className="mt-1.5 space-y-0.5 text-[13.5px] leading-relaxed text-slate-600">
-                      {lines.map((l, i) => (
-                        <div key={i}>{l}</div>
-                      ))}
+              {contact.offices.map((office) => {
+                const Icon = resolveIcon(office.iconName);
+                return (
+                  <div key={office.id} className="flex gap-4 p-5">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-cream-50 text-brand-red">
+                      <Icon className="h-4.5 w-4.5" strokeWidth={1.8} />
+                    </span>
+                    <div>
+                      <h3 className="text-[12.5px] font-semibold uppercase tracking-[0.14em] text-navy-800">
+                        {office.label}
+                      </h3>
+                      <div className="mt-1.5 space-y-0.5 text-[13.5px] leading-relaxed text-slate-600">
+                        {office.lines.map((l, i) => (
+                          <div key={i}>{l}</div>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </aside>
         </div>
@@ -273,9 +223,9 @@ export default function ContactPage() {
             </p>
 
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
-              {bookingOptions.map((o) => (
+              {contact.bookingOptions.map((o) => (
                 <a
-                  key={o.title}
+                  key={o.id}
                   href={o.href}
                   target="_blank"
                   rel="noopener noreferrer"

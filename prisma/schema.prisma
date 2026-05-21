@@ -102,6 +102,7 @@ model ContactInfo {
 
 model Office {
   id        String      @id @default(cuid())
+  iconName  String      @default("MapPin")
   label     String
   lines     String[]
   order     Int         @default(0)

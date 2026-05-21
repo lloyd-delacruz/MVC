@@ -1,6 +1,15 @@
 import Link from "next/link";
-import { Facebook, Instagram, Linkedin, Youtube, Phone, Mail, MapPin } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Youtube, Globe, Phone, Mail, MapPin } from "lucide-react";
+import type { ComponentType } from "react";
 import { Logo } from "@/components/ui/Logo";
+import { getContact } from "@/lib/cms/repositories/contact";
+
+const socialIcons: Record<string, ComponentType<{ className?: string }>> = {
+  Facebook,
+  Instagram,
+  LinkedIn: Linkedin,
+  YouTube: Youtube,
+};
 
 const quickLinks = [
   { label: "About Us", href: "/about" },
@@ -21,14 +30,9 @@ const serviceLinks: { label: string; href: string }[] = [
   { label: "Provincial Nominee", href: "/pathways/permanent-residence/provincial-nominee" },
 ];
 
-const socials = [
-  { Icon: Facebook, href: "#", label: "Facebook" },
-  { Icon: Instagram, href: "#", label: "Instagram" },
-  { Icon: Linkedin, href: "#", label: "LinkedIn" },
-  { Icon: Youtube, href: "#", label: "YouTube" },
-];
+export async function Footer() {
+  const contact = await getContact();
 
-export function Footer() {
   return (
     <footer className="bg-navy-900 text-slate-300">
       <div className="container-x grid gap-10 py-16 md:grid-cols-2 lg:grid-cols-4">
@@ -38,16 +42,19 @@ export function Footer() {
             Canadian immigration guidance you can trust.
           </p>
           <div className="mt-6 flex gap-3">
-            {socials.map(({ Icon, href, label }) => (
-              <Link
-                key={label}
-                href={href}
-                aria-label={label}
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-slate-300 transition-all hover:border-brand-red hover:bg-brand-red hover:text-white"
-              >
-                <Icon className="h-4 w-4" />
-              </Link>
-            ))}
+            {contact.socialLinks.map((s) => {
+              const Icon = socialIcons[s.platform] ?? Globe;
+              return (
+                <Link
+                  key={s.id}
+                  href={s.url}
+                  aria-label={s.platform}
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-slate-300 transition-all hover:border-brand-red hover:bg-brand-red hover:text-white"
+                >
+                  <Icon className="h-4 w-4" />
+                </Link>
+              );
+            })}
           </div>
         </div>
 
@@ -94,22 +101,19 @@ export function Footer() {
           <ul className="mt-5 space-y-3 text-sm">
             <li className="flex items-start gap-3">
               <Phone className="mt-0.5 h-4 w-4 shrink-0 text-brand-red" />
-              <a href="tel:+16041234567" className="hover:text-white">
-                +1 (604) 123-4567
+              <a href={`tel:${contact.phone.replace(/\s+/g, "")}`} className="hover:text-white">
+                {contact.phone}
               </a>
             </li>
             <li className="flex items-start gap-3">
               <Mail className="mt-0.5 h-4 w-4 shrink-0 text-brand-red" />
-              <a
-                href="mailto:info@myvisaforcanada.com"
-                className="hover:text-white"
-              >
-                info@myvisaforcanada.com
+              <a href={`mailto:${contact.email}`} className="hover:text-white">
+                {contact.email}
               </a>
             </li>
             <li className="flex items-start gap-3">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-red" />
-              <span>Vancouver, British Columbia, Canada</span>
+              <span>{contact.addressLine}</span>
             </li>
             <li className="text-slate-400">Serving clients worldwide</li>
           </ul>
