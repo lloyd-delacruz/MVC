@@ -79,3 +79,72 @@ model CtaBanner {
   buttonLabel String
   buttonHref  String
 }
+
+model AboutContent {
+  id           String  @id @default("singleton")
+  eyebrow      String
+  heading      String
+  lede         String
+  bodyMarkdown String
+  imageUrl     String?
+  imageAlt     String?
+}
+
+model ContactInfo {
+  id             String          @id @default("singleton")
+  phone          String
+  email          String
+  addressLine    String
+  offices        Office[]
+  bookingOptions BookingOption[]
+  socialLinks    SocialLink[]
+}
+
+model Office {
+  id        String      @id @default(cuid())
+  label     String
+  lines     String[]
+  order     Int         @default(0)
+  contactId String
+  contact   ContactInfo @relation(fields: [contactId], references: [id], onDelete: Cascade)
+}
+
+model BookingOption {
+  id          String      @id @default(cuid())
+  title       String
+  price       String
+  description String
+  href        String
+  order       Int         @default(0)
+  contactId   String
+  contact     ContactInfo @relation(fields: [contactId], references: [id], onDelete: Cascade)
+}
+
+model SocialLink {
+  id        String      @id @default(cuid())
+  platform  String
+  url       String
+  order     Int         @default(0)
+  contactId String
+  contact   ContactInfo @relation(fields: [contactId], references: [id], onDelete: Cascade)
+}
+
+model Testimonial {
+  id        String  @id @default(cuid())
+  author    String
+  location  String?
+  quote     String
+  rating    Int?
+  imageUrl  String?
+  order     Int     @default(0)
+  published Boolean @default(true)
+}
+
+model Faq {
+  id        String  @id @default(cuid())
+  category  String
+  question  String
+  answer    String
+  order     Int     @default(0)
+  published Boolean @default(true)
+}
