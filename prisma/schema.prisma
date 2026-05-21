@@ -16,3 +16,21 @@ model AdminUser {
   lockedUntil    DateTime?
   createdAt      DateTime  @default(now())
 }
+
+model HeroSection {
+  id                String   @id @default("singleton")
+  eyebrow           String
+  headline          String
+  dek               String
+  guarantees        String[]
+  primaryCtaLabel   String
+  primaryCtaHref    String
+  secondaryCtaLabel String
+  secondaryCtaHref  String
+  imageUrl          String
+  imageAlt          String
+  founderName       String
+  founderTitle      String
+  founderQuote      String
+  updatedAt         DateTime @updatedAt
+}

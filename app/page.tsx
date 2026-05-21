@@ -4,11 +4,14 @@ import { Services } from "@/components/sections/Services";
 import { WhyChoose } from "@/components/sections/WhyChoose";
 import { Team } from "@/components/sections/Team";
 import { CtaBanner } from "@/components/sections/CtaBanner";
+import { getHero } from "@/lib/cms/repositories/hero";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const hero = await getHero();
+
   return (
     <>
-      <Hero />
+      <Hero content={hero} />
       <TrustBadges />
       <Services />
       <WhyChoose />
