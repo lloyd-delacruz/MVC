@@ -1,31 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import type { TeamMemberItem } from "@/lib/cms/types";
 
-const team = [
-  {
-    name: "Adrienne Omega",
-    role: "Marketing",
-    src: "/team/adrienne.png",
-  },
-  {
-    name: "Carisse Solatorio",
-    role: "Operations",
-    src: "/team/carisse.png",
-  },
-  {
-    name: "Khristine Arancta",
-    role: "Operations",
-    src: "/team/khristine.png",
-  },
-  {
-    name: "Marianne Folgurinas",
-    role: "Admin",
-    src: "/team/marianne.png",
-  },
-];
-
-export function Team() {
+export function Team({ members }: { members: TeamMemberItem[] }) {
   return (
     <section className="bg-white pb-14 pt-2 lg:pb-20">
       <div className="container-x">
@@ -36,12 +14,12 @@ export function Team() {
         </div>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {team.map((m) => (
-            <div key={m.name} className="flex items-center gap-3">
+          {members.map((m) => (
+            <div key={m.id} className="flex items-center gap-3">
               <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full ring-2 ring-white shadow-card">
                 <Image
-                  src={m.src}
-                  alt={m.name}
+                  src={m.imageUrl}
+                  alt={m.imageAlt || m.name}
                   width={140}
                   height={140}
                   className="h-full w-full object-cover"

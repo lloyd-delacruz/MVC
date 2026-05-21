@@ -6,9 +6,10 @@ import { Team } from "@/components/sections/Team";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { getHero } from "@/lib/cms/repositories/hero";
 import { getServices } from "@/lib/cms/repositories/services";
+import { getTeam } from "@/lib/cms/repositories/team";
 
 export default async function HomePage() {
-  const [hero, services] = await Promise.all([getHero(), getServices()]);
+  const [hero, services, team] = await Promise.all([getHero(), getServices(), getTeam()]);
 
   return (
     <>
@@ -16,7 +17,7 @@ export default async function HomePage() {
       <TrustBadges />
       <Services items={services} />
       <WhyChoose />
-      <Team />
+      <Team members={team} />
       <CtaBanner />
     </>
   );

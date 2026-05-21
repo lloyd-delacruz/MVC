@@ -7,6 +7,7 @@ import { WhyChoose } from "@/components/sections/WhyChoose";
 import { Team } from "@/components/sections/Team";
 import { BottomCta } from "@/components/ui/BottomCta";
 import { getServices } from "@/lib/cms/repositories/services";
+import { getTeam } from "@/lib/cms/repositories/team";
 
 export const metadata = {
   title: "About MVC Immigration",
@@ -15,7 +16,7 @@ export const metadata = {
 };
 
 export default async function AboutPage() {
-  const services = await getServices();
+  const [services, team] = await Promise.all([getServices(), getTeam()]);
 
   return (
     <>
@@ -80,7 +81,7 @@ export default async function AboutPage() {
       <TrustBadges />
       <Services items={services} />
       <WhyChoose />
-      <Team />
+      <Team members={team} />
       <BottomCta
         title="Your Canadian journey starts with a conversation."
         body="Book your free 15-minute assessment and let's explore your best pathway together."
