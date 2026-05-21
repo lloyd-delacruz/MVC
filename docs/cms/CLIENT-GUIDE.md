@@ -22,6 +22,26 @@ Changes appear on the live site within a few seconds of saving.
 - Required fields are marked with a red asterisk (*). If something's missing or
   too long, the field is highlighted with a short message.
 
+## Try it: a 5-minute walkthrough
+
+New to the admin? Run through these to see how editing works. After each
+**Save changes**, open the matching public page in another tab and refresh —
+your change appears within a few seconds.
+
+1. **Hero** → change the headline → Save → refresh the homepage.
+2. **Services** → add a card (title, description, icon, link) → Save → it appears
+   in the "How We Can Help" row on the homepage.
+3. **FAQs** → add a question under a category → Save → it appears on the FAQ page.
+4. **Blog** → **New post**, fill it in, set **Status: Draft** → Save. It is *not*
+   on the public blog yet. Re-open it, switch to **Published** → Save → now it
+   appears at `/blog`.
+5. **Contact** → change the footer phone → Save → the footer updates site-wide.
+6. **SEO** → change the About page title → Save. (That's the browser-tab title and
+   what shows in Google and social-media shares.)
+
+If those all worked, you're ready to manage the whole site yourself. Each section
+is described in detail below.
+
 ## The sections
 
 ### Homepage Hero
@@ -95,3 +115,58 @@ default" entry also covers the homepage. Blog-post SEO is edited on each post.
   Draft/Published switch on blog posts.
 - If you ever clear out a section entirely, the site falls back to its original
   built-in content rather than showing nothing.
+
+---
+
+## For developers
+
+The two sections below are for whoever sets up and deploys the site — not for
+day-to-day editing. Full technical detail is in `SETUP.md`.
+
+### Testing the admin locally (with Docker)
+
+Run the whole CMS on your own machine before deploying:
+
+1. Start a local Postgres database:
+   ```bash
+   docker run -d --name mvc-cms-db \
+     -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres -e POSTGRES_DB=mvc \
+     -p 5435:5432 postgres:16-alpine
+   ```
+2. Create a `.env` file in the project root:
+   ```
+   DATABASE_URL="postgresql://postgres:postgres@localhost:5435/mvc?sslmode=disable"
+   AUTH_SECRET="paste output of: openssl rand -base64 32"
+   BLOB_READ_WRITE_TOKEN=""
+   ```
+   (Leave the Blob token empty for now — text editing works without it; only
+   image uploads need it.)
+3. Set up the schema, load content, and create a test login:
+   ```bash
+   npm install
+   npm run db:push
+   npm run db:seed
+   npm run admin:create -- "admin@mvc.test" "MVC Admin" "ChangeMe123!"
+   ```
+4. Start the site and sign in at <http://localhost:3100/admin>:
+   ```bash
+   npm run dev -- -p 3100
+   ```
+5. Useful commands: `npm run db:studio` (browse the data),
+   `docker stop mvc-cms-db` / `docker start mvc-cms-db` (stop/resume the database).
+
+> Image uploads won't work locally until you add a real `BLOB_READ_WRITE_TOKEN`
+> and the Vercel Blob hostname to `next.config.mjs`. Everything else is testable.
+
+### Going live & creating the client's login
+
+1. Deploy to Vercel and set `DATABASE_URL`, `BLOB_READ_WRITE_TOKEN`, and
+   `AUTH_SECRET` in the project's Environment Variables (see `SETUP.md`).
+2. Run the schema + seed against the production database, then create the
+   client's account:
+   ```bash
+   npm run admin:create -- "client@email.com" "Client Name" "a-strong-password"
+   ```
+3. Send the client: the **yourdomain.com/admin** link, their password, and this
+   guide. They sign in and edit using the sections above. Changes go live within
+   a few seconds.
