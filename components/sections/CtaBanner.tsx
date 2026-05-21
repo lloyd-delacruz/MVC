@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/Button";
 import { MapleLeaf } from "@/components/ui/MapleLeaf";
+import type { CtaBannerContent } from "@/lib/cms/types";
 
-export function CtaBanner() {
+export function CtaBanner({ content }: { content: CtaBannerContent }) {
   return (
     <section id="contact" className="relative overflow-hidden bg-navy-800">
       <MapleLeaf className="absolute -left-4 -top-4 h-24 w-24 rotate-[18deg] text-white/[0.06]" />
@@ -11,15 +12,12 @@ export function CtaBanner() {
       <div className="container-x relative flex flex-col items-start justify-between gap-5 py-8 lg:flex-row lg:items-center lg:py-9">
         <div>
           <h2 className="headline-serif text-[20px] font-medium leading-tight text-white sm:text-[22px]">
-            Your Canadian journey starts with a conversation.
+            {content.headline}
           </h2>
-          <p className="mt-1.5 text-[13px] text-slate-300">
-            Book your free 15-minute assessment and let&rsquo;s explore your best
-            pathway together.
-          </p>
+          <p className="mt-1.5 text-[13px] text-slate-300">{content.body}</p>
         </div>
-        <Button href="#book" variant="primary" trail="calendar">
-          Book Your Free Assessment
+        <Button href={content.buttonHref} variant="primary" trail="calendar">
+          {content.buttonLabel}
         </Button>
       </div>
     </section>

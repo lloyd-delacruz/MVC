@@ -7,18 +7,30 @@ import { CtaBanner } from "@/components/sections/CtaBanner";
 import { getHero } from "@/lib/cms/repositories/hero";
 import { getServices } from "@/lib/cms/repositories/services";
 import { getTeam } from "@/lib/cms/repositories/team";
+import {
+  getTrustBadges,
+  getWhyChoose,
+  getCtaBanner,
+} from "@/lib/cms/repositories/homepage-extras";
 
 export default async function HomePage() {
-  const [hero, services, team] = await Promise.all([getHero(), getServices(), getTeam()]);
+  const [hero, services, team, trustBadges, whyChoose, cta] = await Promise.all([
+    getHero(),
+    getServices(),
+    getTeam(),
+    getTrustBadges(),
+    getWhyChoose(),
+    getCtaBanner(),
+  ]);
 
   return (
     <>
       <Hero content={hero} />
-      <TrustBadges />
+      <TrustBadges badges={trustBadges} />
       <Services items={services} />
-      <WhyChoose />
+      <WhyChoose items={whyChoose} />
       <Team members={team} />
-      <CtaBanner />
+      <CtaBanner content={cta} />
     </>
   );
 }
