@@ -133,10 +133,10 @@ model SocialLink {
 model Testimonial {
   id        String  @id @default(cuid())
   author    String
-  location  String?
+  location  String
+  year      String
+  pathway   String
   quote     String
-  rating    Int?
-  imageUrl  String?
   order     Int     @default(0)
   published Boolean @default(true)
 }

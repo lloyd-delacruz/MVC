@@ -64,10 +64,10 @@ export type AboutContent = {
 export type TestimonialItem = {
   id: string;
   author: string;
-  location: string | null;
+  location: string;
+  year: string;
+  pathway: string;
   quote: string;
-  rating: number | null;
-  imageUrl: string | null;
 };
 
 export type FaqItem = {
