@@ -6,6 +6,7 @@ import { Services } from "@/components/sections/Services";
 import { WhyChoose } from "@/components/sections/WhyChoose";
 import { Team } from "@/components/sections/Team";
 import { BottomCta } from "@/components/ui/BottomCta";
+import { getServices } from "@/lib/cms/repositories/services";
 
 export const metadata = {
   title: "About MVC Immigration",
@@ -13,7 +14,9 @@ export const metadata = {
     "Regulated Canadian Immigration Consultants in Vancouver. Personal review and real guidance for families, workers, students, and businesses.",
 };
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const services = await getServices();
+
   return (
     <>
       <PageHero
@@ -75,7 +78,7 @@ export default function AboutPage() {
       </section>
 
       <TrustBadges />
-      <Services />
+      <Services items={services} />
       <WhyChoose />
       <Team />
       <BottomCta

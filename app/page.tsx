@@ -5,15 +5,16 @@ import { WhyChoose } from "@/components/sections/WhyChoose";
 import { Team } from "@/components/sections/Team";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { getHero } from "@/lib/cms/repositories/hero";
+import { getServices } from "@/lib/cms/repositories/services";
 
 export default async function HomePage() {
-  const hero = await getHero();
+  const [hero, services] = await Promise.all([getHero(), getServices()]);
 
   return (
     <>
       <Hero content={hero} />
       <TrustBadges />
-      <Services />
+      <Services items={services} />
       <WhyChoose />
       <Team />
       <CtaBanner />
