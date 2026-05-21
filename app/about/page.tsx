@@ -12,12 +12,11 @@ import { getServices } from "@/lib/cms/repositories/services";
 import { getTeam } from "@/lib/cms/repositories/team";
 import { getTrustBadges, getWhyChoose } from "@/lib/cms/repositories/homepage-extras";
 import { getAbout } from "@/lib/cms/repositories/about";
+import { buildPageMetadata } from "@/lib/cms/repositories/seo";
 
-export const metadata = {
-  title: "About MVC Immigration",
-  description:
-    "Regulated Canadian Immigration Consultants in Vancouver. Personal review and real guidance for families, workers, students, and businesses.",
-};
+export function generateMetadata() {
+  return buildPageMetadata("about");
+}
 
 export default async function AboutPage() {
   const [about, services, team, trustBadges, whyChoose] = await Promise.all([

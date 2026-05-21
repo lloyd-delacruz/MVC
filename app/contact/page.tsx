@@ -6,12 +6,11 @@ import { BottomCta } from "@/components/ui/BottomCta";
 import { Button } from "@/components/ui/Button";
 import { resolveIcon } from "@/lib/cms/icons";
 import { getContact } from "@/lib/cms/repositories/contact";
+import { buildPageMetadata } from "@/lib/cms/repositories/seo";
 
-export const metadata = {
-  title: "Contact MVC Immigration",
-  description:
-    "Get in touch with MVC Immigration — send us a message, visit our offices, or book a 1:1 consultation with a Regulated Canadian Immigration Consultant.",
-};
+export function generateMetadata() {
+  return buildPageMetadata("contact");
+}
 
 const pathwayOptions = [
   { value: "", label: "Select a pathway…" },

@@ -172,3 +172,11 @@ model BlogPost {
   ogImageUrl     String?
   updatedAt      DateTime   @updatedAt
 }
+
+model SeoMeta {
+  id          String  @id @default(cuid())
+  pageKey     String  @unique
+  title       String
+  description String
+  ogImageUrl  String?
+}

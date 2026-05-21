@@ -12,12 +12,11 @@ import {
 import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { BottomCta } from "@/components/ui/BottomCta";
+import { buildPageMetadata } from "@/lib/cms/repositories/seo";
 
-export const metadata = {
-  title: "Why Canada",
-  description:
-    "Universal healthcare. Tuition-free public schools. Safe streets, breathtaking nature, and a culture that genuinely makes room for everyone.",
-};
+export function generateMetadata() {
+  return buildPageMetadata("why-canada");
+}
 
 const stats = [
   {

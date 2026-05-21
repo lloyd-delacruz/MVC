@@ -18,18 +18,17 @@ function toMeta(r: BlogPost): BlogPostMeta {
 }
 
 function toFull(r: BlogPost): BlogPostFull {
-  return { ...toMeta(r), body: r.bodyMarkdown };
-}
-
-function toAdmin(r: BlogPost): AdminBlogPost {
   return {
-    ...toFull(r),
-    id: r.id,
-    status: r.status,
+    ...toMeta(r),
+    body: r.bodyMarkdown,
     seoTitle: r.seoTitle,
     seoDescription: r.seoDescription,
     ogImageUrl: r.ogImageUrl,
   };
+}
+
+function toAdmin(r: BlogPost): AdminBlogPost {
+  return { ...toFull(r), id: r.id, status: r.status };
 }
 
 // Published posts (newest first), for the public index + related lists.

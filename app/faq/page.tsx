@@ -3,11 +3,11 @@ import { PageHero } from "@/components/ui/PageHero";
 import { BottomCta } from "@/components/ui/BottomCta";
 import { getFaqs } from "@/lib/cms/repositories/faqs";
 import { FAQ_CATEGORIES } from "@/lib/cms/faq-categories";
+import { buildPageMetadata } from "@/lib/cms/repositories/seo";
 
-export const metadata = {
-  title: "Frequently Asked Questions",
-  description: "Clear answers to the questions we hear most often.",
-};
+export function generateMetadata() {
+  return buildPageMetadata("faq");
+}
 
 export default async function FaqPage() {
   const faqs = await getFaqs();

@@ -18,9 +18,19 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const post = await getPost(params.slug);
   if (!post) return { title: "Article not found" };
+  const title = post.seoTitle || post.title;
+  const description = post.seoDescription || post.dek;
+  const ogImage = post.ogImageUrl || post.coverImageUrl;
   return {
-    title: post.title,
-    description: post.dek,
+    title,
+    description,
+    openGraph: { title, description, ...(ogImage ? { images: [ogImage] } : {}) },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      ...(ogImage ? { images: [ogImage] } : {}),
+    },
   };
 }
 

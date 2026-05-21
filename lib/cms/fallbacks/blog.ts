@@ -44,5 +44,8 @@ export function blogPostFallback(slug: string): BlogPostFull | null {
     readTime: post.readTime,
     coverImageUrl: null,
     body: post.body,
+    seoTitle: null,
+    seoDescription: null,
+    ogImageUrl: null,
   };
 }

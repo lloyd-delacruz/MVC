@@ -14,12 +14,11 @@ import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { BottomCta } from "@/components/ui/BottomCta";
 import { Button } from "@/components/ui/Button";
+import { buildPageMetadata } from "@/lib/cms/repositories/seo";
 
-export const metadata = {
-  title: "How to Immigrate to Canada — Find Your Pathway",
-  description:
-    "Answer six quick questions and get a real reply from an RCIC within 1 business day. Always free.",
-};
+export function generateMetadata() {
+  return buildPageMetadata("get-started");
+}
 
 const trustStats = [
   { number: "500+", label: "Cases approved" },

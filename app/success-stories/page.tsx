@@ -2,12 +2,11 @@ import { Quote, MapPin } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
 import { BottomCta } from "@/components/ui/BottomCta";
 import { getTestimonials } from "@/lib/cms/repositories/testimonials";
+import { buildPageMetadata } from "@/lib/cms/repositories/seo";
 
-export const metadata = {
-  title: "Success Stories",
-  description:
-    "Real people, real outcomes. Every story here represents a family reunited, a career launched, a new life begun.",
-};
+export function generateMetadata() {
+  return buildPageMetadata("success-stories");
+}
 
 export default async function SuccessStoriesPage() {
   const stories = await getTestimonials();

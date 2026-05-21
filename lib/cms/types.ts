@@ -96,6 +96,13 @@ export type ContactContent = {
   socialLinks: SocialLinkItem[];
 };
 
+export type SeoMetaContent = {
+  pageKey: string;
+  title: string;
+  description: string;
+  ogImageUrl: string | null;
+};
+
 export type BlogStatus = "DRAFT" | "PUBLISHED";
 
 export interface BlogPostMeta {
@@ -111,12 +118,12 @@ export interface BlogPostMeta {
 
 export interface BlogPostFull extends BlogPostMeta {
   body: string;
+  seoTitle: string | null;
+  seoDescription: string | null;
+  ogImageUrl: string | null;
 }
 
 export interface AdminBlogPost extends BlogPostFull {
   id: string;
   status: BlogStatus;
-  seoTitle: string | null;
-  seoDescription: string | null;
-  ogImageUrl: string | null;
 }

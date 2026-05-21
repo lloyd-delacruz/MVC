@@ -3,12 +3,11 @@ import { ArrowRight, Calendar } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
 import { BottomCta } from "@/components/ui/BottomCta";
 import { getAllPosts } from "@/lib/cms/repositories/blog";
+import { buildPageMetadata } from "@/lib/cms/repositories/seo";
 
-export const metadata = {
-  title: "Immigration Insights",
-  description:
-    "Plain-English guides, honest answers, and timely commentary on Canadian immigration — written by regulated consultants who actually work the files.",
-};
+export function generateMetadata() {
+  return buildPageMetadata("blog");
+}
 
 function formatDate(date: string) {
   if (!date) return "";
