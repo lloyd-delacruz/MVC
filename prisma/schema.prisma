@@ -149,3 +149,26 @@ model Faq {
   order     Int     @default(0)
   published Boolean @default(true)
 }
+
+enum PostStatus {
+  DRAFT
+  PUBLISHED
+}
+
+model BlogPost {
+  id             String     @id @default(cuid())
+  slug           String     @unique
+  title          String
+  dek            String
+  pill           String     @default("Insights")
+  date           String
+  author         String
+  readTime       String
+  coverImageUrl  String?
+  status         PostStatus @default(DRAFT)
+  bodyMarkdown   String
+  seoTitle       String?
+  seoDescription String?
+  ogImageUrl     String?
+  updatedAt      DateTime   @updatedAt
+}

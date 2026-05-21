@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { getAllPosts, getPost } from "@/lib/blog";
+import { getAllPosts, getPost } from "@/lib/cms/repositories/blog";
 import { BottomCta } from "@/components/ui/BottomCta";
 import type { Metadata } from "next";
 
@@ -11,12 +11,12 @@ interface PageProps {
   params: { slug: string };
 }
 
-export function generateStaticParams() {
-  return getAllPosts().map((post) => ({ slug: post.slug }));
+export async function generateStaticParams() {
+  return (await getAllPosts()).map((post) => ({ slug: post.slug }));
 }
 
-export function generateMetadata({ params }: PageProps): Metadata {
-  const post = getPost(params.slug);
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const post = await getPost(params.slug);
   if (!post) return { title: "Article not found" };
   return {
     title: post.title,
@@ -40,11 +40,11 @@ function cleanBody(body: string): string {
   return body.replace(/^\s*#\s+Body\s*\n+/i, "");
 }
 
-export default function BlogPostPage({ params }: PageProps) {
-  const post = getPost(params.slug);
+export default async function BlogPostPage({ params }: PageProps) {
+  const post = await getPost(params.slug);
   if (!post) notFound();
 
-  const allPosts = getAllPosts();
+  const allPosts = await getAllPosts();
   const related = allPosts.filter((p) => p.slug !== post.slug).slice(0, 3);
   const body = cleanBody(post.body);
 

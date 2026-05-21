@@ -95,3 +95,28 @@ export type ContactContent = {
   bookingOptions: BookingOptionItem[];
   socialLinks: SocialLinkItem[];
 };
+
+export type BlogStatus = "DRAFT" | "PUBLISHED";
+
+export interface BlogPostMeta {
+  slug: string;
+  title: string;
+  dek: string;
+  pill: string;
+  date: string;
+  author: string;
+  readTime: string;
+  coverImageUrl: string | null;
+}
+
+export interface BlogPostFull extends BlogPostMeta {
+  body: string;
+}
+
+export interface AdminBlogPost extends BlogPostFull {
+  id: string;
+  status: BlogStatus;
+  seoTitle: string | null;
+  seoDescription: string | null;
+  ogImageUrl: string | null;
+}
