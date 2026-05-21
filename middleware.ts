@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { verifySessionToken, SESSION_COOKIE } from "@/lib/cms/auth/session";
+import { verifySessionToken, SESSION_COOKIE } from "@/lib/cms/auth/jwt";
 
 export function isProtected(pathname: string): boolean {
   return pathname.startsWith("/admin") && pathname !== "/admin/login";

@@ -28,7 +28,10 @@ export async function login(_prev: LoginState, fd: FormData): Promise<LoginState
   const ok = user ? await verifyPassword(parsed.data.password, user.passwordHash) : false;
   if (!user || !ok) {
     if (user) {
-      const attempts = user.failedAttempts + 1;
+      // If a previous lockout has already expired, start the counter fresh so a
+      // single later failure doesn't immediately re-lock the account.
+      const expired = user.lockedUntil != null && user.lockedUntil <= new Date();
+      const attempts = (expired ? 0 : user.failedAttempts) + 1;
       await prisma.adminUser.update({
         where: { id: user.id },
         data: {

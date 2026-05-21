@@ -1,36 +1,16 @@
-import { SignJWT, jwtVerify } from "jose";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import {
+  SESSION_COOKIE,
+  SESSION_MAX_AGE,
+  signSession,
+  verifySessionToken,
+  type SessionPayload,
+} from "./jwt";
 
-export const SESSION_COOKIE = "mvc_admin_session";
-const ALG = "HS256";
-const MAX_AGE = 60 * 60 * 8; // 8 hours
-
-function secret(): Uint8Array {
-  const s = process.env.AUTH_SECRET;
-  if (!s) throw new Error("AUTH_SECRET is not set");
-  return new TextEncoder().encode(s);
-}
-
-export type SessionPayload = { sub: string; email: string };
-
-export async function signSession(p: SessionPayload): Promise<string> {
-  return new SignJWT({ email: p.email })
-    .setProtectedHeader({ alg: ALG })
-    .setSubject(p.sub)
-    .setIssuedAt()
-    .setExpirationTime(`${MAX_AGE}s`)
-    .sign(secret());
-}
-
-export async function verifySessionToken(token: string): Promise<SessionPayload | null> {
-  try {
-    const { payload } = await jwtVerify(token, secret());
-    return { sub: String(payload.sub), email: String(payload.email) };
-  } catch {
-    return null;
-  }
-}
+// Re-export the Edge-safe primitives so existing imports keep working.
+export { SESSION_COOKIE, signSession, verifySessionToken };
+export type { SessionPayload };
 
 export async function createSession(p: SessionPayload): Promise<void> {
   const token = await signSession(p);
@@ -39,7 +19,7 @@ export async function createSession(p: SessionPayload): Promise<void> {
     secure: process.env.NODE_ENV === "production",
     sameSite: "lax",
     path: "/",
-    maxAge: MAX_AGE,
+    maxAge: SESSION_MAX_AGE,
   });
 }
 
