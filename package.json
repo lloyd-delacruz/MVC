@@ -13,7 +13,9 @@
     "db:migrate": "prisma migrate dev",
     "db:studio": "prisma studio",
     "admin:create": "tsx scripts/create-admin.ts",
-    "db:seed": "tsx scripts/seed-cms.ts"
+    "db:seed": "tsx scripts/seed-cms.ts",
+    "db:migrate-blog": "tsx scripts/migrate-blog.ts",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@prisma/client": "^6.19.3",

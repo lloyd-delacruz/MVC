@@ -92,6 +92,24 @@ Top-level pages (`/about`, `/contact`, etc.) currently render copy directly from
 - **CTAs:** primary red CTAs get `trail="calendar"` when they're booking-related; outline CTAs get `trail="arrow"`.
 - **Active nav state:** derived from `usePathname()` in `Header.tsx` — don't hard-code `active: true`.
 
+## CMS / Admin panel
+
+The site has a database-driven CMS at `/admin` so the client can edit content
+without code. Quick start:
+
+```bash
+cp .env.example .env        # fill in DATABASE_URL, BLOB_READ_WRITE_TOKEN, AUTH_SECRET
+npm install                 # also runs `prisma generate`
+npm run db:push             # create tables
+npm run db:seed             # load current content + migrate blog posts
+npm run admin:create -- "you@example.com" "Your Name" "a-strong-password"
+npm run dev                 # admin at http://localhost:3000/admin
+```
+
+Full details: `docs/cms/SETUP.md` (developer) and `docs/cms/CLIENT-GUIDE.md`
+(client). The public site renders identically with no database (everything
+falls back to the original built-in content).
+
 ## Known gaps before launch
 
 - **Calendly URLs** in the contact page are `REPLACE-WITH-MVC-CALENDLY/...` — swap when the client provides them.
