@@ -21,7 +21,7 @@ import {
 import type { ComponentType } from "react";
 import { MapleLeaf } from "@/components/ui/MapleLeaf";
 
-export type IconComponent = ComponentType<{ className?: string; strokeWidth?: number }>;
+export type IconComponent = ComponentType<{ className?: string; strokeWidth?: string | number }>;
 
 // Allowlist of icons the client may choose in the admin. Storing a name (not
 // code) keeps content safe; resolveIcon maps it back to a component.
