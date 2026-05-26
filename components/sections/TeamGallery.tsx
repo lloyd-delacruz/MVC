@@ -1,13 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useState } from "react";
-import { ArrowRight, X } from "lucide-react";
+import { X } from "lucide-react";
 import type { TeamMemberItem } from "@/lib/content/types";
 import { LanguageChips } from "@/components/ui/LanguageChips";
 
-export function Team({ members }: { members: TeamMemberItem[] }) {
+export function TeamGallery({ members }: { members: TeamMemberItem[] }) {
   const [active, setActive] = useState<TeamMemberItem | null>(null);
 
   useEffect(() => {
@@ -28,81 +27,41 @@ export function Team({ members }: { members: TeamMemberItem[] }) {
   }, [active]);
 
   return (
-    <section className="bg-white pb-14 pt-2 lg:pb-20">
-      <div className="container-x">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="headline-serif text-[30px] font-medium text-navy-800 sm:text-[36px]">
-            Meet the Team
-          </h2>
-          <p className="mt-4 text-[14px] leading-relaxed text-slate-500 sm:text-[15px]">
-            Behind MVC is a dedicated team helping clients move through the immigration process with care, clarity, and attention to detail.
-          </p>
-        </div>
-
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {members.map((m) => {
-            const sharedClasses =
-              "group flex items-center gap-3 rounded-lg p-1 -m-1 text-left transition-colors hover:bg-cream-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red";
-            const inner = (
-              <>
-                <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full ring-2 ring-white shadow-card transition-transform group-hover:-translate-y-0.5">
-                  <Image
-                    src={m.imageUrl}
-                    alt={m.imageAlt || m.name}
-                    width={140}
-                    height={140}
-                    className={`h-full w-full object-cover ${m.imagePosition ?? ""}`}
-                  />
-                </div>
-                <div>
-                  <div className="headline-serif text-[15px] font-semibold leading-tight text-navy-800 transition-colors group-hover:text-brand-red">
-                    {m.name}
-                  </div>
-                  <div className="mt-0.5 text-[12px] font-medium text-brand-red">
-                    {m.role}
-                  </div>
-                </div>
-              </>
-            );
-
-            if (!m.bio) {
-              return (
-                <Link key={m.id} href={`/about#${m.id}`} className={sharedClasses}>
-                  {inner}
-                </Link>
-              );
-            }
-
-            return (
-              <button
-                key={m.id}
-                type="button"
-                onClick={() => setActive(m)}
-                aria-label={`View ${m.name}'s bio`}
-                className={sharedClasses}
-              >
-                {inner}
-              </button>
-            );
-          })}
-        </div>
-
-        <div className="mt-10 text-center">
-          <Link
-            href="/about#team-bios"
-            className="inline-flex items-center gap-1.5 text-[13px] font-medium text-navy-800 underline underline-offset-4 hover:text-brand-red"
-          >
-            Meet the full team
-            <ArrowRight className="h-3.5 w-3.5" />
-          </Link>
-        </div>
-      </div>
+    <>
+      <ul className="mx-auto mt-14 grid max-w-4xl grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 sm:gap-x-8 sm:gap-y-12">
+        {members.map((m) => (
+          <li key={m.id} id={m.id} className="scroll-mt-24">
+            <button
+              type="button"
+              onClick={() => setActive(m)}
+              className="group flex w-full flex-col items-center text-center transition-transform duration-300 hover:-translate-y-1 focus-visible:outline-none"
+              aria-label={`View ${m.name}'s bio`}
+            >
+              <div className="relative h-36 w-36 overflow-hidden rounded-full bg-white shadow-portrait ring-4 ring-cream-50 transition-shadow duration-300 group-hover:shadow-cardHover group-focus-visible:ring-brand-red sm:h-44 sm:w-44">
+                <Image
+                  src={m.imageUrl}
+                  alt={m.imageAlt || m.name}
+                  width={280}
+                  height={280}
+                  className={`h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04] ${m.imagePosition ?? ""}`}
+                />
+              </div>
+              <h3 className="headline-serif mt-5 text-[18px] font-semibold leading-tight text-navy-800 transition-colors group-hover:text-brand-red">
+                {m.name}
+              </h3>
+              <p className="mt-1.5 text-[10.5px] font-semibold uppercase tracking-[0.16em] text-brand-red">
+                {m.role}
+              </p>
+            </button>
+          </li>
+        ))}
+      </ul>
 
       {active && (
         <div
           role="dialog"
           aria-modal="true"
-          aria-labelledby="home-team-modal-name"
+          aria-labelledby="team-modal-name"
           className="fixed inset-0 z-50 flex animate-fadeUp items-end justify-center bg-navy-900/70 p-4 backdrop-blur-sm sm:items-center"
           onMouseDown={(e) => {
             if (e.target === e.currentTarget) setActive(null);
@@ -135,7 +94,7 @@ export function Team({ members }: { members: TeamMemberItem[] }) {
                 {active.role}
               </p>
               <h3
-                id="home-team-modal-name"
+                id="team-modal-name"
                 className="headline-serif mt-2 text-center text-[28px] font-semibold leading-tight text-navy-800"
               >
                 {active.name}
@@ -157,6 +116,6 @@ export function Team({ members }: { members: TeamMemberItem[] }) {
           </div>
         </div>
       )}
-    </section>
+    </>
   );
 }

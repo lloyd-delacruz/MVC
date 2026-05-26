@@ -29,6 +29,8 @@ export type TeamMemberItem = {
   imageUrl: string;
   imageAlt: string;
   bio: string | null;
+  languages?: string[];
+  imagePosition?: string;
 };
 
 export type TrustBadgeItem = {
