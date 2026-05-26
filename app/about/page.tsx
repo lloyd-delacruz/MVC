@@ -134,7 +134,7 @@ export default async function AboutPage() {
 
           <div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-red">
-              Founder's story
+              Founder&apos;s story
             </p>
             <div id="founder-heading" className="prose-mvc mt-3">
               <ReactMarkdown remarkPlugins={[remarkGfm]}>{about.bodyMarkdown}</ReactMarkdown>
