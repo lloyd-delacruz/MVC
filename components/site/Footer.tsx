@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Facebook, Instagram, Linkedin, Youtube, Globe, Phone, Mail, MapPin } from "lucide-react";
 import type { ComponentType } from "react";
 import { Logo } from "@/components/ui/Logo";
-import { getContact } from "@/lib/cms/repositories/contact";
+import { getContact } from "@/lib/content/contact";
 
 const socialIcons: Record<string, ComponentType<{ className?: string }>> = {
   Facebook,
@@ -12,12 +12,11 @@ const socialIcons: Record<string, ComponentType<{ className?: string }>> = {
 };
 
 const quickLinks = [
-  { label: "About Us", href: "/about" },
-  { label: "Why Canada", href: "/why-canada" },
-  { label: "Get Started", href: "/get-started" },
-  { label: "Success Stories", href: "/success-stories" },
-  { label: "Blog", href: "/blog" },
-  { label: "FAQ", href: "/faq" },
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/pathways" },
+  { label: "About MVC", href: "/about" },
+  { label: "Client Reviews", href: "/success-stories" },
+  { label: "Resources", href: "/blog" },
   { label: "Contact Us", href: "/contact" },
 ];
 
@@ -25,9 +24,9 @@ const serviceLinks: { label: string; href: string }[] = [
   { label: "Express Entry", href: "/pathways/permanent-residence/express-entry" },
   { label: "Family Sponsorship", href: "/pathways/family/family-sponsorship" },
   { label: "Study Permits", href: "/pathways/study/study-permits" },
-  { label: "Work Permits", href: "/pathways/work/work-permits" },
+  { label: "LMIA / Work Permits", href: "/pathways/work/work-permits" },
   { label: "Visitor Visas", href: "/pathways/visit/visitor-visas" },
-  { label: "Provincial Nominee", href: "/pathways/permanent-residence/provincial-nominee" },
+  { label: "Provincial Nominee Programs", href: "/pathways/permanent-residence/provincial-nominee" },
 ];
 
 export async function Footer() {
@@ -39,7 +38,7 @@ export async function Footer() {
         <div>
           <Logo variant="light" />
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-slate-400">
-            Canadian immigration guidance you can trust.
+            Clear, honest guidance for your Canadian immigration journey.
           </p>
           <div className="mt-6 flex gap-3">
             {contact.socialLinks.map((s) => {
@@ -101,7 +100,7 @@ export async function Footer() {
           <ul className="mt-5 space-y-3 text-sm">
             <li className="flex items-start gap-3">
               <Phone className="mt-0.5 h-4 w-4 shrink-0 text-brand-red" />
-              <a href={`tel:${contact.phone.replace(/\s+/g, "")}`} className="hover:text-white">
+              <a href={`tel:${contact.phone.replace(/[^+\d]/g, "")}`} className="hover:text-white">
                 {contact.phone}
               </a>
             </li>
@@ -115,7 +114,7 @@ export async function Footer() {
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-red" />
               <span>{contact.addressLine}</span>
             </li>
-            <li className="text-slate-400">Serving clients worldwide</li>
+            <li className="text-slate-400">Serving clients worldwide.</li>
           </ul>
         </div>
       </div>
@@ -123,8 +122,7 @@ export async function Footer() {
       <div className="border-t border-white/10">
         <div className="container-x flex flex-col items-center justify-between gap-2 py-5 text-xs text-slate-500 sm:flex-row">
           <p>
-            &copy; {new Date().getFullYear()} My Visa For Canada Immigration
-            Firm. All rights reserved.
+            &copy; {new Date().getFullYear()} MVC Immigration Firm. All rights reserved.
           </p>
           <p>RCIC #R519412</p>
         </div>

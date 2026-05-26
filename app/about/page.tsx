@@ -8,11 +8,11 @@ import { Services } from "@/components/sections/Services";
 import { WhyChoose } from "@/components/sections/WhyChoose";
 import { Team } from "@/components/sections/Team";
 import { BottomCta } from "@/components/ui/BottomCta";
-import { getServices } from "@/lib/cms/repositories/services";
-import { getTeam } from "@/lib/cms/repositories/team";
-import { getTrustBadges, getWhyChoose } from "@/lib/cms/repositories/homepage-extras";
-import { getAbout } from "@/lib/cms/repositories/about";
-import { buildPageMetadata } from "@/lib/cms/repositories/seo";
+import { getServices } from "@/lib/content/services";
+import { getTeam } from "@/lib/content/team";
+import { getTrustBadges, getWhyChoose } from "@/lib/content/homepage-extras";
+import { getAbout } from "@/lib/content/about";
+import { buildPageMetadata } from "@/lib/seo";
 
 export function generateMetadata() {
   return buildPageMetadata("about");
@@ -34,9 +34,9 @@ export default async function AboutPage() {
       <section className="bg-white py-16 lg:py-20">
         <div className="container-x grid grid-cols-[minmax(0,1fr)] items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]">
           <div className="relative">
-            <div className="overflow-hidden rounded-[24px] bg-[#8a6f5d] shadow-portrait">
+            <div className="overflow-hidden rounded-[24px] shadow-portrait">
               <Image
-                src={about.imageUrl ?? "/team/yaniv.png"}
+                src={about.imageUrl ?? "/team/yaniv.jpg"}
                 alt={about.imageAlt ?? "Yaniv Babani, Founder & RCIC"}
                 width={568}
                 height={596}

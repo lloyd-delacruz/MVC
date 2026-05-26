@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { getAllPosts, getPost } from "@/lib/cms/repositories/blog";
+import { getAllPosts, getPost } from "@/lib/content/blog";
 import { BottomCta } from "@/components/ui/BottomCta";
 import type { Metadata } from "next";
 

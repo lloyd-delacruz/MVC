@@ -2,8 +2,8 @@ import Link from "next/link";
 import { ArrowRight, Calendar } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
 import { BottomCta } from "@/components/ui/BottomCta";
-import { getAllPosts } from "@/lib/cms/repositories/blog";
-import { buildPageMetadata } from "@/lib/cms/repositories/seo";
+import { getAllPosts } from "@/lib/content/blog";
+import { buildPageMetadata } from "@/lib/seo";
 
 export function generateMetadata() {
   return buildPageMetadata("blog");

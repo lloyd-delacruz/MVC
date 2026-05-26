@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { resolveIcon } from "@/lib/cms/icons";
-import type { ServiceItem } from "@/lib/cms/types";
+import { resolveIcon } from "@/lib/icons";
+import type { ServiceItem } from "@/lib/content/types";
 
 export function Services({ items }: { items: ServiceItem[] }) {
   return (

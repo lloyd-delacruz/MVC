@@ -1,8 +1,8 @@
 import { Quote, MapPin } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
 import { BottomCta } from "@/components/ui/BottomCta";
-import { getTestimonials } from "@/lib/cms/repositories/testimonials";
-import { buildPageMetadata } from "@/lib/cms/repositories/seo";
+import { getTestimonials } from "@/lib/content/testimonials";
+import { buildPageMetadata } from "@/lib/seo";
 
 export function generateMetadata() {
   return buildPageMetadata("success-stories");

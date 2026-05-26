@@ -4,9 +4,9 @@ import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { BottomCta } from "@/components/ui/BottomCta";
 import { Button } from "@/components/ui/Button";
-import { resolveIcon } from "@/lib/cms/icons";
-import { getContact } from "@/lib/cms/repositories/contact";
-import { buildPageMetadata } from "@/lib/cms/repositories/seo";
+import { resolveIcon } from "@/lib/icons";
+import { getContact } from "@/lib/content/contact";
+import { buildPageMetadata } from "@/lib/seo";
 
 export function generateMetadata() {
   return buildPageMetadata("contact");

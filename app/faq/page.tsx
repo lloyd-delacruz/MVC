@@ -1,9 +1,9 @@
 import { ChevronDown } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
 import { BottomCta } from "@/components/ui/BottomCta";
-import { getFaqs } from "@/lib/cms/repositories/faqs";
-import { FAQ_CATEGORIES } from "@/lib/cms/faq-categories";
-import { buildPageMetadata } from "@/lib/cms/repositories/seo";
+import { getFaqs } from "@/lib/content/faqs";
+import { FAQ_CATEGORIES } from "@/lib/faq-categories";
+import { buildPageMetadata } from "@/lib/seo";
 
 export function generateMetadata() {
   return buildPageMetadata("faq");

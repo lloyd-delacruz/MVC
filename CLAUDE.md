@@ -152,28 +152,28 @@ Each top-level page (`/about`, `/contact`, etc.) was hand-built from a correspon
 - **CTAs:** primary red CTAs get `trail="calendar"` when they're booking-related; outline CTAs get `trail="arrow"`.
 - **Active nav state:** derived from `usePathname()` in `Header.tsx` — don't hard-code `active: true`.
 
-## CMS / Admin panel
+## Editable content
 
-A database-driven CMS lets the client edit content at `/admin` without code. See
-`docs/cms/SETUP.md` (developer) and `docs/cms/CLIENT-GUIDE.md` (client).
+The site is fully static — no database, no admin panel. All editable content lives in plain TypeScript modules under `lib/content/`:
 
-- **MVC layering:** Models = `prisma/schema.prisma` + `lib/cms/repositories/*` (only DB callers; reads cached + fallback-wrapped). Controllers = server actions in `lib/cms/actions/*` + `middleware.ts` + `lib/cms/auth/*`. Views = the existing public components (now prop-driven, markup unchanged) + admin UI in `app/admin/`.
-- **Auth:** custom — bcrypt + `jose` JWT cookie, `middleware.ts` guards `/admin/*` (except `/admin/login`); the `(panel)` route group adds a `requireUser()` layout. No auth on the public site.
-- **Public chrome:** `components/site/ChromeGate.tsx` hides Header/Footer on `/admin` while keeping public pages statically rendered.
-- **Fallbacks:** every public read falls back to `lib/cms/fallbacks/*` (the original hardcoded content) when the DB is empty/unreachable — the site renders identically with no DB. Blog falls back to `content/blog/*.md`.
-- **Editable modules:** hero, homepage extras (trust badges / why-choose / CTA), about, services, team, testimonials, FAQs, blog (with drafts), contact info (+ footer), SEO. Pathways are intentionally NOT in the CMS (still markdown).
-- **Publishing:** save → `revalidateTag`/`revalidatePath` → live in seconds.
-- **Stack:** Prisma 6 + Postgres (Neon), Vercel Blob (images, optimized via `sharp`), Zod validation, Vitest. Env vars: `DATABASE_URL`, `BLOB_READ_WRITE_TOKEN`, `AUTH_SECRET`.
-- **Adding a CMS field:** add it to the model in `schema.prisma` → `prisma generate` → update the matching `types.ts`, `fallbacks/*`, `repositories/*` mapper, `validation/*`, `actions/*`, the admin form, and the public component.
-- **Tests run via Vitest** (`npm test`). The config uses the `forks` pool for sandbox compatibility; DB is mocked in repository tests.
+- `hero.ts`, `services.ts`, `team.ts`, `homepage-extras.ts` — homepage sections
+- `about.ts`, `testimonials.ts`, `faqs.ts`, `contact.ts` — inner page content
+- `blog.ts` — wraps `lib/blog.ts`, which reads `content/blog/*.md`
+- `types.ts` — shared content types
+
+Other helpers:
+- `lib/seo.ts` — per-page metadata (`buildPageMetadata(pageKey)`)
+- `lib/icons.ts` — allowlist of lucide icons referenced by name in content
+- `lib/faq-categories.ts` — FAQ section grouping
+
+To change copy, edit the relevant `lib/content/*.ts` file and reload. Pathways still live in `content/pathways/<category>/<slug>.md` and are parsed by `lib/pathways.ts`.
 
 ## Known gaps & placeholders
 
-- **Calendly URLs** in the contact page are `REPLACE-WITH-MVC-CALENDLY/...` — swap when client provides them. (Now editable in the admin Contact section.)
+- **Calendly URLs** in `lib/content/contact.ts` are `REPLACE-WITH-MVC-CALENDLY/...` — swap when the client provides them.
 - **Contact form** is markup-only (no submit handler). Wire to Formspree, Resend, or similar before launch.
-- **Phone number** — the footer placeholder `+1 (604) 123-4567` was reconciled to the real Burnaby number `+1 778 288 7388` in the contact fallback (`lib/cms/fallbacks/contact.ts`) and is editable in the admin Contact section.
 - **Consultant photo backdrop** — Yaniv's photo (`/public/team/yaniv.png`) has a transparent/white cutout; the warm-brown studio backdrop from the reference screenshot is achieved via the `bg-[#8a6f5d]` on the wrapper div behind the image. If client provides a version with the brown backdrop baked in, drop the wrapper bg.
-- **Team photos** include `nico.png` and `michelle.png` that aren't currently surfaced — the homepage Team section only shows 4 of the 6 available faces. Add to `components/sections/Team.tsx` when you want them.
+- **Team photos** in `public/team/` include faces not currently surfaced in `lib/content/team.ts` — add them when desired.
 - **Security advisory** on `next@14.2.5` — `npm audit fix` to bump.
 
 ## What NOT to touch without asking

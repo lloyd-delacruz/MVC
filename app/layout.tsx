@@ -2,8 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Playfair_Display, DM_Sans } from "next/font/google";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
-import { ChromeGate } from "@/components/site/ChromeGate";
-import { getSeo } from "@/lib/cms/repositories/seo";
+import { buildPageMetadata } from "@/lib/seo";
 import "./globals.css";
 
 const display = Playfair_Display({
@@ -20,21 +19,13 @@ const body = DM_Sans({
   display: "swap",
 });
 
-export async function generateMetadata(): Promise<Metadata> {
-  const seo = await getSeo("__default__");
-  const images = seo.ogImageUrl ? [seo.ogImageUrl] : undefined;
-  return {
-    title: { default: seo.title, template: "%s · MVC Immigration" },
-    description: seo.description,
-    openGraph: { title: seo.title, description: seo.description, ...(images ? { images } : {}) },
-    twitter: {
-      card: "summary_large_image",
-      title: seo.title,
-      description: seo.description,
-      ...(images ? { images } : {}),
-    },
-  };
-}
+export const metadata: Metadata = {
+  ...buildPageMetadata("__default__"),
+  title: {
+    default: "My Visa For Canada — Canadian Immigration Guidance You Can Trust",
+    template: "%s · MVC Immigration",
+  },
+};
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -50,9 +41,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${display.variable} ${body.variable}`}>
       <body className="font-sans">
-        <ChromeGate header={<Header />} footer={<Footer />}>
-          {children}
-        </ChromeGate>
+        <Header />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

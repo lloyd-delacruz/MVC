@@ -1,8 +1,7 @@
 import Image from "next/image";
 import { Check, BadgeCheck } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { MapleLeaf } from "@/components/ui/MapleLeaf";
-import type { HeroContent } from "@/lib/cms/types";
+import type { HeroContent } from "@/lib/content/types";
 
 export function Hero({ content }: { content: HeroContent }) {
   return (
@@ -15,7 +14,6 @@ export function Hero({ content }: { content: HeroContent }) {
 
           <h1 className="headline-serif mt-4 break-words text-[26px] font-medium leading-[1.15] text-navy-800 sm:text-[44px] lg:text-[58px] lg:leading-[1.05]">
             {content.headline}
-            <MapleLeaf className="ml-1 inline-block h-4 w-4 align-baseline text-brand-red sm:h-5 sm:w-5" />
           </h1>
 
           <p className="mt-5 max-w-xl text-[14px] leading-relaxed text-slate-500 sm:text-[14.5px]">
@@ -47,13 +45,13 @@ export function Hero({ content }: { content: HeroContent }) {
         </div>
 
         <div className="relative min-w-0 animate-fadeUp [animation-delay:120ms]">
-          <div className="relative overflow-hidden rounded-[24px] bg-[#8a6f5d] shadow-portrait">
+          <div className="relative overflow-hidden rounded-[24px] shadow-portrait">
             <Image
               src={content.imageUrl}
               alt={content.imageAlt}
               width={568}
               height={596}
-              className="h-[420px] w-full object-cover object-top sm:h-[460px]"
+              className="h-[420px] w-full object-cover object-[center_20%] sm:h-[460px]"
               priority
             />
             <div className="absolute bottom-3 left-3 right-3 sm:right-auto sm:max-w-[260px]">

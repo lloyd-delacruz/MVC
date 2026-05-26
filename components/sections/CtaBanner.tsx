@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/Button";
 import { MapleLeaf } from "@/components/ui/MapleLeaf";
-import type { CtaBannerContent } from "@/lib/cms/types";
+import type { CtaBannerContent } from "@/lib/content/types";
 
 export function CtaBanner({ content }: { content: CtaBannerContent }) {
   return (

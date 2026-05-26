@@ -1,5 +1,5 @@
-import { resolveIcon } from "@/lib/cms/icons";
-import type { WhyChooseItem } from "@/lib/cms/types";
+import { resolveIcon } from "@/lib/icons";
+import type { WhyChooseItem } from "@/lib/content/types";
 
 export function WhyChoose({ items }: { items: WhyChooseItem[] }) {
   return (

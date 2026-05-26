@@ -10,11 +10,10 @@ import { PATHWAY_CATEGORIES } from "@/lib/pathway-taxonomy";
 
 const navItems = [
   { label: "Home", href: "/" },
+  { label: "Services", href: "/pathways", hasDropdown: true },
   { label: "About", href: "/about" },
-  { label: "Pathways", href: "/pathways", hasDropdown: true },
-  { label: "Why Canada", href: "/why-canada" },
-  { label: "Get Started", href: "/get-started" },
-  { label: "Blog", href: "/blog" },
+  { label: "Reviews", href: "/success-stories" },
+  { label: "Resources", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
 

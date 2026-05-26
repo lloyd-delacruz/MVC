@@ -4,14 +4,14 @@ import { Services } from "@/components/sections/Services";
 import { WhyChoose } from "@/components/sections/WhyChoose";
 import { Team } from "@/components/sections/Team";
 import { CtaBanner } from "@/components/sections/CtaBanner";
-import { getHero } from "@/lib/cms/repositories/hero";
-import { getServices } from "@/lib/cms/repositories/services";
-import { getTeam } from "@/lib/cms/repositories/team";
+import { getHero } from "@/lib/content/hero";
+import { getServices } from "@/lib/content/services";
+import { getTeam } from "@/lib/content/team";
 import {
   getTrustBadges,
   getWhyChoose,
   getCtaBanner,
-} from "@/lib/cms/repositories/homepage-extras";
+} from "@/lib/content/homepage-extras";
 
 export default async function HomePage() {
   const [hero, services, team, trustBadges, whyChoose, cta] = await Promise.all([

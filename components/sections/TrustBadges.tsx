@@ -1,5 +1,5 @@
-import { resolveIcon } from "@/lib/cms/icons";
-import type { TrustBadgeItem } from "@/lib/cms/types";
+import { resolveIcon } from "@/lib/icons";
+import type { TrustBadgeItem } from "@/lib/content/types";
 
 // Preserve the original per-badge icon treatment: the maple leaf is red, the
 // rest navy, and Star is filled. New/unknown icons default to the navy style.

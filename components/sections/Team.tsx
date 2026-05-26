@@ -1,19 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import type { TeamMemberItem } from "@/lib/cms/types";
+import type { TeamMemberItem } from "@/lib/content/types";
 
 export function Team({ members }: { members: TeamMemberItem[] }) {
   return (
     <section className="bg-white pb-14 pt-2 lg:pb-20">
       <div className="container-x">
-        <div className="text-center">
+        <div className="mx-auto max-w-2xl text-center">
           <h2 className="headline-serif text-[30px] font-medium text-navy-800 sm:text-[36px]">
             Meet the Team
           </h2>
+          <p className="mt-4 text-[14px] leading-relaxed text-slate-500 sm:text-[15px]">
+            Behind MVC is a dedicated team helping clients move through the immigration process with care, clarity, and attention to detail.
+          </p>
         </div>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {members.map((m) => (
             <div key={m.id} className="flex items-center gap-3">
               <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full ring-2 ring-white shadow-card">
