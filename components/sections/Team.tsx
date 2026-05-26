@@ -43,15 +43,24 @@ export function Team({ members }: { members: TeamMemberItem[] }) {
           {members.map((m) => {
             const sharedClasses =
               "group flex items-center gap-3 rounded-lg p-1 -m-1 text-left transition-colors hover:bg-cream-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red";
+            const isYaniv = m.id === "yaniv";
             const inner = (
               <>
-                <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full ring-2 ring-white shadow-card transition-transform group-hover:-translate-y-0.5">
+                <div
+                  className={`relative h-14 w-14 shrink-0 overflow-hidden rounded-full ring-2 ring-white shadow-card transition-transform group-hover:-translate-y-0.5 ${
+                    isYaniv ? "bg-[#8a6f5d]" : ""
+                  }`}
+                >
                   <Image
                     src={m.imageUrl}
                     alt={m.imageAlt || m.name}
                     width={140}
                     height={140}
-                    className={`h-full w-full object-cover ${m.imagePosition ?? ""}`}
+                    className={
+                      isYaniv
+                        ? "h-full w-full object-contain"
+                        : `h-full w-full object-cover ${m.imagePosition ?? ""}`
+                    }
                   />
                 </div>
                 <div>
