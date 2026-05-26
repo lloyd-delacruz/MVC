@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CalendarDays, CreditCard, ArrowUpRight } from "lucide-react";
+import { CalendarDays, CreditCard, ArrowUpRight, MapPin } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { BottomCta } from "@/components/ui/BottomCta";
@@ -30,6 +30,7 @@ const labelClass =
 
 export default async function ContactPage() {
   const contact = await getContact();
+  const mappedOffices = contact.offices.filter((o) => o.mapsQuery);
 
   return (
     <>
@@ -194,6 +195,77 @@ export default async function ContactPage() {
           </aside>
         </div>
       </section>
+
+      {/* OFFICE MAPS */}
+      {mappedOffices.length > 0 && (
+        <section id="find-us" className="border-t border-slate-100 bg-white py-16 lg:py-20">
+          <div className="container-x">
+            <div className="mx-auto max-w-2xl text-center">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-red">
+                Find Our Offices
+              </p>
+              <h2 className="headline-serif mt-2 text-[30px] font-medium leading-tight text-navy-800 sm:text-[34px]">
+                Visit us in person
+              </h2>
+              <p className="mt-3 text-[14.5px] leading-relaxed text-slate-500">
+                We&rsquo;re happy to meet face-to-face by appointment. Tap a map to get directions.
+              </p>
+            </div>
+
+            <div className="mt-10 grid gap-6 sm:gap-8 lg:grid-cols-2">
+              {mappedOffices.map((office) => {
+                const query = encodeURIComponent(office.mapsQuery!);
+                const embedSrc = `https://www.google.com/maps?q=${query}&z=17&output=embed`;
+                const directionsHref = `https://www.google.com/maps/search/?api=1&query=${query}`;
+                const addressLines = office.lines.filter((l) => !/^\+/.test(l.trim()));
+                return (
+                  <article
+                    key={office.id}
+                    className="group flex flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-card transition-shadow duration-300 hover:shadow-cardHover"
+                  >
+                    <div className="flex items-start gap-4 p-6">
+                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-cream-50 text-brand-red">
+                        <MapPin className="h-4 w-4" strokeWidth={1.8} />
+                      </span>
+                      <div className="min-w-0">
+                        <h3 className="text-[12.5px] font-semibold uppercase tracking-[0.14em] text-navy-800">
+                          {office.label}
+                        </h3>
+                        <div className="mt-1.5 space-y-0.5 text-[13.5px] leading-relaxed text-slate-600">
+                          {addressLines.map((l, i) => (
+                            <div key={i}>{l}</div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="relative aspect-[4/3] w-full overflow-hidden border-y border-slate-100 bg-slate-50 sm:aspect-[16/10]">
+                      <iframe
+                        src={embedSrc}
+                        title={`Map of ${office.label}`}
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        className="absolute inset-0 h-full w-full"
+                        allowFullScreen
+                      />
+                    </div>
+
+                    <a
+                      href={directionsHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-between gap-3 p-5 text-[13px] font-semibold text-navy-800 transition-colors hover:bg-cream-50 hover:text-brand-red"
+                    >
+                      <span>Get directions on Google Maps</span>
+                      <ArrowUpRight className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </a>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* BOOKING */}
       <section id="consultation" className="bg-cream-50 py-16 lg:py-20">
