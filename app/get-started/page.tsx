@@ -123,7 +123,7 @@ export default function GetStartedPage() {
           <div className="mx-auto grid max-w-3xl grid-cols-3 gap-4 text-center">
             {trustStats.map((s) => (
               <div key={s.label}>
-                <div className="headline-serif text-[26px] font-semibold text-navy-800 sm:text-[30px]">
+                <div className="headline-serif text-[26px] font-medium text-navy-800 sm:text-[30px]">
                   {s.number}
                 </div>
                 <div className="mt-1 text-[11.5px] uppercase tracking-[0.14em] text-slate-500">

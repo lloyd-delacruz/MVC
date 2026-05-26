@@ -95,7 +95,7 @@ export function TeamGallery({ members }: { members: TeamMemberItem[] }) {
               </p>
               <h3
                 id="team-modal-name"
-                className="headline-serif mt-2 text-center text-[28px] font-semibold leading-tight text-navy-800"
+                className="headline-serif mt-2 text-center text-[28px] font-medium leading-tight text-navy-800"
               >
                 {active.name}
               </h3>

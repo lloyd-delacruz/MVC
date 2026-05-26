@@ -137,7 +137,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                   <p className="text-[10.5px] font-semibold uppercase tracking-[0.22em] text-brand-red">
                     Insights
                   </p>
-                  <h3 className="headline-serif mt-3 text-[20px] font-medium leading-snug text-navy-800">
+                  <h3 className="headline-serif mt-3 text-[20px] font-semibold leading-snug text-navy-800">
                     {p.title}
                   </h3>
                   {p.dek && (

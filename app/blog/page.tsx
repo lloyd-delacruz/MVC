@@ -49,7 +49,7 @@ export default async function BlogPage() {
                   </time>
                 </div>
 
-                <h2 className="headline-serif mt-5 text-[20px] font-medium leading-snug text-navy-800 transition-colors group-hover:text-brand-red sm:text-[22px]">
+                <h2 className="headline-serif mt-5 text-[20px] font-semibold leading-snug text-navy-800 transition-colors group-hover:text-brand-red sm:text-[22px]">
                   {p.title}
                 </h2>
 

@@ -11,7 +11,7 @@ export function CtaBanner({ content }: { content: CtaBannerContent }) {
 
       <div className="container-x relative flex flex-col items-start justify-between gap-5 py-8 lg:flex-row lg:items-center lg:py-9">
         <div>
-          <h2 className="headline-serif text-[20px] font-medium leading-tight text-white sm:text-[22px]">
+          <h2 className="headline-serif text-[20px] font-semibold leading-tight text-white sm:text-[22px]">
             {content.headline}
           </h2>
           <p className="mt-1.5 text-[13px] text-slate-300">{content.body}</p>

@@ -10,6 +10,7 @@ const CONTACT: ContactContent = {
       iconName: "MapPin",
       label: "Canada Office",
       lines: ["Suite 900 – 2025 Willingdon Avenue", "Burnaby, BC V5C 0J3", "Canada", "+1 778 288 7388"],
+      mapsQuery: "Suite 900, 2025 Willingdon Avenue, Burnaby, BC V5C 0J3, Canada",
     },
     {
       id: "philippines",
@@ -23,6 +24,7 @@ const CONTACT: ContactContent = {
         "+63 939 922 4533 (Mobile)",
         "+63 32 253 0843 (Landline)",
       ],
+      mapsQuery: "Unit 610B Oakridge IT Centre 2, 880 A.S. Fortuna St., Mandaue City, Cebu 6014, Philippines",
     },
     { id: "email", iconName: "Mail", label: "Email", lines: ["info@myvisa4canada.com"] },
     { id: "hours", iconName: "Clock", label: "Hours", lines: ["9:00am – 5:00pm", "By appointment only"] },

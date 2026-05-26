@@ -92,7 +92,7 @@ export function AccoladesGallery({ accolades }: { accolades: Accolade[] }) {
             </p>
             <h3
               id="accolade-title"
-              className="headline-serif mt-2 text-center text-[24px] font-semibold leading-tight text-navy-800"
+              className="headline-serif mt-2 text-center text-[24px] font-medium leading-tight text-navy-800"
             >
               {active.title}
             </h3>

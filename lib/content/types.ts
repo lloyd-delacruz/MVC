@@ -79,7 +79,13 @@ export type FaqItem = {
   answer: string;
 };
 
-export type OfficeItem = { id: string; iconName: string; label: string; lines: string[] };
+export type OfficeItem = {
+  id: string;
+  iconName: string;
+  label: string;
+  lines: string[];
+  mapsQuery?: string;
+};
 export type BookingOptionItem = {
   id: string;
   title: string;

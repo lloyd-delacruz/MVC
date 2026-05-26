@@ -562,7 +562,7 @@ export default function WhyCanadaPage() {
                   <div className="text-[10.5px] font-semibold uppercase tracking-[0.22em] text-brand-red">
                     {p.region}
                   </div>
-                  <h3 className="headline-serif mt-1.5 text-[22px] font-medium leading-tight text-white">
+                  <h3 className="headline-serif mt-1.5 text-[22px] font-semibold leading-tight text-white">
                     {p.name}
                   </h3>
                   <p className="mt-2 text-[12.5px] leading-snug text-slate-200/90">

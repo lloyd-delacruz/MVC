@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CalendarDays, CreditCard } from "lucide-react";
+import { CalendarDays, CreditCard, ArrowUpRight } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { BottomCta } from "@/components/ui/BottomCta";
