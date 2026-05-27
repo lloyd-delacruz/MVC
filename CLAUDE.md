@@ -51,12 +51,14 @@ components/
   site/                   # cross-page chrome
     Header.tsx
     Footer.tsx
-  sections/               # homepage sections (also used on /about)
+  sections/               # homepage + about sections
     Hero.tsx
     TrustBadges.tsx
     Services.tsx
     WhyChoose.tsx
-    Team.tsx
+    Team.tsx              # compact homepage team strip
+    TeamGallery.tsx       # client component: about-page grid + lightbox modal w/ LanguageChips
+    AccoladesGallery.tsx  # client component: about-page badges grid + lightbox modal
     CtaBanner.tsx
   ui/                     # primitives, used everywhere
     Button.tsx            # variants: primary | outline | outlineLight; trail: arrow | calendar | none
@@ -66,6 +68,7 @@ components/
     SectionHeading.tsx    # centered eyebrow + title + lede
     BottomCta.tsx         # closing "Ready to start your journey?" section
     Prose.tsx             # wraps long-form text with prose-mvc class
+    LanguageChips.tsx     # pill row of languages spoken (used inside TeamGallery modal)
 
 content/                  # source-of-truth content; pages read from here
   pages/                  # one .md per top-level page (custom YAML-ish format)
@@ -87,7 +90,9 @@ lib/
 
 public/
   logo.svg                # MVC monogram + wordmark
-  team/*.png              # consultant + team headshots (yaniv, adrienne, carisse, khristine, marianne, michelle, nico)
+  team/                   # consultant + team headshots (yaniv.jpg + yaniv.png, adrienne, carisse, khristine, marianne, michelle, nico)
+  accolades/              # award + designation badges shown on /about (cicc, tbr-2021..2024)
+  why-canada/             # photo library for /why-canada (cities, seasons, "matter-*" topical photos)
 
 assets/                   # original migration source (DO NOT serve from here)
   mvc_revised.png         # reference screenshot the design follows
@@ -151,6 +156,18 @@ Each top-level page (`/about`, `/contact`, etc.) was hand-built from a correspon
 - **Icons:** lucide-react. Stroke-width 1.6–1.8 for line icons feels on-brand. Red icons inside a small red square outline work for "service" cards.
 - **CTAs:** primary red CTAs get `trail="calendar"` when they're booking-related; outline CTAs get `trail="arrow"`.
 - **Active nav state:** derived from `usePathname()` in `Header.tsx` — don't hard-code `active: true`.
+- **Lightbox galleries** (`AccoladesGallery`, `TeamGallery`): both are `"use client"`, manage their own `active` state, lock `document.body.style.overflow` while open, and close on `Escape`. Match this pattern for any new modal/lightbox component instead of pulling in a library.
+
+## Relationship to the parent `Websitegemms/CLAUDE.md`
+
+The parent folder's `CLAUDE.md` describes a generic "calm/healing/welcoming" template (sage/clay palette, Fraunces/Cormorant type, full-bleed hero with embedded trust bar). **Those defaults do not apply here.** MVC has its own established brand identity:
+
+- Palette is navy + red + cream — not earth tones. Use the tokens in `tailwind.config.ts`, not the parent doc's `#304830` / `#C0D878`.
+- Type pairing is Playfair Display + DM Sans, not Fraunces/Inter.
+- Hero (`components/sections/Hero.tsx`) is the existing two-column composition matching `assets/mvc_revised.png` — do **not** rebuild it to the parent doc's full-bleed pattern without explicit client sign-off.
+- Footer (`components/site/Footer.tsx`) uses `navy.900`, not `#1C1F1B`.
+
+The parent doc's process rules (mobile-first, four interactive states, Lighthouse 90+, WCAG AA, no `transition-all`, JSON-LD, etc.) **do** apply — those are quality bars, not visual prescriptions.
 
 ## Editable content
 
@@ -159,9 +176,14 @@ The site is fully static — no database, no admin panel. All editable content l
 - `hero.ts`, `services.ts`, `team.ts`, `homepage-extras.ts` — homepage sections
 - `about.ts`, `testimonials.ts`, `faqs.ts`, `contact.ts` — inner page content
 - `blog.ts` — wraps `lib/blog.ts`, which reads `content/blog/*.md`
-- `types.ts` — shared content types
+- `types.ts` — shared content types (note: `TeamMemberItem` includes a `languages?: string[]` field surfaced by `LanguageChips` inside the `TeamGallery` modal)
+
+The **Accolades** array on `/about` is currently defined inline in `app/about/page.tsx` as a local `ACCOLADES: Accolade[]` const (not yet moved to `lib/content/`). Move it there if it grows.
+
+The **`/why-canada` page** keeps its `stats` and `matters` arrays inline in `app/why-canada/page.tsx` and pulls imagery from `public/why-canada/*.jpg`. Photo filenames are referenced by string — keep them in sync if renaming files.
 
 Other helpers:
+
 - `lib/seo.ts` — per-page metadata (`buildPageMetadata(pageKey)`)
 - `lib/icons.ts` — allowlist of lucide icons referenced by name in content
 - `lib/faq-categories.ts` — FAQ section grouping
@@ -174,7 +196,9 @@ To change copy, edit the relevant `lib/content/*.ts` file and reload. Pathways s
 - **Contact form** is markup-only (no submit handler). Wire to Formspree, Resend, or similar before launch.
 - **Consultant photo backdrop** — Yaniv's photo (`/public/team/yaniv.png`) has a transparent/white cutout; the warm-brown studio backdrop from the reference screenshot is achieved via the `bg-[#8a6f5d]` on the wrapper div behind the image. If client provides a version with the brown backdrop baked in, drop the wrapper bg.
 - **Team photos** in `public/team/` include faces not currently surfaced in `lib/content/team.ts` — add them when desired.
-- **Security advisory** on `next@14.2.5` — `npm audit fix` to bump.
+- **Stray duplicate:** `lib/content/hero 2.ts` is an editor-created duplicate of `hero.ts` — safe to delete; nothing imports it.
+- **Git index drift:** every tracked file currently appears as `deleted` in `git status` with an identical untracked copy on disk. The working tree is the source of truth; the index needs to be rebuilt (`git add -A` on a clean review) before the next commit.
+- **Security advisory** on `next@14.2.x` — `npm audit fix` to bump.
 
 ## What NOT to touch without asking
 

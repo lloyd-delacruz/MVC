@@ -10,7 +10,7 @@ import { PATHWAY_CATEGORIES } from "@/lib/pathway-taxonomy";
 
 const navItems = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "/pathways", hasDropdown: true },
+  { label: "Services", href: "/services", hasDropdown: true },
   { label: "About", href: "/about" },
   { label: "Reviews", href: "/success-stories" },
   { label: "Resources", href: "/blog" },
@@ -74,27 +74,39 @@ export function Header() {
                   onMouseEnter={openDropdown}
                   onMouseLeave={scheduleClose}
                 >
-                  <button
-                    type="button"
-                    onClick={() => setPathwaysOpen((v) => !v)}
-                    aria-expanded={pathwaysOpen}
-                    aria-haspopup="menu"
-                    className={`group relative inline-flex items-center gap-1 text-[13.5px] font-medium transition-colors ${
-                      isActive(item.href)
-                        ? "text-brand-red"
-                        : "text-navy-800 hover:text-brand-red"
-                    }`}
-                  >
-                    {item.label}
-                    <ChevronDown
-                      className={`h-3.5 w-3.5 opacity-70 transition-transform ${
-                        pathwaysOpen ? "rotate-180" : ""
+                  <div className="flex items-center gap-1">
+                    <Link
+                      href={item.href}
+                      className={`group relative inline-flex items-center text-[13.5px] font-medium transition-colors ${
+                        isActive(item.href)
+                          ? "text-brand-red"
+                          : "text-navy-800 hover:text-brand-red"
                       }`}
-                    />
-                    {isActive(item.href) && (
-                      <span className="absolute -bottom-[22px] left-0 right-0 h-[2px] bg-brand-red" />
-                    )}
-                  </button>
+                    >
+                      {item.label}
+                      {isActive(item.href) && (
+                        <span className="absolute -bottom-[22px] left-0 right-0 h-[2px] bg-brand-red" />
+                      )}
+                    </Link>
+                    <button
+                      type="button"
+                      onClick={() => setPathwaysOpen((v) => !v)}
+                      aria-expanded={pathwaysOpen}
+                      aria-haspopup="menu"
+                      aria-label={`${item.label} menu`}
+                      className={`inline-flex h-5 w-5 items-center justify-center rounded transition-colors ${
+                        isActive(item.href)
+                          ? "text-brand-red"
+                          : "text-navy-800 hover:text-brand-red"
+                      }`}
+                    >
+                      <ChevronDown
+                        className={`h-3.5 w-3.5 opacity-70 transition-transform ${
+                          pathwaysOpen ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+                  </div>
 
                   {pathwaysOpen && (
                     <div
@@ -128,7 +140,14 @@ export function Header() {
                             </div>
                           ))}
                         </div>
-                        <div className="border-t border-slate-100 bg-cream-50 px-5 py-3">
+                        <div className="flex items-center justify-between gap-4 border-t border-slate-100 bg-cream-50 px-5 py-3">
+                          <Link
+                            href="/services"
+                            className="inline-flex items-center gap-1.5 text-[12.5px] font-semibold text-navy-800 hover:text-brand-red"
+                          >
+                            Services overview
+                            <ChevronRight className="h-3.5 w-3.5" />
+                          </Link>
                           <Link
                             href="/pathways"
                             className="inline-flex items-center gap-1.5 text-[12.5px] font-semibold text-navy-800 hover:text-brand-red"
@@ -183,25 +202,41 @@ export function Header() {
             {navItems.map((item) =>
               item.hasDropdown ? (
                 <div key={item.label}>
-                  <button
-                    type="button"
-                    onClick={() => setMobilePathwaysOpen((v) => !v)}
-                    aria-expanded={mobilePathwaysOpen}
-                    className={`flex w-full items-center justify-between rounded-md px-3 py-2.5 text-sm font-medium ${
+                  <div
+                    className={`flex w-full items-center justify-between rounded-md text-sm font-medium ${
                       isActive(item.href)
                         ? "bg-brand-redSoft text-brand-red"
                         : "text-navy-800 hover:bg-slate-50"
                     }`}
                   >
-                    {item.label}
-                    <ChevronDown
-                      className={`h-4 w-4 transition-transform ${
-                        mobilePathwaysOpen ? "rotate-180" : ""
-                      }`}
-                    />
-                  </button>
+                    <Link
+                      href={item.href}
+                      className="flex-1 px-3 py-2.5"
+                    >
+                      {item.label}
+                    </Link>
+                    <button
+                      type="button"
+                      onClick={() => setMobilePathwaysOpen((v) => !v)}
+                      aria-expanded={mobilePathwaysOpen}
+                      aria-label={`${item.label} menu`}
+                      className="px-3 py-2.5"
+                    >
+                      <ChevronDown
+                        className={`h-4 w-4 transition-transform ${
+                          mobilePathwaysOpen ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+                  </div>
                   {mobilePathwaysOpen && (
                     <div className="mt-1 space-y-3 border-l-2 border-slate-100 pl-3">
+                      <Link
+                        href="/services"
+                        className="block px-3 py-2 text-[12.5px] font-semibold uppercase tracking-[0.16em] text-brand-red hover:text-brand-redDark"
+                      >
+                        Services Overview
+                      </Link>
                       <Link
                         href="/pathways"
                         className="block px-3 py-2 text-[12.5px] font-semibold uppercase tracking-[0.16em] text-navy-800 hover:text-brand-red"

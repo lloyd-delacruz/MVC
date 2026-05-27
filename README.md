@@ -37,20 +37,31 @@ app/                          # App Router pages
 
 components/
   site/                       # cross-page chrome (Header, Footer)
-  sections/                   # homepage sections
-  ui/                         # primitives — Button, PageHero, SectionHeading, BottomCta, etc.
+  sections/                   # Hero, TrustBadges, Services, WhyChoose, Team,
+                              # TeamGallery, AccoladesGallery, CtaBanner
+  ui/                         # primitives — Button, PageHero, SectionHeading,
+                              # BottomCta, LanguageChips, Logo, MapleLeaf, Prose
 
 content/                      # source-of-truth markdown content
-  pages/                      # one .md per top-level page (reference)
+  pages/                      # one .md per top-level page (reference only)
   pathways/                   # nested by category — one .md per pathway
   blog/                       # one .md per blog post
 
 lib/
-  pathways.ts                 # parser + types for pathway markdown
+  pathways.ts                 # parser + types for pathway markdown (server)
+  pathway-taxonomy.ts         # client-safe categories + pathwayHref()
   blog.ts                     # getAllPosts() / getPost(slug)
-  markdown.tsx                # tiny inline renderer used inside pathways
+  markdown.tsx                # inline renderer + legacy /pages link rewriter
+  seo.ts                      # per-page metadata via buildPageMetadata()
+  icons.ts                    # allowlist of lucide icons usable in content
+  faq-categories.ts           # FAQ section grouping
+  content/                    # editable site copy (TS modules — see below)
 
-public/                       # static assets — logo, team headshots, /why-canada photos
+public/                       # static assets
+  logo.svg
+  team/                       # team headshots
+  accolades/                  # award + designation badges (shown on /about)
+  why-canada/                 # photo library for /why-canada
 ```
 
 ## Theme tokens
@@ -91,31 +102,26 @@ Top-level pages (`/about`, `/contact`, etc.) currently render copy directly from
 - **Cards:** `rounded-xl border border-slate-100 bg-white p-6 shadow-card hover:shadow-cardHover hover:-translate-y-1`.
 - **CTAs:** primary red CTAs get `trail="calendar"` when they're booking-related; outline CTAs get `trail="arrow"`.
 - **Active nav state:** derived from `usePathname()` in `Header.tsx` — don't hard-code `active: true`.
+- **Lightbox galleries:** `AccoladesGallery` and `TeamGallery` are client components that manage their own modal state, lock `document.body.style.overflow` while open, and close on `Escape`. Reuse this pattern instead of pulling in a modal library.
 
-## CMS / Admin panel
+## Editing content
 
-The site has a database-driven CMS at `/admin` so the client can edit content
-without code. Quick start:
+The site is fully static — no database, no admin panel. Editable copy lives in plain TypeScript modules under `lib/content/`:
 
-```bash
-cp .env.example .env        # fill in DATABASE_URL, BLOB_READ_WRITE_TOKEN, AUTH_SECRET
-npm install                 # also runs `prisma generate`
-npm run db:push             # create tables
-npm run db:seed             # load current content + migrate blog posts
-npm run admin:create -- "you@example.com" "Your Name" "a-strong-password"
-npm run dev                 # admin at http://localhost:3000/admin
-```
+- `hero.ts`, `services.ts`, `team.ts`, `homepage-extras.ts` — homepage sections
+- `about.ts`, `testimonials.ts`, `faqs.ts`, `contact.ts` — inner-page content
+- `blog.ts` — wraps `lib/blog.ts`, which reads `content/blog/*.md`
+- `types.ts` — shared content types (e.g. `TeamMemberItem.languages?: string[]`, surfaced by `LanguageChips` inside the `TeamGallery` modal)
 
-Full details: `docs/cms/SETUP.md` (developer) and `docs/cms/CLIENT-GUIDE.md`
-(client). The public site renders identically with no database (everything
-falls back to the original built-in content).
+Edit a file, save, refresh — that's it. The `ACCOLADES` array on `/about` and the `stats` / `matters` arrays on `/why-canada` are still defined inline in their respective `app/<page>/page.tsx` files; move them into `lib/content/` if they grow.
 
 ## Known gaps before launch
 
 - **Calendly URLs** in the contact page are `REPLACE-WITH-MVC-CALENDLY/...` — swap when the client provides them.
 - **Contact form** is markup-only — wire to Formspree, Resend, or equivalent before launch.
 - **Placeholder phone number** `+1 (604) 123-4567` on the homepage footer needs to be reconciled with the real Burnaby number `+1 778 288 7388` (already in `app/contact/page.tsx`).
-- **Security advisory** on `next@14.2.5` — run `npm audit fix` to bump.
+- **Security advisory** on `next@14.2.x` — run `npm audit fix` to bump.
+- **Stray duplicate** `lib/content/hero 2.ts` is an editor-created copy of `hero.ts`; safe to delete.
 
 ## Photo credits
 

@@ -43,6 +43,13 @@ const SEO: Record<string, SeoMetaContent> = {
       "Real people, real outcomes. Every story here represents a family reunited, a career launched, a new life begun.",
     ogImageUrl: null,
   },
+  services: {
+    pageKey: "services",
+    title: "Immigration Services — Every Canadian Pathway",
+    description:
+      "Express Entry, work permits, study permits, family sponsorship, business immigration, citizenship and more — guided by a Regulated Canadian Immigration Consultant.",
+    ogImageUrl: null,
+  },
   "get-started": {
     pageKey: "get-started",
     title: "How to Immigrate to Canada — Find Your Pathway",
