@@ -132,56 +132,120 @@ export default async function ServicesPage() {
             </p>
           </div>
 
-          <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {PATHWAY_CATEGORIES.map((cat) => {
-              const Icon = CATEGORY_ICONS[cat.id] ?? Stamp;
-              const count = cat.pathways.length;
-              return (
-                <li key={cat.id}>
-                  <Link
-                    href={`/pathways/${cat.id}`}
-                    className="group flex h-full flex-col rounded-xl border border-slate-100 bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-brand-redBorder hover:shadow-cardHover"
-                  >
-                    <div className="flex items-center gap-3">
-                      <span className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-brand-red/20 bg-brand-redSoft text-brand-red">
-                        <Icon className="h-5 w-5" strokeWidth={1.7} />
+          {(() => {
+            const [featured, ...rest] = PATHWAY_CATEGORIES;
+            const FeaturedIcon = CATEGORY_ICONS[featured.id] ?? Stamp;
+            return (
+              <div className="mt-12 space-y-5">
+                {/* Featured flagship category */}
+                <Link
+                  href={`/pathways/${featured.id}`}
+                  className="group relative grid overflow-hidden rounded-2xl border border-brand-red/15 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-brand-redBorder hover:shadow-cardHover md:grid-cols-[1.1fr_1fr]"
+                >
+                  <span
+                    aria-hidden
+                    className="absolute inset-y-0 left-0 w-[3px] bg-brand-red"
+                  />
+                  <div className="p-7 lg:p-9">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[10.5px] font-semibold uppercase tracking-[0.22em] text-brand-red">
+                        Most clients start here
                       </span>
-                      <h3 className="headline-serif text-[19px] font-semibold leading-tight text-navy-800 group-hover:text-brand-red">
-                        {cat.label}
-                      </h3>
+                      <span className="h-px flex-1 bg-brand-red/15" />
                     </div>
-                    <p className="mt-4 text-[13.5px] leading-relaxed text-slate-500">
-                      {cat.description}
-                    </p>
-                    <div className="mt-5 border-t border-slate-100 pt-4">
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">
-                        {count} {count === 1 ? "pathway" : "pathways"}
-                      </p>
-                      <ul className="mt-2 space-y-1">
-                        {cat.pathways.slice(0, 3).map((p) => (
-                          <li
-                            key={p.slug}
-                            className="text-[13px] leading-snug text-navy-800/80"
-                          >
-                            • {p.title}
-                          </li>
-                        ))}
-                        {cat.pathways.length > 3 && (
-                          <li className="text-[12.5px] italic text-slate-400">
-                            + {cat.pathways.length - 3} more
-                          </li>
-                        )}
-                      </ul>
+                    <div className="mt-5 flex items-start gap-4">
+                      <span className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-brand-red/20 bg-brand-redSoft text-brand-red">
+                        <FeaturedIcon className="h-7 w-7" strokeWidth={1.6} />
+                      </span>
+                      <div>
+                        <h3 className="headline-serif text-[26px] font-semibold leading-tight text-navy-800 group-hover:text-brand-red sm:text-[30px]">
+                          {featured.label}
+                        </h3>
+                        <p className="mt-3 text-[14.5px] leading-relaxed text-slate-600">
+                          {featured.description}
+                        </p>
+                      </div>
                     </div>
-                    <span className="mt-5 inline-flex items-center gap-1.5 text-[13px] font-medium text-brand-red">
-                      View {cat.label}
-                      <ChevronRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                    <span className="mt-7 inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-brand-red">
+                      Explore {featured.label.toLowerCase()}
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </span>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
+                  </div>
+                  <div className="border-t border-slate-100 bg-cream-50/70 p-7 md:border-l md:border-t-0 lg:p-9">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+                      {featured.pathways.length} pathways inside
+                    </p>
+                    <ul className="mt-4 grid gap-x-6 gap-y-2 sm:grid-cols-2">
+                      {featured.pathways.map((p) => (
+                        <li
+                          key={p.slug}
+                          className="flex items-center gap-2 text-[13.5px] leading-snug text-navy-800/85"
+                        >
+                          <span
+                            aria-hidden
+                            className="h-1 w-1 shrink-0 rounded-full bg-brand-red/60"
+                          />
+                          {p.title}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </Link>
+
+                {/* Remaining six categories — perfect 3×2 grid */}
+                <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                  {rest.map((cat) => {
+                    const Icon = CATEGORY_ICONS[cat.id] ?? Stamp;
+                    const count = cat.pathways.length;
+                    return (
+                      <li key={cat.id}>
+                        <Link
+                          href={`/pathways/${cat.id}`}
+                          className="group flex h-full flex-col rounded-xl border border-slate-100 bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-brand-redBorder hover:shadow-cardHover"
+                        >
+                          <div className="flex items-center gap-3">
+                            <span className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-brand-red/20 bg-brand-redSoft text-brand-red">
+                              <Icon className="h-5 w-5" strokeWidth={1.7} />
+                            </span>
+                            <h3 className="headline-serif text-[19px] font-semibold leading-tight text-navy-800 group-hover:text-brand-red">
+                              {cat.label}
+                            </h3>
+                          </div>
+                          <p className="mt-4 text-[13.5px] leading-relaxed text-slate-500">
+                            {cat.description}
+                          </p>
+                          <div className="mt-5 border-t border-slate-100 pt-4">
+                            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">
+                              {count} {count === 1 ? "pathway" : "pathways"}
+                            </p>
+                            <ul className="mt-2 space-y-1">
+                              {cat.pathways.slice(0, 3).map((p) => (
+                                <li
+                                  key={p.slug}
+                                  className="text-[13px] leading-snug text-navy-800/80"
+                                >
+                                  • {p.title}
+                                </li>
+                              ))}
+                              {cat.pathways.length > 3 && (
+                                <li className="text-[12.5px] italic text-slate-400">
+                                  + {cat.pathways.length - 3} more
+                                </li>
+                              )}
+                            </ul>
+                          </div>
+                          <span className="mt-5 inline-flex items-center gap-1.5 text-[13px] font-medium text-brand-red">
+                            View {cat.label}
+                            <ChevronRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                          </span>
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            );
+          })()}
 
           <div className="mt-10 text-center">
             <Link
