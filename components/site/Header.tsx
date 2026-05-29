@@ -77,7 +77,7 @@ export function Header() {
                   <div className="flex items-center gap-1">
                     <Link
                       href={item.href}
-                      className={`group relative inline-flex items-center text-[13.5px] font-medium transition-colors ${
+                      className={`group relative inline-flex items-center text-[15.4px] font-medium transition-colors ${
                         isActive(item.href)
                           ? "text-brand-red"
                           : "text-navy-800 hover:text-brand-red"
@@ -164,7 +164,7 @@ export function Header() {
                 <li key={item.label}>
                   <Link
                     href={item.href}
-                    className={`group relative inline-flex items-center gap-1 text-[13.5px] font-medium transition-colors ${
+                    className={`group relative inline-flex items-center gap-1 text-[15.4px] font-medium transition-colors ${
                       isActive(item.href)
                         ? "text-brand-red"
                         : "text-navy-800 hover:text-brand-red"

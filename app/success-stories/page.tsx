@@ -3,12 +3,10 @@ import {
   ArrowRight,
   ShieldCheck,
   Star,
-  Stamp,
-  Route,
   HeartHandshake,
   MessageSquareQuote,
 } from "lucide-react";
-import { MapleLeaf } from "@/components/ui/MapleLeaf";
+import { PageHero } from "@/components/ui/PageHero";
 import { BottomCta } from "@/components/ui/BottomCta";
 import { StoriesGallery } from "@/components/sections/StoriesGallery";
 import { getTestimonials, getGoogleReviews } from "@/lib/content/testimonials";
@@ -17,26 +15,6 @@ import { buildPageMetadata } from "@/lib/seo";
 export function generateMetadata() {
   return buildPageMetadata("success-stories");
 }
-
-// Trust stats — confirmed safe to display per client direction.
-// NOTE: "500+" is a PLACEHOLDER — replace with the real approval count before launch.
-const STATS = [
-  {
-    icon: ShieldCheck,
-    value: "RCIC",
-    label: "Licensed & CICC-regulated consultant",
-  },
-  {
-    icon: Stamp,
-    value: "500+",
-    label: "Successful visas & approvals",
-  },
-  {
-    icon: Route,
-    value: "5 pathways",
-    label: "PR · Study · Work · Family · Citizenship",
-  },
-];
 
 const REASSURANCE = [
   {
@@ -112,71 +90,11 @@ export default async function SuccessStoriesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* ───────────────────── Hero with embedded trust stats ───────────────────── */}
-      <section className="relative overflow-hidden bg-navy-800 text-white">
-        <MapleLeaf className="absolute -left-8 -top-10 h-40 w-40 rotate-12 text-white/[0.04]" />
-        <MapleLeaf className="absolute -right-10 -bottom-12 h-52 w-52 -rotate-12 text-white/[0.04]" />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 opacity-[0.05]"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
-            backgroundSize: "30px 30px",
-          }}
-        />
-
-        <div className="container-x relative py-14 text-center sm:py-16 lg:py-20">
-          <div className="mx-auto flex w-fit items-center gap-2.5 rounded-full bg-white/10 px-4 py-1.5 text-[12.5px] font-medium text-white ring-1 ring-inset ring-white/15">
-            <Stars className="h-3.5 w-3.5" />
-            <span>Rated 5.0 by clients across Canada &amp; abroad</span>
-          </div>
-
-          <h1 className="headline-serif mx-auto mt-6 max-w-3xl text-[28px] font-medium leading-[1.15] sm:text-[38px] lg:text-[46px] lg:leading-[1.08]">
-            Real families. Real approvals.
-            <br className="hidden sm:block" /> Real Canadian dreams.
-          </h1>
-          <p className="mx-auto mt-5 max-w-2xl text-[14.5px] leading-relaxed text-slate-300 sm:text-[16px]">
-            These aren&apos;t stock photos. Every face below is an MVC client holding
-            their approved Canadian visa, permit, or passport — proof of what&apos;s
-            possible when you have the right people in your corner.
-          </p>
-
-          <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Link
-              href="/contact"
-              className="group inline-flex w-full items-center justify-center gap-2 rounded-md bg-brand-red px-6 py-3.5 text-[14px] font-semibold text-white shadow-[0_10px_24px_-10px_rgba(201,31,26,0.7)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-redDark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-navy-800 sm:w-auto"
-            >
-              Book a Free Consultation
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-            <Link
-              href="#reviews"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-white/30 px-6 py-3.5 text-[14px] font-semibold text-white transition-colors duration-200 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:w-auto"
-            >
-              Read verified reviews
-            </Link>
-          </div>
-
-          {/* Trust stat strip — embedded inside the hero, no gap below */}
-          <div className="mx-auto mt-12 grid max-w-3xl grid-cols-1 gap-px overflow-hidden rounded-2xl bg-white/10 ring-1 ring-inset ring-white/10 sm:grid-cols-3">
-            {STATS.map((s) => (
-              <div
-                key={s.value}
-                className="flex flex-col items-center gap-1.5 bg-navy-800 px-5 py-6 text-center"
-              >
-                <s.icon className="h-5 w-5 text-brand-red" strokeWidth={1.8} />
-                <span className="headline-serif text-[24px] font-semibold leading-none text-white">
-                  {s.value}
-                </span>
-                <span className="text-[12px] leading-snug text-slate-300">
-                  {s.label}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ───────────────────── Hero — standard PageHero, matches other pages ───────────────────── */}
+      <PageHero
+        eyebrow="Reviews · Success Stories"
+        title="Real families. Real approvals. Real Canadian dreams."
+      />
 
       {/* ───────────────────── Client stories ───────────────────── */}
       <section className="bg-white py-16 lg:py-20">
