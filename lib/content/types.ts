@@ -70,6 +70,25 @@ export type TestimonialItem = {
   year: string;
   pathway: string;
   quote: string;
+  /** Headline result, e.g. "Study Permit — Approved". Shown as a badge on the card. */
+  outcome?: string;
+  /** Photo of the real client (in /public/testimonials). Optional for text-only quotes. */
+  imageUrl?: string;
+  imageAlt?: string;
+  /** Tailwind object-position utility to keep faces/visas in frame, e.g. "object-top". */
+  imagePosition?: string;
+  /** Larger, top-of-page treatment. */
+  featured?: boolean;
+};
+
+export type GoogleReviewItem = {
+  id: string;
+  author: string;
+  /** Single letter for the avatar circle. */
+  initial: string;
+  rating: number;
+  date: string;
+  text: string;
 };
 
 export type FaqItem = {
