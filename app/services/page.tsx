@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   Briefcase,
@@ -15,7 +16,6 @@ import { BottomCta } from "@/components/ui/BottomCta";
 import { Button } from "@/components/ui/Button";
 import { PATHWAY_CATEGORIES } from "@/lib/pathway-taxonomy";
 import { getServices } from "@/lib/content/services";
-import { resolveIcon } from "@/lib/icons";
 import { buildPageMetadata } from "@/lib/seo";
 
 export function generateMetadata() {
@@ -69,49 +69,53 @@ export default async function ServicesPage() {
       {/* Most requested */}
       <section className="bg-white py-16 lg:py-20">
         <div className="container-x">
-          <div className="mx-auto max-w-2xl text-center">
+          <div className="mx-auto max-w-4xl text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-red">
               Start here
             </p>
-            <h2 className="headline-serif mt-2 text-[30px] font-medium leading-tight text-navy-800 sm:text-[38px]">
+            <h2 className="headline-serif mt-2 text-balance text-[28px] font-medium leading-tight text-navy-800 sm:text-[38px] lg:whitespace-nowrap">
               The four services we&rsquo;re asked about most
             </h2>
-            <p className="mt-4 text-[15px] leading-relaxed text-slate-600">
+            <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-relaxed text-slate-600">
               Not sure where you fit? These four cover roughly 80% of the files we
               open. Click through for full details, eligibility, and timelines.
             </p>
           </div>
 
-          <ul className="mt-12 grid gap-6 sm:grid-cols-2">
-            {services.map((s) => {
-              const Icon = resolveIcon(s.iconName);
-              return (
-                <li key={s.id}>
-                  <Link
-                    href={s.href}
-                    className="group flex h-full flex-col rounded-2xl border border-slate-100 bg-white p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-brand-redBorder hover:shadow-cardHover"
-                  >
-                    <div className="flex items-start gap-4">
-                      <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-lg border border-brand-red/20 bg-brand-redSoft text-brand-red">
-                        <Icon className="h-6 w-6" strokeWidth={1.7} />
-                      </span>
-                      <div>
-                        <h3 className="headline-serif text-[22px] font-semibold leading-tight text-navy-800 group-hover:text-brand-red">
-                          {s.title}
-                        </h3>
-                        <p className="mt-2 text-[14px] leading-relaxed text-slate-500">
-                          {s.description}
-                        </p>
-                      </div>
-                    </div>
-                    <span className="mt-6 inline-flex items-center gap-1.5 text-[13px] font-medium text-brand-red">
+          <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {services.map((s) => (
+              <li key={s.id}>
+                <Link
+                  href={s.href}
+                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-brand-redBorder hover:shadow-cardHover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2"
+                >
+                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-cream-100">
+                    {s.imageUrl && (
+                      <Image
+                        src={s.imageUrl}
+                        alt={s.imageAlt || s.title}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 290px"
+                        className="object-cover transition-transform duration-500 group-hover:scale-[1.05]"
+                      />
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy-900/55 via-navy-900/5 to-transparent" />
+                    <h3 className="headline-serif absolute inset-x-0 bottom-0 p-4 text-[18px] font-semibold leading-tight text-white">
+                      {s.title}
+                    </h3>
+                  </div>
+                  <div className="flex flex-1 flex-col p-5">
+                    <p className="text-[13.5px] leading-relaxed text-slate-500">
+                      {s.description}
+                    </p>
+                    <span className="mt-auto pt-4 inline-flex items-center gap-1.5 text-[13px] font-medium text-brand-red">
                       Explore this pathway
                       <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
                     </span>
-                  </Link>
-                </li>
-              );
-            })}
+                  </div>
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </section>

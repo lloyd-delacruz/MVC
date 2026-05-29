@@ -16,7 +16,7 @@ const TEAM: TeamMemberItem[] = [
     id: "adrienne",
     name: "Adrienne Omega",
     role: "Marketing",
-    imageUrl: "/team/adrienne.png",
+    imageUrl: "/team/adrienne.jpg",
     imageAlt: "Adrienne Omega",
     languages: ["English", "Cebuano", "Tagalog"],
     bio:
@@ -26,7 +26,7 @@ const TEAM: TeamMemberItem[] = [
     id: "carisse",
     name: "Carisse Solatorio",
     role: "Operations",
-    imageUrl: "/team/carisse.png",
+    imageUrl: "/team/carisse.jpg",
     imageAlt: "Carisse Solatorio",
     languages: ["English", "Cebuano", "Tagalog", "Ilonggo"],
     bio:
@@ -36,7 +36,7 @@ const TEAM: TeamMemberItem[] = [
     id: "khristine",
     name: "Khristinne Araneta",
     role: "Operations",
-    imageUrl: "/team/khristine.png",
+    imageUrl: "/team/khristine.jpg",
     imageAlt: "Khristinne Araneta",
     languages: ["English", "Cebuano", "Tagalog"],
     bio:
@@ -46,7 +46,7 @@ const TEAM: TeamMemberItem[] = [
     id: "marianne",
     name: "Marianne Fulguirinas",
     role: "Admin Support",
-    imageUrl: "/team/marianne.png",
+    imageUrl: "/team/marianne.jpg",
     imageAlt: "Marianne Fulguirinas",
     languages: ["English", "Tagalog", "Cebuano"],
     bio: "Marianne is a Case Representative for MVC Immigration's office in the Philippines.",
@@ -55,7 +55,7 @@ const TEAM: TeamMemberItem[] = [
     id: "michelle",
     name: "Michelle Rose Gallemit",
     role: "Admin Support",
-    imageUrl: "/team/michelle.png",
+    imageUrl: "/team/michelle.jpg",
     imageAlt: "Michelle Rose Gallemit",
     languages: ["English", "Tagalog", "Cebuano"],
     bio: "Michelle is a Case Representative for MVC Immigration's office in the Philippines.",
@@ -64,7 +64,7 @@ const TEAM: TeamMemberItem[] = [
     id: "nico",
     name: "Nico Pelayo",
     role: "Case Processing",
-    imageUrl: "/team/nico.png",
+    imageUrl: "/team/nico.jpg",
     imageAlt: "Nico Pelayo",
     languages: ["English", "Tagalog"],
     bio:

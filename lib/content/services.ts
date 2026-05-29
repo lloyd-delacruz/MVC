@@ -1,5 +1,8 @@
 import type { ServiceItem } from "@/lib/content/types";
 
+// Service card photos are self-hosted in /public/services (sourced from Unsplash,
+// free license). iconName is retained as a fallback but the cards now render photos.
+
 const SERVICES: ServiceItem[] = [
   {
     id: "express-entry",
@@ -7,6 +10,8 @@ const SERVICES: ServiceItem[] = [
     description: "Immigration pathway for skilled workers located in and out of Canada.",
     iconName: "Stamp",
     href: "/pathways/permanent-residence/express-entry",
+    imageUrl: "/services/express-entry.jpg",
+    imageAlt: "Toronto skyline at sunset with the CN Tower — a new life in Canada",
   },
   {
     id: "family-sponsorship",
@@ -14,6 +19,8 @@ const SERVICES: ServiceItem[] = [
     description: "Guidance for spouses, partners, parents and family members to reunite in Canada.",
     iconName: "Heart",
     href: "/pathways/family/family-sponsorship",
+    imageUrl: "/services/family-sponsorship.jpg",
+    imageAlt: "A father smiling with his two young children, reunited as a family",
   },
   {
     id: "work-permits",
@@ -21,6 +28,8 @@ const SERVICES: ServiceItem[] = [
     description: "Help with employers needing to hire foreign nationals and vice versa.",
     iconName: "Briefcase",
     href: "/pathways/work/work-permits",
+    imageUrl: "/services/work-permits.jpg",
+    imageAlt: "Two professionals shaking hands in an office after a successful hire",
   },
   {
     id: "study-permits",
@@ -28,6 +37,8 @@ const SERVICES: ServiceItem[] = [
     description: "Support for students planning to study in Canada.",
     iconName: "GraduationCap",
     href: "/pathways/study/study-permits",
+    imageUrl: "/services/study-permits.jpg",
+    imageAlt: "International graduates throwing their caps in the air to celebrate",
   },
 ];
 

@@ -20,6 +20,8 @@ export type ServiceItem = {
   description: string;
   iconName: string;
   href: string;
+  imageUrl?: string;
+  imageAlt?: string;
 };
 
 export type TeamMemberItem = {

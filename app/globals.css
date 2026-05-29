@@ -66,3 +66,91 @@
     @apply mt-6 border-l-4 border-brand-red bg-cream-50 px-5 py-4 italic text-navy-800;
   }
 }
+
+/*
+ * Desktop typography scale-up.
+ * Mobile/tablet sizes are unchanged; from lg (1024px) up — the same breakpoint
+ * where the desktop nav appears — every text-size utility used in the codebase
+ * is scaled by --ts via calc(). Only font-size is affected; spacing, layout, and
+ * line-height utilities are untouched. Placed after the Tailwind layers so these
+ * win on source order (no !important).
+ *
+ * To make all desktop text bigger/smaller, change the single --ts value below.
+ * If a new text size is added in a component, add a matching line here.
+ */
+@media (min-width: 1024px) {
+  :root { --ts: 1.3; } /* desktop type scale, e.g. 1.3 = +30% */
+
+  /* Shrink the wide left/right desktop margins by widening the content cap.
+     1200px -> 1280px. Only affects screens wider than the cap (desktop);
+     mobile/tablet are narrower than the cap, so they are unchanged. */
+  .container-x { max-width: 1280px; }
+
+  /* named utilities */
+  .text-xs { font-size: calc(0.75rem * var(--ts)); }
+  .text-sm { font-size: calc(0.875rem * var(--ts)); }
+
+  /* base arbitrary px sizes (incl. decimals) */
+  .text-\[9.5px\] { font-size: calc(9.5px * var(--ts)); }
+  .text-\[10px\] { font-size: calc(10px * var(--ts)); }
+  .text-\[10.5px\] { font-size: calc(10.5px * var(--ts)); }
+  .text-\[11px\] { font-size: calc(11px * var(--ts)); }
+  .text-\[11.5px\] { font-size: calc(11.5px * var(--ts)); }
+  .text-\[12px\] { font-size: calc(12px * var(--ts)); }
+  .text-\[12.5px\] { font-size: calc(12.5px * var(--ts)); }
+  .text-\[13px\] { font-size: calc(13px * var(--ts)); }
+  .text-\[13.5px\] { font-size: calc(13.5px * var(--ts)); }
+  .text-\[14px\] { font-size: calc(14px * var(--ts)); }
+  .text-\[14.5px\] { font-size: calc(14.5px * var(--ts)); }
+  .text-\[15px\] { font-size: calc(15px * var(--ts)); }
+  .text-\[15.5px\] { font-size: calc(15.5px * var(--ts)); }
+  .text-\[16px\] { font-size: calc(16px * var(--ts)); }
+  .text-\[17px\] { font-size: calc(17px * var(--ts)); }
+  .text-\[18px\] { font-size: calc(18px * var(--ts)); }
+  .text-\[19px\] { font-size: calc(19px * var(--ts)); }
+  .text-\[20px\] { font-size: calc(20px * var(--ts)); }
+  .text-\[21px\] { font-size: calc(21px * var(--ts)); }
+  .text-\[22px\] { font-size: calc(22px * var(--ts)); }
+  .text-\[24px\] { font-size: calc(24px * var(--ts)); }
+  .text-\[26px\] { font-size: calc(26px * var(--ts)); }
+  .text-\[28px\] { font-size: calc(28px * var(--ts)); }
+  .text-\[30px\] { font-size: calc(30px * var(--ts)); }
+  .text-\[32px\] { font-size: calc(32px * var(--ts)); }
+  .text-\[34px\] { font-size: calc(34px * var(--ts)); }
+  .text-\[36px\] { font-size: calc(36px * var(--ts)); }
+  .text-\[38px\] { font-size: calc(38px * var(--ts)); }
+  .text-\[40px\] { font-size: calc(40px * var(--ts)); }
+  .text-\[42px\] { font-size: calc(42px * var(--ts)); }
+  .text-\[44px\] { font-size: calc(44px * var(--ts)); }
+  .text-\[46px\] { font-size: calc(46px * var(--ts)); }
+  .text-\[52px\] { font-size: calc(52px * var(--ts)); }
+  .text-\[58px\] { font-size: calc(58px * var(--ts)); }
+
+  /* sm: responsive variants (active at desktop) */
+  .sm\:text-\[10.5px\] { font-size: calc(10.5px * var(--ts)); }
+  .sm\:text-\[14.5px\] { font-size: calc(14.5px * var(--ts)); }
+  .sm\:text-\[15px\] { font-size: calc(15px * var(--ts)); }
+  .sm\:text-\[16px\] { font-size: calc(16px * var(--ts)); }
+  .sm\:text-\[17px\] { font-size: calc(17px * var(--ts)); }
+  .sm\:text-\[18px\] { font-size: calc(18px * var(--ts)); }
+  .sm\:text-\[20px\] { font-size: calc(20px * var(--ts)); }
+  .sm\:text-\[22px\] { font-size: calc(22px * var(--ts)); }
+  .sm\:text-\[26px\] { font-size: calc(26px * var(--ts)); }
+  .sm\:text-\[30px\] { font-size: calc(30px * var(--ts)); }
+  .sm\:text-\[32px\] { font-size: calc(32px * var(--ts)); }
+  .sm\:text-\[34px\] { font-size: calc(34px * var(--ts)); }
+  .sm\:text-\[36px\] { font-size: calc(36px * var(--ts)); }
+  .sm\:text-\[38px\] { font-size: calc(38px * var(--ts)); }
+  .sm\:text-\[40px\] { font-size: calc(40px * var(--ts)); }
+  .sm\:text-\[44px\] { font-size: calc(44px * var(--ts)); }
+
+  /* lg: responsive variants */
+  .lg\:text-\[42px\] { font-size: calc(42px * var(--ts)); }
+  .lg\:text-\[46px\] { font-size: calc(46px * var(--ts)); }
+  .lg\:text-\[52px\] { font-size: calc(52px * var(--ts)); }
+  .lg\:text-\[58px\] { font-size: calc(58px * var(--ts)); }
+
+  /* prose headings (sizes baked in via @apply, not the utility class) */
+  .prose-mvc h2 { font-size: calc(26px * var(--ts)); }
+  .prose-mvc h3 { font-size: calc(20px * var(--ts)); }
+}
