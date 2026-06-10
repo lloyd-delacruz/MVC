@@ -324,6 +324,19 @@ export default async function ContactPage() {
             <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-slate-100 pt-4">
               <div className="text-[11.5px] text-slate-500">
                 Secure scheduling &amp; payment via Calendly
+                {contact.bookingAllUrl && (
+                  <>
+                    {" · "}
+                    <a
+                      href={contact.bookingAllUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold text-brand-red underline underline-offset-4 hover:text-brand-redDark"
+                    >
+                      Compare all options
+                    </a>
+                  </>
+                )}
               </div>
               <div className="flex items-center gap-2 text-[10px] font-semibold text-slate-500">
                 <CreditCard className="h-3.5 w-3.5" />
@@ -334,13 +347,24 @@ export default async function ContactPage() {
 
           <p className="mx-auto mt-8 max-w-2xl text-center text-[13px] leading-relaxed text-slate-500">
             Not ready to book a paid session?{" "}
-            <Link
-              href="#main"
-              className="text-brand-red underline underline-offset-4 hover:text-brand-redDark"
-            >
-              Send us a message
-            </Link>{" "}
-            for a free 30-minute discovery call — we&rsquo;ll tell you whether a 1:1 consultation is the right next step.
+            {contact.freeConsultationUrl ? (
+              <a
+                href={contact.freeConsultationUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-brand-red underline underline-offset-4 hover:text-brand-redDark"
+              >
+                Book a free 15-minute consultation
+              </a>
+            ) : (
+              <Link
+                href="#main"
+                className="text-brand-red underline underline-offset-4 hover:text-brand-redDark"
+              >
+                Send us a message
+              </Link>
+            )}{" "}
+            for a quick discovery call — we&rsquo;ll tell you whether a 1:1 consultation is the right next step.
           </p>
 
           <p className="mx-auto mt-3 max-w-2xl text-center text-[11.5px] leading-relaxed text-slate-400">
@@ -351,9 +375,9 @@ export default async function ContactPage() {
 
       <BottomCta
         title="Ready to start your journey?"
-        body="Book a free 30-minute consultation — no obligation."
+        body="Book a free 15-minute consultation — no obligation."
         buttonText="Book a Free Consultation"
-        buttonHref="#consultation"
+        buttonHref={contact.freeConsultationUrl ?? "#consultation"}
       />
     </>
   );

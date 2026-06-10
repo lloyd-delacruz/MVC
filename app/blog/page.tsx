@@ -69,7 +69,7 @@ export default async function BlogPage() {
 
       <BottomCta
         title="Got a specific question?"
-        body="Book a free 30-minute consultation. We'll give you an honest read on your situation — no obligation."
+        body="Book a free 15-minute consultation. We'll give you an honest read on your situation — no obligation."
         buttonText="Book a Free Consultation"
         buttonHref="/contact"
       />

@@ -66,7 +66,7 @@ export default async function FaqPage() {
 
       <BottomCta
         title="Still have questions?"
-        body="Book a free 30-minute consultation."
+        body="Book a free 15-minute consultation."
         buttonText="Book a Free Consultation"
         buttonHref="/contact"
       />

@@ -37,7 +37,7 @@ const CONTACT: ContactContent = {
       price: "$250 CAD",
       description:
         "Talk to a Regulated Canadian Immigration Consultant online (Zoom or Google Meet) and discuss your immigration plan or ask specific case-related questions. 60 minutes. Notes & next steps emailed afterwards.",
-      href: "https://calendly.com/REPLACE-WITH-MVC-CALENDLY/virtual-consultation",
+      href: "https://calendly.com/yaniv-20/1-1-interview-case-officer",
     },
     {
       id: "inoffice",
@@ -45,9 +45,11 @@ const CONTACT: ContactContent = {
       price: "$350 CAD",
       description:
         "Meet your RCIC face-to-face at our Burnaby, BC office. Bring documents, ask every question, and leave with a written plan. 60 minutes. Free parking on site, transit-accessible.",
-      href: "https://calendly.com/REPLACE-WITH-MVC-CALENDLY/in-office-consultation",
+      href: "https://calendly.com/yaniv-20/mvc-1-1-virtual-consultation-250-clone",
     },
   ],
+  bookingAllUrl: "https://calendly.com/yaniv-20",
+  freeConsultationUrl: "https://calendly.com/yaniv-20/mvc-15-minute-free-consultation",
   socialLinks: [
     { id: "facebook", platform: "Facebook", url: "#" },
     { id: "instagram", platform: "Instagram", url: "#" },

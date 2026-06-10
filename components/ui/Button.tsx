@@ -31,8 +31,13 @@ export function Button({
   trail = "none",
   className = "",
 }: ButtonProps) {
+  const isExternal = /^https?:\/\//.test(href);
   return (
-    <Link href={href} className={`${base} ${styles[variant]} ${className}`}>
+    <Link
+      href={href}
+      className={`${base} ${styles[variant]} ${className}`}
+      {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+    >
       <span>{children}</span>
       {trail === "arrow" && (
         <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

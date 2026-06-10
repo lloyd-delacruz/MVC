@@ -30,7 +30,7 @@ const steps = [
   {
     num: "01",
     title: "Book your free consultation",
-    body: "A 30-minute call with a Regulated Canadian Immigration Consultant. No obligation, no sales pressure. We listen to your goals, ask about your situation, and give you our honest read on whether — and how — we can help.",
+    body: "A 15-minute call with a Regulated Canadian Immigration Consultant. No obligation, no sales pressure. We listen to your goals, ask about your situation, and give you our honest read on whether — and how — we can help.",
     you_do: "Book a time. Tell us a little about your situation in the booking form so we can prepare.",
     we_do: "Review your situation in advance. Walk you through the relevant pathways. Answer every question.",
   },
@@ -182,7 +182,7 @@ export default function GetStartedPage() {
               <strong className="font-semibold text-navy-800">
                 This is informational guidance — not a binding eligibility decision.
               </strong>{" "}
-              Immigration cases are unique. Your free 30-minute consultation gives you an RCIC&rsquo;s formal opinion on your situation. We never guarantee immigration outcomes.
+              Immigration cases are unique. Your free 15-minute consultation gives you an RCIC&rsquo;s formal opinion on your situation. We never guarantee immigration outcomes.
             </p>
           </div>
 
@@ -285,7 +285,7 @@ export default function GetStartedPage() {
 
       <BottomCta
         title="Ready to start your journey?"
-        body="Book a free 30-minute consultation — no obligation."
+        body="Book a free 15-minute consultation — no obligation."
         buttonText="Book a Free Consultation"
         buttonHref="/contact"
       />

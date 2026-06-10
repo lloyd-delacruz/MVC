@@ -122,6 +122,8 @@ export type ContactContent = {
   addressLine: string;
   offices: OfficeItem[];
   bookingOptions: BookingOptionItem[];
+  bookingAllUrl?: string;
+  freeConsultationUrl?: string;
   socialLinks: SocialLinkItem[];
 };
 
