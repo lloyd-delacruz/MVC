@@ -12,7 +12,6 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
-import { BottomCta } from "@/components/ui/BottomCta";
 import { Button } from "@/components/ui/Button";
 import { PATHWAY_CATEGORIES } from "@/lib/pathway-taxonomy";
 import { getServices } from "@/lib/content/services";
@@ -35,23 +34,23 @@ const CATEGORY_ICONS: Record<string, typeof Stamp> = {
 const PROCESS_STEPS = [
   {
     n: "01",
-    title: "Free assessment",
-    body: "Tell us where you are today — your background, your goals, your timeline. We'll tell you honestly whether Canada is the right move and which pathway fits.",
+    title: "Assessment",
+    body: "We learn about your background, goals, and timeline.",
   },
   {
     n: "02",
-    title: "Eligibility & strategy",
-    body: "A licensed RCIC reviews your full profile against current IRCC rules, scores your options, and recommends the strongest path forward — with realistic timelines.",
+    title: "Eligibility & Strategy",
+    body: "We review your options and recommend a realistic pathway.",
   },
   {
     n: "03",
-    title: "Application & filing",
-    body: "We prepare, review, and submit every form, supporting document, and translation. No template work — every file is tailored to your situation.",
+    title: "Application & Filing",
+    body: "We prepare, review, and submit a complete application.",
   },
   {
     n: "04",
-    title: "Through to landing",
-    body: "We monitor your file, respond to IRCC requests on your behalf, and stay with you until you land — and beyond, for PR renewals and citizenship.",
+    title: "Support After Submission",
+    body: "We support you through updates, document requests, and next steps.",
   },
 ];
 
@@ -62,8 +61,8 @@ export default async function ServicesPage() {
     <>
       <PageHero
         eyebrow="Our Services"
-        title="Every Canadian immigration pathway, in one place."
-        lede="Skilled workers, families, students, visitors, entrepreneurs — whatever brings you to Canada, a Regulated Canadian Immigration Consultant (RCIC) will guide you from first question to landed status."
+        title="Find the right Canadian immigration pathway for your situation."
+        lede="Whether you want to work, study, reunite with family, visit, or settle permanently in Canada, MVC helps you understand your options and choose the next step with confidence."
       />
 
       {/* Most requested */}
@@ -73,12 +72,12 @@ export default async function ServicesPage() {
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-red">
               Start here
             </p>
-            <h2 className="headline-serif mt-2 text-balance text-[28px] font-medium leading-tight text-navy-800 sm:text-[38px] lg:whitespace-nowrap">
-              The four services we&rsquo;re asked about most
+            <h2 className="headline-serif mt-2 text-balance text-[28px] font-medium leading-tight text-navy-800 sm:text-[38px]">
+              Most Requested Services
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-relaxed text-slate-600">
-              Not sure where you fit? These four cover roughly 80% of the files we
-              open. Click through for full details, eligibility, and timelines.
+              Each service page includes key details, eligibility considerations,
+              timelines, and how MVC can help.
             </p>
           </div>
 
@@ -131,8 +130,8 @@ export default async function ServicesPage() {
               What brings you to Canada?
             </h2>
             <p className="mt-4 text-[15px] leading-relaxed text-slate-600">
-              Pick the category that matches your situation. Each one opens onto
-              the specific pathways inside it.
+              Choose the situation that best matches your goal. Each category leads
+              to the pathways and services that may apply to you.
             </p>
           </div>
 
@@ -144,7 +143,7 @@ export default async function ServicesPage() {
                 {/* Featured flagship category */}
                 <Link
                   href={`/pathways/${featured.id}`}
-                  className="group relative grid overflow-hidden rounded-2xl border border-brand-red/15 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-brand-redBorder hover:shadow-cardHover md:grid-cols-[1.1fr_1fr]"
+                  className="group relative block overflow-hidden rounded-2xl border border-brand-red/15 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-brand-redBorder hover:shadow-cardHover"
                 >
                   <span
                     aria-hidden
@@ -175,32 +174,12 @@ export default async function ServicesPage() {
                       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </span>
                   </div>
-                  <div className="border-t border-slate-100 bg-cream-50/70 p-7 md:border-l md:border-t-0 lg:p-9">
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
-                      {featured.pathways.length} pathways inside
-                    </p>
-                    <ul className="mt-4 grid gap-x-6 gap-y-2 sm:grid-cols-2">
-                      {featured.pathways.map((p) => (
-                        <li
-                          key={p.slug}
-                          className="flex items-center gap-2 text-[13.5px] leading-snug text-navy-800/85"
-                        >
-                          <span
-                            aria-hidden
-                            className="h-1 w-1 shrink-0 rounded-full bg-brand-red/60"
-                          />
-                          {p.title}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
                 </Link>
 
                 {/* Remaining six categories — perfect 3×2 grid */}
                 <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                   {rest.map((cat) => {
                     const Icon = CATEGORY_ICONS[cat.id] ?? Stamp;
-                    const count = cat.pathways.length;
                     return (
                       <li key={cat.id}>
                         <Link
@@ -218,27 +197,7 @@ export default async function ServicesPage() {
                           <p className="mt-4 text-[13.5px] leading-relaxed text-slate-500">
                             {cat.description}
                           </p>
-                          <div className="mt-5 border-t border-slate-100 pt-4">
-                            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">
-                              {count} {count === 1 ? "pathway" : "pathways"}
-                            </p>
-                            <ul className="mt-2 space-y-1">
-                              {cat.pathways.slice(0, 3).map((p) => (
-                                <li
-                                  key={p.slug}
-                                  className="text-[13px] leading-snug text-navy-800/80"
-                                >
-                                  • {p.title}
-                                </li>
-                              ))}
-                              {cat.pathways.length > 3 && (
-                                <li className="text-[12.5px] italic text-slate-400">
-                                  + {cat.pathways.length - 3} more
-                                </li>
-                              )}
-                            </ul>
-                          </div>
-                          <span className="mt-5 inline-flex items-center gap-1.5 text-[13px] font-medium text-brand-red">
+                          <span className="mt-auto pt-5 inline-flex items-center gap-1.5 text-[13px] font-medium text-brand-red">
                             View {cat.label}
                             <ChevronRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
                           </span>
@@ -271,11 +230,12 @@ export default async function ServicesPage() {
               How we work
             </p>
             <h2 className="headline-serif mt-2 text-[30px] font-medium leading-tight text-navy-800 sm:text-[38px]">
-              Four steps. No surprises.
+              How We Work
             </h2>
             <p className="mt-4 text-[15px] leading-relaxed text-slate-600">
-              The same process every client gets — whether you&rsquo;re applying
-              for a study permit or a permanent residence file.
+              A clear process, from first question to next step. No matter which
+              pathway applies to you, our process is designed to be practical,
+              transparent, and easy to follow.
             </p>
           </div>
 
@@ -305,11 +265,12 @@ export default async function ServicesPage() {
         <div className="container-x">
           <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
             <div className="max-w-2xl">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/60">
-                Still deciding?
+              <p className="text-[12.5px] font-semibold tracking-[0.04em] text-white/60">
+                Not sure which pathway fits your situation?
               </p>
               <h2 className="headline-serif mt-2 text-[26px] font-medium leading-tight sm:text-[32px]">
-                Answer six quick questions — get a real reply from an RCIC.
+                Answer a few quick questions and our team will point you toward the
+                most relevant option.
               </h2>
               <p className="mt-3 text-[14.5px] leading-relaxed text-white/75">
                 If you&rsquo;re not sure which pathway fits, our short
@@ -322,19 +283,12 @@ export default async function ServicesPage() {
                 Find my pathway
               </Button>
               <Button href="/contact" variant="outlineLight" trail="calendar">
-                Talk to an RCIC
+                Book a free assessment
               </Button>
             </div>
           </div>
         </div>
       </section>
-
-      <BottomCta
-        title="Ready to take the first step?"
-        body="Book a free 15-minute assessment with a Regulated Canadian Immigration Consultant. We'll tell you what's possible — honestly."
-        buttonText="Book a Free Assessment"
-        buttonHref="/contact"
-      />
     </>
   );
 }

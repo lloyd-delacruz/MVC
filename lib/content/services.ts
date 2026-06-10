@@ -7,7 +7,7 @@ const SERVICES: ServiceItem[] = [
   {
     id: "express-entry",
     title: "Express Entry",
-    description: "Immigration pathway for skilled workers located in and out of Canada.",
+    description: "Skilled worker pathways to permanent residence.",
     iconName: "Stamp",
     href: "/pathways/permanent-residence/express-entry",
     imageUrl: "/services/express-entry.jpg",
@@ -15,8 +15,8 @@ const SERVICES: ServiceItem[] = [
   },
   {
     id: "family-sponsorship",
-    title: "Family / Spouse Sponsorship",
-    description: "Guidance for spouses, partners, parents and family members to reunite in Canada.",
+    title: "Family & Spouse Sponsorship",
+    description: "Support for spouses, partners, children, parents, and other eligible family members.",
     iconName: "Heart",
     href: "/pathways/family/family-sponsorship",
     imageUrl: "/services/family-sponsorship.jpg",
@@ -25,7 +25,7 @@ const SERVICES: ServiceItem[] = [
   {
     id: "work-permits",
     title: "LMIA / Work Permits",
-    description: "Help with employers needing to hire foreign nationals and vice versa.",
+    description: "Guidance for employers and workers navigating Canadian work authorization.",
     iconName: "Briefcase",
     href: "/pathways/work/work-permits",
     imageUrl: "/services/work-permits.jpg",
