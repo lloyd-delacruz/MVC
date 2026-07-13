@@ -54,9 +54,15 @@ export default function PathwayPage({ params }: { params: Params }) {
 
       {(data.overview || data.keyFacts) && (
         <section className="bg-white py-16 lg:py-20">
-          <div className="container-x grid grid-cols-[minmax(0,1fr)] gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
+          <div
+            className={
+              data.keyFacts
+                ? "container-x grid grid-cols-[minmax(0,1fr)] gap-10 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]"
+                : "container-x"
+            }
+          >
             {data.overview && (
-              <div>
+              <div className={data.keyFacts ? undefined : "mx-auto max-w-3xl"}>
                 {data.overview.heading && (
                   <h2 className="headline-serif text-[28px] font-medium leading-tight text-navy-800 sm:text-[34px]">
                     {data.overview.heading}

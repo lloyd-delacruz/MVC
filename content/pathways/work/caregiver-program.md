@@ -1,71 +1,55 @@
 ---
-title: "Canada Caregiver Program"
+title: "Caregiver Pathways to Canada"
 slug: caregiver-program
-description: "The Home Child Care Provider Pilot and Home Support Worker Pilot — work permits for caregivers in Canada with a clear path to permanent residence."
+description: "Caregiver immigration to Canada — with the federal PR pilots in transition, RCIC guidance on the work-permit, PNP, and Express Entry routes open to caregivers today."
 ---
 
 # Hero
-eyebrow: "RCIC · Care for a Family · Build a Life"
-title: "Canada Caregiver Program"
-lede: "Care for Canadian children or seniors — and earn permanent residence after two years of qualifying work. Two pilots, one clear path home."
+title: "Caregiver Pathways to Canada"
+lede: "Care for Canadian children, seniors, or people with disabilities — and build a long-term path to staying in Canada."
 
 # Overview
-heading: "Two pilots, one shared promise"
+heading: "Where things stand right now"
 content: |
-  The Home Child Care Provider Pilot and the Home Support Worker Pilot are two work-permit streams that recognise something simple — that the people who care for Canada's children, seniors, and people with disabilities deserve a real path to stay.
+  Canada's dedicated federal caregiver pilots have historically offered caregivers a route to permanent residence. As of now, the federal caregiver PR pilots are closed to new applications, and IRCC has signalled that a redesigned caregiver pathway is under development. That means the specific program, eligibility rules, and timing are in flux — and anyone planning a caregiver move to Canada should plan around what's actually available today, while positioning for the next pathway when it opens.
 
-  Both pilots issue occupation-restricted open work permits. That means you can work for any qualifying employer in Canada in your occupation, change households if a placement isn't right, and bring your spouse and children with you on accompanying open work and study permits.
-
-  After 24 months of qualifying full-time Canadian work experience, you become eligible to apply for permanent residence — for yourself and the family who came with you.
-
-# Key Facts
-items:
-  - "Permit Type: Occupation-restricted open work permit"
-  - "Work Required for PR: 24 months of full-time qualifying experience"
-  - "Family: Spouse work permit + children study permits included"
-  - "Education: One year of post-secondary or equivalent"
-  - "Language: CLB 5 minimum (English or French)"
+  This is exactly where good advice matters. We track the caregiver landscape closely, so you don't build a plan around a program that isn't accepting applications.
 
 # Do You Qualify
-heading: "Do you qualify?"
-eyebrow: "Eligibility"
-lede: "The pilots share a foundation, then diverge by occupation. Most refusals come down to the wrong NOC code or thin proof of experience — both fixable."
+eyebrow: "Your Options"
+heading: "What caregivers can do right now"
+content: |
+  Even with the federal caregiver PR pilots paused, there are real, active routes for caregivers and their families:
+items:
+  - "**Employer-supported work permits.** A genuine, full-time job offer from a Canadian family or agency, supported by a Labour Market Impact Assessment (LMIA), remains one of the strongest ways to come and work in Canada as a caregiver."
+  - "**Provincial Nominee Programs (PNPs).** Several provinces run streams that target caregiving and home-support occupations, some of which can lead to permanent residence. Which province fits depends on your occupation, experience, and ties."
+  - "**Express Entry, where eligible.** Some caregivers qualify through the broader economic streams, especially after gaining Canadian work experience."
+  - "**Maintaining status and building experience.** If you're already in Canada, keeping valid status and accumulating documented caregiving experience keeps your options open for whatever pathway opens next."
 groups:
-  - title: "Shared requirements (both pilots)"
+  - title: "Who these pathways suit"
     items:
-      - "A genuine, full-time job offer from a Canadian employer in the right NOC code"
-      - "Language test results — CLB 5 or higher (English) / NCLC 5 (French)"
-      - "An educational credential equal to one year of Canadian post-secondary, with an ECA if obtained outside Canada"
-      - "Proof you can perform the duties of the job — relevant work experience or training"
-      - "Admissibility — medical exam, police certificates, biometrics"
-  - title: "Home Child Care Provider Pilot"
-    items:
-      - "Job duties: caring for children under 18 in their home — meals, routine, supervision, schoolwork support"
-      - "NOC 44100 — Home child care provider"
-  - title: "Home Support Worker Pilot"
-    items:
-      - "Job duties: personal care for seniors, the chronically ill, or people with disabilities in their home — hygiene, meals, light housework, companionship"
-      - "NOC 44101 — Home support worker"
-note: "The right pilot depends on your training and the family or agency that wants to hire you. Send us your CV and the job offer — we'll confirm the cleanest fit before you spend a dollar on language tests."
+      - "Experienced caregivers, nannies, and home-support workers with, or able to obtain, a genuine Canadian job offer"
+      - "People already working in caregiving roles in Canada who want to move toward permanent residence"
+      - "Families in Canada who need to hire a caregiver and want to do it compliantly"
 
 # How It Works
-heading: "How it works"
-eyebrow: "The Process"
-lede: "From first job offer to permanent residence — and the family arriving with you."
+eyebrow: "How We Help"
+heading: "How we help"
 steps:
-  - title: "Find the right job offer"
-    description: "A genuine, full-time offer from a Canadian household or agency in the correct NOC. We review job offers for compliance before you accept — this alone prevents the most common refusals."
-  - title: "Build the application package"
-    description: "Educational Credential Assessment, language results, employment letters, ID, photos, and the family members you're bringing — all assembled into a single coherent file."
-  - title: "Submit work permit + PR together"
-    description: "The pilots are designed so your work permit and PR application travel in the same envelope. We file both, then track the file through to a decision and biometrics."
-  - title: "Arrive and start qualifying work"
-    description: "Your work permit and the family's accompanying permits are issued at the port of entry. Day one of qualifying work begins immediately — and the clock to PR begins ticking."
-  - title: "Document 24 months of experience"
-    description: "We help you keep the right paper trail — pay stubs, T4s, employer letters, hour logs — so the eventual PR confirmation is a formality, not a fight."
-  - title: "Confirm permanent residence"
-    description: "Once the experience requirement is met, we confirm and finalise PR for the whole family — and start mapping the next decade: schools, mortgages, citizenship."
+  - title: "Assess your situation"
+    description: "We assess your situation — your experience, credentials, language, and any existing job offer — and map it against the pathways that are genuinely open today."
+  - title: "Vet the job offer"
+    description: "We vet the job offer for compliance before you rely on it, which is where many caregiver files go wrong."
+  - title: "Build a positioning plan"
+    description: "We build a positioning plan so that when IRCC opens the redesigned caregiver pathway, you're ready to move quickly rather than starting from scratch."
+  - title: "Handle the paperwork"
+    description: "We handle the paperwork — work permits, PNP applications, PR applications, and the family members coming with you — as a single coherent file."
 
 # Bottom CTA
-heading: "Ready to build a life caring for a Canadian family?"
-content: "Start with a free 30-minute consultation. We'll review your job offer, confirm the right pilot, and map the path from work permit to PR."
+heading: "Thinking about a caregiver move to Canada?"
+content: "Start with a free 15-minute consultation. We'll tell you honestly what's open right now, what to expect from the redesigned caregiver pathway, and the smartest next step for your situation."
+
+# Disclaimer
+heading: "Disclaimer"
+content: |
+  The information on this page is general in nature and is not legal or immigration advice. Canada's caregiver immigration programs are currently in transition: the federal caregiver pilots are closed to new applications, eligibility rules and program design are subject to change, and processing times and government fees change frequently and without notice. Details described here may be out of date by the time you read them. Always confirm the current status of caregiver programs on the official Government of Canada website (canada.ca), and book a consultation for advice specific to your situation. Nothing here guarantees eligibility, approval, or any particular outcome.

@@ -74,7 +74,7 @@ content/                  # source-of-truth content; pages read from here
   pages/                  # one .md per top-level page (custom YAML-ish format)
   pathways/               # nested by category — one .md per pathway
     permanent-residence/  # express-entry, canadian-experience-class, federal-skilled-{worker,trades}, provincial-nominee
-    work/                 # work-permits, post-graduation-work-permit, iec, caregiver-program, spousal-open-work-permit
+    work/                 # work-permits, iec, caregiver-program
     study/                # study-permits, partner-schools
     visit/                # visitor-visas
     family/               # family-sponsorship

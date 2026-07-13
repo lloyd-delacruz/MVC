@@ -95,6 +95,20 @@ const TESTIMONIALS: TestimonialItem[] = [
     imagePosition: "object-top",
   },
   {
+    id: "joao",
+    author: "João",
+    location: "Brazil → Vancouver, BC",
+    year: "2024",
+    pathway: "Study Permit → PR",
+    outcome: "Permanent Residence — Approved",
+    quote:
+      "I came to Canada from Brazil as a student, and once I found my footing I knew I wanted to stay for good. MVC mapped out exactly how to turn my studies and work experience into permanent residence, and stayed on top of every deadline. Getting that approval felt like the whole plan finally clicked into place.",
+    imageUrl: "/testimonials/joao.jpg",
+    imageAlt:
+      "João standing in his Vancouver workplace after his permanent residence approval",
+    imagePosition: "object-top",
+  },
+  {
     id: "lloyd",
     author: "Lloyd",
     location: "Philippines → Vancouver, BC",
@@ -107,6 +121,20 @@ const TESTIMONIALS: TestimonialItem[] = [
     imageAlt:
       "Lloyd sitting outside Canada Place in Vancouver, holding his Canadian passport",
     imagePosition: "object-[70%_center]",
+  },
+  {
+    id: "gayle",
+    author: "Gayle",
+    location: "Philippines → Canada",
+    year: "2025",
+    pathway: "Study → Sponsorship → Citizenship",
+    outcome: "Now a Canadian Citizen",
+    quote:
+      "I first came to Canada from the Philippines as a student, never imagining how far the journey would take me. My common-law partner sponsored me for permanent residence, and MVC guided us through every stage — right up to the day I took my citizenship oath. Standing there with my certificate, it finally hit me: Canada is home for good.",
+    imageUrl: "/testimonials/gayle.jpg",
+    imageAlt:
+      "Gayle holding her Certificate of Canadian Citizenship beside the citizenship judge and her partner, with a Canadian flag behind them",
+    imagePosition: "object-top",
   },
 ];
 
