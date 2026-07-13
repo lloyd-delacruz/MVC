@@ -106,6 +106,11 @@ export interface BottomCtaSection {
   content?: string;
 }
 
+export interface DisclaimerSection {
+  heading?: string;
+  content?: string;
+}
+
 export interface PathwayData {
   slug: string;
   title: string;
@@ -122,6 +127,7 @@ export interface PathwayData {
   pathwaysAfterGrad?: SimpleListSection;
   inDemandIndustries?: SimpleListSection;
   bottomCta?: BottomCtaSection;
+  disclaimer?: DisclaimerSection;
 }
 
 // ---------- Parser ----------
@@ -690,6 +696,14 @@ function buildPathway(slug: string, raw: string): PathwayData {
       }
     : undefined;
 
+  const disclaimerRaw = get("Disclaimer");
+  const disclaimer: DisclaimerSection | undefined = disclaimerRaw
+    ? {
+        heading: asString(disclaimerRaw.heading),
+        content: asString(disclaimerRaw.content),
+      }
+    : undefined;
+
   return {
     slug: data.slug ?? slug,
     title: data.title,
@@ -706,6 +720,7 @@ function buildPathway(slug: string, raw: string): PathwayData {
     pathwaysAfterGrad,
     inDemandIndustries,
     bottomCta,
+    disclaimer,
   };
 }
 

@@ -15,6 +15,11 @@ import { renderBlock, renderInline } from "@/lib/markdown";
 
 type Params = { category: string; slug: string };
 
+// Site-wide default disclaimer shown on every pathway page. Individual
+// pathways can override it with their own `# Disclaimer` section.
+const DEFAULT_PATHWAY_DISCLAIMER =
+  "The information on this page is general in nature and is not legal or immigration advice. Immigration programs and their requirements, eligible occupations and NOC codes, language levels, points and scoring, draw cut-offs, processing times, deadlines, settlement-fund amounts, and government fees change frequently and without notice. Details described here may be out of date by the time you read them. Always confirm current requirements on the official Government of Canada website (canada.ca) and book a consultation for advice specific to your situation. Nothing here guarantees an invitation, approval, or any particular outcome.";
+
 export function generateStaticParams() {
   return getAllCategorySlugPairs();
 }
@@ -122,6 +127,11 @@ export default function PathwayPage({ params }: { params: Params }) {
         }
         buttonText="Book a Free Consultation"
         buttonHref="/contact"
+      />
+
+      <DisclaimerBlock
+        heading={data.disclaimer?.heading ?? "Disclaimer"}
+        content={data.disclaimer?.content ?? DEFAULT_PATHWAY_DISCLAIMER}
       />
     </>
   );
@@ -421,6 +431,29 @@ function SchoolsGridBlock({
             {renderInline(data.note)}
           </p>
         )}
+      </div>
+    </section>
+  );
+}
+
+function DisclaimerBlock({
+  heading,
+  content,
+}: {
+  heading: string;
+  content: string;
+}) {
+  return (
+    <section className="border-t border-slate-100 bg-white py-10 lg:py-12">
+      <div className="container-x">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-400">
+            {heading}
+          </h2>
+          <div className="mt-3 text-[12px] leading-relaxed text-slate-400">
+            {renderBlock(content)}
+          </div>
+        </div>
       </div>
     </section>
   );

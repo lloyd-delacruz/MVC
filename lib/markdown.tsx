@@ -83,11 +83,26 @@ export function renderBlock(content: string): React.ReactNode {
     .filter(Boolean);
   return (
     <>
-      {paragraphs.map((p, idx) => (
-        <p key={idx} className={idx === 0 ? "" : "mt-4"}>
-          {renderInline(p.replace(/\n/g, " "))}
-        </p>
-      ))}
+      {paragraphs.map((p, idx) => {
+        // A paragraph that begins with "## " is a subheading within the block.
+        if (p.startsWith("## ")) {
+          return (
+            <h3
+              key={idx}
+              className={`headline-serif text-[22px] font-medium leading-tight text-navy-800 sm:text-[26px] ${
+                idx === 0 ? "" : "mt-8"
+              }`}
+            >
+              {renderInline(p.slice(3).replace(/\n/g, " "))}
+            </h3>
+          );
+        }
+        return (
+          <p key={idx} className={idx === 0 ? "" : "mt-4"}>
+            {renderInline(p.replace(/\n/g, " "))}
+          </p>
+        );
+      })}
     </>
   );
 }

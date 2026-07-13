@@ -42,10 +42,8 @@ export const PATHWAY_CATEGORIES: PathwayCategoryGroup[] = [
     description: "Work permits, youth mobility, and caregiver pathways.",
     pathways: [
       { slug: "work-permits", title: "Work Permits" },
-      { slug: "post-graduation-work-permit", title: "Post-Graduation Work Permit" },
       { slug: "iec", title: "International Experience Canada" },
       { slug: "caregiver-program", title: "Caregiver Program" },
-      { slug: "spousal-open-work-permit", title: "Spousal Open Work Permit" },
     ],
   },
   {

@@ -46,11 +46,7 @@ export function Team({ members }: { members: TeamMemberItem[] }) {
             const isYaniv = m.id === "yaniv";
             const inner = (
               <>
-                <div
-                  className={`relative h-14 w-14 shrink-0 overflow-hidden rounded-full ring-2 ring-white shadow-card transition-transform group-hover:-translate-y-0.5 ${
-                    isYaniv ? "bg-[#8a6f5d]" : ""
-                  }`}
-                >
+                <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full ring-2 ring-white shadow-card transition-transform group-hover:-translate-y-0.5">
                   <Image
                     src={m.imageUrl}
                     alt={m.imageAlt || m.name}
@@ -58,7 +54,7 @@ export function Team({ members }: { members: TeamMemberItem[] }) {
                     height={140}
                     className={
                       isYaniv
-                        ? "h-full w-full object-contain"
+                        ? "h-full w-full origin-top scale-[1.8] object-cover object-[50%_40%]"
                         : `h-full w-full object-cover ${m.imagePosition ?? ""}`
                     }
                   />
