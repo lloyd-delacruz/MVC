@@ -118,11 +118,11 @@ export const PAGE_IMAGES: Record<string, PageImage> = {
     license: "unsplash",
   },
   // 14) Citizenship — client-supplied photo (Google Drive: shutterstock_1525344614).
-  // Drop the file at public/pathways/citizenship.jpg; it's hidden until it exists.
   "/pathways/citizenship": {
     src: "/pathways/citizenship.jpg",
-    alt: "New Canadian citizens celebrating with Canadian flags",
+    alt: "Two Canadian passports resting on a Canadian flag",
     license: "client",
+    position: "center 62%",
   },
 };
 
