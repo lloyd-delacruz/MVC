@@ -37,8 +37,8 @@ export default async function ContactPage() {
     <>
       <PageHero
         eyebrow="Get in Touch"
-        title="Let's talk about your situation"
-        lede="The first step is a conversation — no paperwork, no commitment, no sales pitch."
+        title="We'd love to hear from you"
+        lede="Fill out our assessment form or book a free 15-minute consultation."
       />
 
       <section id="main" className="bg-white py-16 lg:py-20">
@@ -165,14 +165,8 @@ export default async function ContactPage() {
 
           {/* DETAILS */}
           <aside>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-red">
-              Reach us directly
-            </p>
-            <h2 className="headline-serif mt-2 text-[30px] font-medium leading-tight text-navy-800 sm:text-[34px]">
-              Visit, call, or write
-            </h2>
-
-            <div className="mt-8 divide-y divide-slate-100 rounded-2xl border border-brand-blue/20 bg-white shadow-card">
+            <h2 className="sr-only">Contact details</h2>
+            <div className="divide-y divide-slate-100 rounded-2xl border border-brand-blue/20 bg-white shadow-card">
               {contact.offices.map((office) => {
                 const Icon = resolveIcon(office.iconName);
                 return (

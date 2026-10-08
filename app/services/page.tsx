@@ -62,8 +62,8 @@ export default async function ServicesPage() {
     <>
       <PageHero
         eyebrow="Our Services"
-        title="Find the right Canadian immigration pathway for your situation."
-        lede="Whether you want to work, study, reunite with family, visit, or settle permanently in Canada, MVC helps you understand your options and choose the next step with confidence."
+        title="Find the right Canadian immigration pathway for you"
+        lede="Whether you want to work, study, reunite with family, visit or settle permanently in Canada, MVC Immigration helps you understand your options and choose the next step with confidence."
       />
 
       {/* Most requested */}
@@ -77,10 +77,6 @@ export default async function ServicesPage() {
             <h2 className="headline-serif mt-2 text-balance text-[28px] font-medium leading-tight text-navy-800 sm:text-[38px]">
               Most Requested Services
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-relaxed text-slate-600">
-              Each service page includes key details, eligibility considerations,
-              timelines, and how MVC can help.
-            </p>
           </div>
 
           <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">

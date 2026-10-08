@@ -24,8 +24,7 @@ export default async function BlogPage() {
     <>
       <PageHero
         eyebrow="Insights"
-        title="Immigration insights"
-        lede="Plain-English guides, honest answers, and timely commentary on Canadian immigration — written by regulated consultants who actually work the files."
+        title="Practical advice and immigration updates that could guide you on your immigration journey"
       />
 
       <section className="bg-white py-16 lg:py-20">
