@@ -1,3 +1,4 @@
+import { FREE_ASSESSMENT_URL } from "@/lib/links";
 import {
   CheckCircle2,
   FileText,
@@ -170,7 +171,7 @@ export default function GetStartedPage() {
             </ul>
 
             <div className="mt-6 flex flex-wrap gap-3">
-              <Button href="#consultation" variant="primary" trail="calendar">
+              <Button href={FREE_ASSESSMENT_URL} variant="primary" trail="calendar">
                 Book a Free Consultation
               </Button>
               <Button href="#" variant="outline" trail="arrow">
@@ -287,7 +288,7 @@ export default function GetStartedPage() {
         title="Ready to start your journey?"
         body="Book a free 15-minute consultation — no obligation."
         buttonText="Book a Free Consultation"
-        buttonHref="/contact"
+        buttonHref={FREE_ASSESSMENT_URL}
       />
     </>
   );

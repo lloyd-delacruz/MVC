@@ -1,3 +1,4 @@
+import { FREE_ASSESSMENT_URL } from "@/lib/links";
 import Link from "next/link";
 import { ArrowRight, Calendar } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
@@ -72,7 +73,7 @@ export default async function BlogPage() {
         title="Got a specific question?"
         body="Book a free 15-minute consultation. We'll give you an honest read on your situation — no obligation."
         buttonText="Book a Free Consultation"
-        buttonHref="/contact"
+        buttonHref={FREE_ASSESSMENT_URL}
       />
     </>
   );

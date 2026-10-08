@@ -1,3 +1,4 @@
+import { FREE_ASSESSMENT_URL } from "@/lib/links";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -236,7 +237,7 @@ export default async function SuccessStoriesPage() {
         title="Your success story starts with a conversation."
         body="Book a free, no-obligation consultation with a licensed RCIC and find out exactly what your pathway to Canada looks like."
         buttonText="Book a Free Consultation"
-        buttonHref="/contact"
+        buttonHref={FREE_ASSESSMENT_URL}
       />
     </>
   );

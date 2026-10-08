@@ -54,4 +54,4 @@ Not every program at every DLI leads to PGWP eligibility. Choose your school and
 
 If you need help picking a reputable educational institution, we can provide you with a list of accredited colleges and universities that fit your budget and goals. We'll also walk you through the immigration steps that follow your studies, so the path from your acceptance letter through to your PR application is mapped out in advance.
 
-For more information about study permits and Canadian immigration programs, [book a free consultation](/pages/contact.html). We're an immigration consulting firm based in Vancouver, BC — we deliver professionalism, transparency, exceptional customer service, and competitive pricing, with up-to-date knowledge of Canadian immigration laws, regulations, and policies.
+For more information about study permits and Canadian immigration programs, [book a free consultation](https://zcform.com/s4t1S). We're an immigration consulting firm based in Vancouver, BC — we deliver professionalism, transparency, exceptional customer service, and competitive pricing, with up-to-date knowledge of Canadian immigration laws, regulations, and policies.

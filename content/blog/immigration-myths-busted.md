@@ -47,4 +47,4 @@ If you've encountered these myths from family, friends, or social media, get a r
 
 If you're navigating myths and conflicting advice, that's exactly when a regulated consultant is most useful. As an RCIC firm in good standing with the College of Immigration and Citizenship Consultants (CICC), our team helps clients present themselves accurately on their applications and prove to the Canadian government that they'll be assets to the country.
 
-Our team is fluent in English, Spanish, Filipino, and Hebrew, and we have offices in Vancouver, British Columbia, and Cebu City, Philippines. [Book a free consultation](/pages/contact.html) to get the truth about your specific situation.
+Our team is fluent in English, Spanish, Filipino, and Hebrew, and we have offices in Vancouver, British Columbia, and Cebu City, Philippines. [Book a free consultation](https://zcform.com/s4t1S) to get the truth about your specific situation.

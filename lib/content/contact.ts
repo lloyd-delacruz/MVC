@@ -1,3 +1,4 @@
+import { FREE_ASSESSMENT_URL } from "@/lib/links";
 import type { ContactContent } from "@/lib/content/types";
 
 const CONTACT: ContactContent = {
@@ -49,7 +50,8 @@ const CONTACT: ContactContent = {
     },
   ],
   bookingAllUrl: "https://calendly.com/yaniv-20",
-  freeConsultationUrl: "https://calendly.com/yaniv-20/mvc-15-minute-free-consultation",
+  // Free 15-minute consultation now goes through the Zoho assessment form (client request 2026-10-08).
+  freeConsultationUrl: FREE_ASSESSMENT_URL,
   socialLinks: [
     { id: "facebook", platform: "Facebook", url: "https://www.facebook.com/MVCImmigrationCanada" },
     { id: "instagram", platform: "Instagram", url: "https://www.instagram.com/mvc_immigration" },

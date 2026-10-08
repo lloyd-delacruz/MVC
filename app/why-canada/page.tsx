@@ -1,3 +1,4 @@
+import { FREE_ASSESSMENT_URL } from "@/lib/links";
 import Image from "next/image";
 import {
   Heart,
@@ -579,7 +580,7 @@ export default function WhyCanadaPage() {
         title="Your story belongs in Canada."
         body="We've helped families from over forty countries plant new roots here. Book a free consultation and we'll help you map yours, step by step."
         buttonText="Book a Free Consultation"
-        buttonHref="/contact"
+        buttonHref={FREE_ASSESSMENT_URL}
       />
     </>
   );

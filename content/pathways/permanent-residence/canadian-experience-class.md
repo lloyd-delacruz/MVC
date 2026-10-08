@@ -56,7 +56,7 @@ items:
   - "An approved language test result of **CLB 7** (TEER 0 or 1) or **CLB 5** (TEER 2 or 3) in English or French — speaking, listening, reading, writing"
   - "You plan to live **outside Quebec** (Quebec selects skilled workers under its own programs)"
   - "You are **not inadmissible** on criminal, medical, or security grounds"
-note: "What does *not* count: self-employment, work performed while you were a full-time student (including co-op terms), and any work done without authorization. [Book a free CEC eligibility check](/pages/contact.html) — we'll confirm your hours and TEER classification before you spend a dollar on a language test."
+note: "What does *not* count: self-employment, work performed while you were a full-time student (including co-op terms), and any work done without authorization. [Book a free CEC eligibility check](https://zcform.com/s4t1S) — we'll confirm your hours and TEER classification before you spend a dollar on a language test."
 
 # How It Works
 heading: "How it works"

@@ -35,7 +35,7 @@ items:
   - "Have filed your taxes for the relevant years, if you were required to"
   - "Pass the citizenship test on Canada's rights, responsibilities, history, geography, and government (within the age range that requires it)"
   - "Demonstrate language ability in English or French (within the age range that requires it)"
-note: "We understand that applying for citizenship is an emotional milestone. We prepare your application — and your family's — so you can focus on the test and the day you take the oath. [Book a free eligibility check](/contact) — no obligation."
+note: "We understand that applying for citizenship is an emotional milestone. We prepare your application — and your family's — so you can focus on the test and the day you take the oath. [Book a free eligibility check](https://zcform.com/s4t1S) — no obligation."
 
 # How It Works
 heading: "How it works"

@@ -1,3 +1,4 @@
+import { FREE_ASSESSMENT_URL } from "@/lib/links";
 import Link from "next/link";
 import { CalendarDays, CreditCard, ArrowUpRight, MapPin } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
@@ -373,7 +374,7 @@ export default async function ContactPage() {
         title="Ready to start your journey?"
         body="Book a free 15-minute consultation — no obligation."
         buttonText="Book a Free Consultation"
-        buttonHref={contact.freeConsultationUrl ?? "#consultation"}
+        buttonHref={FREE_ASSESSMENT_URL}
       />
     </>
   );

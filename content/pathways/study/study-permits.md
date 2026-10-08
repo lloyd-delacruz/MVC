@@ -37,7 +37,7 @@ items:
   - "No criminal inadmissibility, and a medical exam if required"
   - "Demonstrated strong ties to your home country, or a clear and credible study-to-PR plan"
   - "A genuine, well-articulated study plan showing how the program fits your career goals"
-note: "Worried about a refusal or a gap in your study history? [Book a free eligibility check](/contact) — no obligation."
+note: "Worried about a refusal or a gap in your study history? [Book a free eligibility check](https://zcform.com/s4t1S) — no obligation."
 
 # How It Works
 heading: "How it works"

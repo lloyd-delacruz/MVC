@@ -1,3 +1,4 @@
+import { FREE_ASSESSMENT_URL } from "@/lib/links";
 import { notFound } from "next/navigation";
 import { Check, MapPin, Sparkles } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
@@ -138,7 +139,7 @@ export default function PathwayPage({ params }: { params: Params }) {
           "Book a free 15-minute consultation and let’s explore your best pathway together."
         }
         buttonText="Book a Free Consultation"
-        buttonHref="/contact"
+        buttonHref={FREE_ASSESSMENT_URL}
       />
 
       <DisclaimerBlock

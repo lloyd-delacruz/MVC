@@ -1,3 +1,4 @@
+import { FREE_ASSESSMENT_URL } from "@/lib/links";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -280,7 +281,7 @@ export default async function ServicesPage() {
               <Button href="/get-started" variant="primary" trail="arrow">
                 Find my pathway
               </Button>
-              <Button href="/contact" variant="outlineLight" trail="calendar">
+              <Button href={FREE_ASSESSMENT_URL} variant="outlineLight" trail="calendar">
                 Book a free assessment
               </Button>
             </div>

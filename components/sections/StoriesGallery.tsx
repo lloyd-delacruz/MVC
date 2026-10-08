@@ -1,5 +1,6 @@
 "use client";
 
+import { FREE_ASSESSMENT_URL } from "@/lib/links";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -196,7 +197,9 @@ export function StoriesGallery({ stories }: { stories: TestimonialItem[] }) {
                 {active.quote}
               </blockquote>
               <Link
-                href="/contact"
+                href={FREE_ASSESSMENT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-7 inline-flex items-center justify-center gap-2 rounded-md bg-brand-red px-5 py-3 text-[13.5px] font-semibold text-white shadow-[0_8px_18px_-8px_rgba(201,31,26,0.55)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-redDark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2"
               >
                 Start your story
