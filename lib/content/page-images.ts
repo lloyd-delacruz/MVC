@@ -19,7 +19,7 @@ export interface PageImage {
 }
 
 const u = (id: string) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=2400&q=80`;
+  `https://images.unsplash.com/${id}`;
 
 export const PAGE_IMAGES: Record<string, PageImage> = {
   // 4) Services (all pathways)
@@ -75,11 +75,11 @@ export const PAGE_IMAGES: Record<string, PageImage> = {
     position: "center 60%",
   },
   "/pathways/study/study-permits": {
-    src: u("photo-1541339907198-e08756dedf3f"),
-    alt: "University graduates throwing their caps in the air outdoors",
-    credit: "Pang Yuhao / Unsplash",
+    src: u("photo-1592021482992-f83e6ef66dcb"),
+    alt: "Students walking along the tree-lined Main Mall at the University of British Columbia in Vancouver",
+    credit: "Amy Tran / Unsplash (UBC, Vancouver)",
     license: "unsplash",
-    position: "center 55%",
+    position: "center 60%",
   },
   // 10) Family
   "/pathways/family": {
