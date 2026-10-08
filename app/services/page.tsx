@@ -1,6 +1,6 @@
 import { FREE_ASSESSMENT_URL } from "@/lib/links";
 import Link from "next/link";
-import Image from "next/image";
+import { SmartImage } from "@/components/ui/SmartImage";
 import {
   ArrowRight,
   Briefcase,
@@ -89,7 +89,7 @@ export default async function ServicesPage() {
                 >
                   <div className="relative aspect-[4/3] w-full overflow-hidden bg-cream-100">
                     {s.imageUrl && (
-                      <Image
+                      <SmartImage
                         src={s.imageUrl}
                         alt={s.imageAlt || s.title}
                         fill

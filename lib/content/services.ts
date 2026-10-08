@@ -37,8 +37,9 @@ const SERVICES: ServiceItem[] = [
     description: "Support for students planning to study in Canada.",
     iconName: "GraduationCap",
     href: "/pathways/study/study-permits",
-    imageUrl: "/services/study-permits.jpg",
-    imageAlt: "International graduates throwing their caps in the air to celebrate",
+    // University of Toronto — Jason Ng / Unsplash (free Unsplash License)
+    imageUrl: "https://images.unsplash.com/photo-1631667547665-70f1a12b64ae",
+    imageAlt: "Students on the steps of a historic University of Toronto building",
   },
 ];
 

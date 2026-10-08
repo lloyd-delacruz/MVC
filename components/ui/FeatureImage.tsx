@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import Image from "next/image";
+import { SmartImage } from "@/components/ui/SmartImage";
 import { getPageImage } from "@/lib/content/page-images";
 
 interface FeatureImageProps {
@@ -30,7 +30,8 @@ export function FeatureImage({ route, variant = "wide", className = "" }: Featur
   return (
     <div className={`container-x ${className}`}>
       <figure className={`relative overflow-hidden rounded-2xl border border-brand-blue/20 bg-slate-100 shadow-card ${frame}`}>
-        <Image
+        <SmartImage
+          priority
           src={img.src}
           alt={img.alt}
           fill
