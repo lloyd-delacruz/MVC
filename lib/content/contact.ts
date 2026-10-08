@@ -51,10 +51,11 @@ const CONTACT: ContactContent = {
   bookingAllUrl: "https://calendly.com/yaniv-20",
   freeConsultationUrl: "https://calendly.com/yaniv-20/mvc-15-minute-free-consultation",
   socialLinks: [
-    { id: "facebook", platform: "Facebook", url: "#" },
-    { id: "instagram", platform: "Instagram", url: "#" },
-    { id: "linkedin", platform: "LinkedIn", url: "#" },
-    { id: "youtube", platform: "YouTube", url: "#" },
+    { id: "facebook", platform: "Facebook", url: "https://www.facebook.com/MVCImmigrationCanada" },
+    { id: "instagram", platform: "Instagram", url: "https://www.instagram.com/mvc_immigration" },
+    // TODO: share.google short link from client — swap for the direct LinkedIn company URL when available.
+    { id: "linkedin", platform: "LinkedIn", url: "https://share.google/ZAdBgSdLCY1W3ZP5d" },
+    { id: "youtube", platform: "YouTube", url: "https://www.youtube.com/channel/UChG3MXi0XBvJCXb1rPBZYmA" },
   ],
 };
 

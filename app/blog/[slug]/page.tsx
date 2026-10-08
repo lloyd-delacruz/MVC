@@ -5,6 +5,7 @@ import remarkGfm from "remark-gfm";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { getAllPosts, getPost } from "@/lib/content/blog";
 import { BottomCta } from "@/components/ui/BottomCta";
+import { FeatureImage } from "@/components/ui/FeatureImage";
 import type { Metadata } from "next";
 
 interface PageProps {
@@ -107,6 +108,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
       {/* Article body */}
       <section className="bg-white pb-16 lg:pb-24">
+        <FeatureImage route={`/blog/${post.slug}`} variant="article" className="mb-10 lg:mb-12" />
         <div className="container-x">
           <article className="prose-mvc mx-auto max-w-2xl text-[16px] leading-[1.78] text-slate-600">
             <ReactMarkdown remarkPlugins={[remarkGfm]}>{body}</ReactMarkdown>

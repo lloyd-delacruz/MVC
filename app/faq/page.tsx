@@ -37,7 +37,7 @@ export default async function FaqPage() {
                     </span>
                   </div>
 
-                  <div className="mt-4 divide-y divide-slate-100 rounded-2xl border border-slate-100 bg-white shadow-card">
+                  <div className="mt-4 divide-y divide-slate-100 rounded-2xl border border-brand-blue/20 bg-white shadow-card">
                     {catItems.map((item) => (
                       <details
                         key={item.id}

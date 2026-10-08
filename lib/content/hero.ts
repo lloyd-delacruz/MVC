@@ -11,7 +11,7 @@ const HERO: HeroContent = {
     "Practical, Honest Guidance",
   ],
   primaryCtaLabel: "Book a Free Assessment",
-  primaryCtaHref: "/contact",
+  primaryCtaHref: "/free-assessment",
   secondaryCtaLabel: "Explore Immigration Pathways",
   secondaryCtaHref: "/pathways",
   imageUrl: "/team/yaniv.jpg",
@@ -19,6 +19,9 @@ const HERO: HeroContent = {
   founderName: "Yaniv Babani",
   founderTitle: "Founder & RCIC (RCIC: #R519412)",
   founderQuote: "Your immigration goals, our priority.",
+  reviewsCtaLabel: "See our Google Reviews",
+  // Client-supplied share.google short link (Comments 2026-10-07, item 16).
+  reviewsCtaHref: "https://share.google/wQnL1oCuOCvkR7jwu",
 };
 
 export async function getHero(): Promise<HeroContent> {

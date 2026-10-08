@@ -17,7 +17,7 @@ const CTA_BANNER: CtaBannerContent = {
   headline: "Your Canadian immigration journey starts with a conversation.",
   body: "Book your free 15-minute assessment and let's review your best next step.",
   buttonLabel: "Book Your Free Assessment",
-  buttonHref: "#book",
+  buttonHref: "/free-assessment",
 };
 
 export async function getTrustBadges(): Promise<TrustBadgeItem[]> {

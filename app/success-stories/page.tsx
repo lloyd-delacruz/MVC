@@ -146,7 +146,7 @@ export default async function SuccessStoriesPage() {
             {reviews.map((r) => (
               <figure
                 key={r.id}
-                className="flex flex-col rounded-2xl border border-slate-100 bg-white p-6 shadow-card"
+                className="flex flex-col rounded-2xl border border-brand-blue/20 bg-white p-6 shadow-card"
               >
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy-800 text-[15px] font-semibold text-white">
@@ -209,7 +209,7 @@ export default async function SuccessStoriesPage() {
             {REASSURANCE.map((r) => (
               <div
                 key={r.title}
-                className="flex flex-col items-start gap-3 rounded-2xl border border-slate-100 bg-cream-50 p-6"
+                className="flex flex-col items-start gap-3 rounded-2xl border border-brand-blue/20 bg-cream-50 p-6 shadow-card"
               >
                 <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-redSoft text-brand-red">
                   <r.icon className="h-5 w-5" strokeWidth={1.7} />

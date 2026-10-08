@@ -4,6 +4,7 @@ import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { BottomCta } from "@/components/ui/BottomCta";
 import { Prose } from "@/components/ui/Prose";
+import { FeatureImage } from "@/components/ui/FeatureImage";
 import {
   getAllCategorySlugPairs,
   getPathway,
@@ -46,6 +47,11 @@ export default function PathwayPage({ params }: { params: Params }) {
         lede={data.hero.lede}
       />
 
+      <FeatureImage
+        route={`/pathways/${params.category}/${params.slug}`}
+        className="bg-white pt-12 lg:pt-16"
+      />
+
       {data.latestUpdates && <LatestUpdatesBlock data={data} />}
 
       {data.pathwaysAfterGrad && (
@@ -76,7 +82,7 @@ export default function PathwayPage({ params }: { params: Params }) {
               </div>
             )}
             {data.keyFacts && data.keyFacts.items.length > 0 && (
-              <aside className="self-start rounded-xl border border-slate-100 bg-cream-50 p-6 shadow-card lg:sticky lg:top-28">
+              <aside className="self-start rounded-xl border border-brand-blue/20 bg-cream-50 p-6 shadow-card lg:sticky lg:top-28">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-red">
                   Key Facts
                 </p>
@@ -167,7 +173,7 @@ function LatestUpdatesBlock({ data }: { data: PathwayData }) {
           {u.items.map((item, i) => (
             <li
               key={i}
-              className="rounded-xl border border-slate-100 bg-white p-5 text-[13.5px] leading-relaxed text-slate-600 shadow-card"
+              className="rounded-xl border border-brand-blue/20 bg-white p-5 text-[13.5px] leading-relaxed text-slate-600 shadow-card"
             >
               {renderInline(item)}
             </li>
@@ -215,7 +221,7 @@ function InDemandIndustriesBlock({
           {data.items.map((it) => (
             <li
               key={it}
-              className="rounded-md border border-slate-100 bg-white px-4 py-2 text-[13px] font-medium text-navy-800 shadow-card"
+              className="rounded-md border border-brand-blue/20 bg-white px-4 py-2 text-[13px] font-medium text-navy-800 shadow-card"
             >
               {it}
             </li>
@@ -243,7 +249,7 @@ function ThreeStreamsBlock({
           {data.streams.map((s) => (
             <div
               key={s.title}
-              className="flex flex-col rounded-xl border border-slate-100 bg-white p-6 shadow-card"
+              className="flex flex-col rounded-xl border border-brand-blue/20 bg-white p-6 shadow-card"
             >
               {s.tag && (
                 <span className="inline-flex w-fit rounded-full border border-brand-redBorder bg-brand-redSoft px-2.5 py-0.5 text-[10.5px] font-semibold uppercase tracking-[0.12em] text-brand-red">
@@ -303,7 +309,7 @@ function QualifyBlock({
           )}
 
           {qualify.items && qualify.items.length > 0 && (
-            <ul className="mt-8 space-y-3 rounded-xl border border-slate-100 bg-white p-6 shadow-card">
+            <ul className="mt-8 space-y-3 rounded-xl border border-brand-blue/20 bg-white p-6 shadow-card">
               {qualify.items.map((it, i) => (
                 <QualifyItem key={i} text={it} />
               ))}
@@ -343,7 +349,7 @@ function QualifyItem({ text }: { text: string }) {
 function QualifyGroupCard({ group }: { group: QualifyGroup }) {
   const heading = group.title ?? group.heading;
   return (
-    <div className="rounded-xl border border-slate-100 bg-white p-6 shadow-card">
+    <div className="rounded-xl border border-brand-blue/20 bg-white p-6 shadow-card">
       {heading && (
         <h3 className="headline-serif text-[18px] font-semibold leading-tight text-navy-800">
           {heading}
@@ -375,7 +381,7 @@ function HowItWorksBlock({
           {how.steps.map((step, i) => (
             <li
               key={i}
-              className="relative flex gap-5 rounded-xl border border-slate-100 bg-white p-6 shadow-card transition-shadow hover:shadow-cardHover"
+              className="relative flex gap-5 rounded-xl border border-brand-blue/20 bg-white p-6 shadow-card transition-shadow hover:shadow-cardHover"
             >
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-red text-[15px] font-semibold text-white shadow-[0_8px_18px_-8px_rgba(201,31,26,0.55)]">
                 {i + 1}
@@ -413,7 +419,7 @@ function SchoolsGridBlock({
           {data.schools.map((s) => (
             <li
               key={s.name}
-              className="flex flex-col rounded-xl border border-slate-100 bg-white p-6 shadow-card"
+              className="flex flex-col rounded-xl border border-brand-blue/20 bg-white p-6 shadow-card"
             >
               <h3 className="headline-serif text-[18px] font-semibold leading-tight text-navy-800">
                 {s.name}
@@ -477,7 +483,7 @@ function FaqBlock({ faq }: { faq: NonNullable<PathwayData["faq"]> }) {
           {faq.items.map((q, i) => (
             <details
               key={i}
-              className="group rounded-xl border border-slate-100 bg-white p-5 shadow-card open:shadow-cardHover"
+              className="group rounded-xl border border-brand-blue/20 bg-white p-5 shadow-card open:shadow-cardHover"
             >
               <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-[15px] font-semibold text-navy-800">
                 <span>{q.question}</span>

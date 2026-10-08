@@ -12,6 +12,9 @@ export type HeroContent = {
   founderName: string;
   founderTitle: string;
   founderQuote: string;
+  /** Optional Google Reviews button shown under the hero photo. */
+  reviewsCtaLabel?: string;
+  reviewsCtaHref?: string;
 };
 
 export type ServiceItem = {

@@ -62,7 +62,7 @@ export function StoriesGallery({ stories }: { stories: TestimonialItem[] }) {
               type="button"
               onClick={() => setActive(s)}
               aria-label={`Read ${s.author}'s full story`}
-              className="group flex flex-col overflow-hidden rounded-3xl border border-slate-100 bg-white text-left shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-brand-redBorder hover:shadow-cardHover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2"
+              className="group flex flex-col overflow-hidden rounded-3xl border border-brand-blue/20 bg-white text-left shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-brand-redBorder hover:shadow-cardHover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2"
             >
               <div className="relative aspect-[3/2] w-full overflow-hidden bg-cream-100">
                 <Image
@@ -108,7 +108,7 @@ export function StoriesGallery({ stories }: { stories: TestimonialItem[] }) {
               type="button"
               onClick={() => setActive(s)}
               aria-label={`Read ${s.author}'s full story`}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white text-left shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-brand-redBorder hover:shadow-cardHover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2"
+              className="group flex flex-col overflow-hidden rounded-2xl border border-brand-blue/20 bg-white text-left shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-brand-redBorder hover:shadow-cardHover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2"
             >
               <div className="relative aspect-[4/5] w-full overflow-hidden bg-cream-100">
                 <Image

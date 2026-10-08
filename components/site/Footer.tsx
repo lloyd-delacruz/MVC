@@ -47,7 +47,9 @@ export async function Footer() {
                 <Link
                   key={s.id}
                   href={s.url}
-                  aria-label={s.platform}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`MVC on ${s.platform}`}
                   className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-slate-300 transition-all hover:border-brand-red hover:bg-brand-red hover:text-white"
                 >
                   <Icon className="h-4 w-4" />

@@ -60,7 +60,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-100 bg-white/95 backdrop-blur">
-      <div className="container-x flex h-20 items-center justify-between">
+      <div className="container-x flex h-20 items-center justify-between lg:h-24">
         <Logo />
 
         <nav className="hidden lg:block">
@@ -114,7 +114,7 @@ export function Header() {
                       onMouseEnter={openDropdown}
                       onMouseLeave={scheduleClose}
                     >
-                      <div className="overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-cardHover ring-1 ring-black/[0.03]">
+                      <div className="overflow-hidden rounded-2xl border border-brand-blue/20 bg-white shadow-cardHover ring-1 ring-black/[0.03]">
                         <div className="grid grid-cols-3 gap-px bg-slate-100">
                           {PATHWAY_CATEGORIES.map((cat) => (
                             <div key={cat.id} className="bg-white p-5">
@@ -182,7 +182,7 @@ export function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <Button href="/contact" variant="primary" trail="calendar">
+          <Button href="/free-assessment" variant="primary" trail="calendar">
             Book a Free Assessment
           </Button>
         </div>
@@ -283,7 +283,7 @@ export function Header() {
               ),
             )}
             <div className="pt-3">
-              <Button href="/contact" variant="primary" trail="calendar" className="w-full">
+              <Button href="/free-assessment" variant="primary" trail="calendar" className="w-full">
                 Book a Free Assessment
               </Button>
             </div>

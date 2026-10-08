@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight, ChevronRight } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
 import { BottomCta } from "@/components/ui/BottomCta";
+import { FeatureImage } from "@/components/ui/FeatureImage";
 import {
   PATHWAY_CATEGORIES,
   getAllPathways,
@@ -48,6 +49,10 @@ export default function PathwaysIndexPage() {
         lede="Whether you’re moving for work, study, family, or to start a business — every Canadian immigration pathway we handle, in one place."
       />
 
+      <section className="bg-white pt-12 lg:pt-16">
+        <FeatureImage route="/pathways" />
+      </section>
+
       <section className="bg-white py-16 lg:py-20">
         <div className="container-x space-y-16">
           {categories.map((cat) => {
@@ -81,7 +86,7 @@ export default function PathwaysIndexPage() {
                     <li key={p.slug}>
                       <Link
                         href={`/pathways/${cat.id}/${p.slug}`}
-                        className="group flex h-full flex-col rounded-xl border border-slate-100 bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-brand-redBorder hover:shadow-cardHover"
+                        className="group flex h-full flex-col rounded-xl border border-brand-blue/20 bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-brand-redBorder hover:shadow-cardHover"
                       >
                         <h3 className="headline-serif text-[20px] font-semibold leading-tight text-navy-800 group-hover:text-brand-red">
                           {p.title}
@@ -107,7 +112,7 @@ export default function PathwaysIndexPage() {
         title="Not sure which pathway is right for you?"
         body="Book a free 15-minute consultation. We’ll review your situation and tell you the strongest path forward — honestly."
         buttonText="Book a Free Assessment"
-        buttonHref="/contact"
+        buttonHref="/free-assessment"
       />
     </>
   );

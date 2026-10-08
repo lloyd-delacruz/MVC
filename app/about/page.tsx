@@ -178,7 +178,7 @@ export default async function AboutPage() {
         title="Your Canadian journey starts with a conversation."
         body="Book your free 15-minute assessment and let's explore your best pathway together."
         buttonText="Book Your Free Assessment"
-        buttonHref="/contact"
+        buttonHref="/free-assessment"
       />
     </>
   );

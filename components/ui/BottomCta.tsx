@@ -11,7 +11,7 @@ export function BottomCta({
   title = "Ready to start your journey?",
   body = "Book a free 15-minute consultation and let's explore your best pathway together.",
   buttonText = "Book a Free Assessment",
-  buttonHref = "/contact",
+  buttonHref = "/free-assessment",
 }: BottomCtaProps) {
   return (
     <section className="bg-cream-50">

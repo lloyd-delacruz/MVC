@@ -10,7 +10,7 @@ export function Logo({ variant = "dark" }: { variant?: "dark" | "light" }) {
         width={392}
         height={220}
         priority
-        className={`h-14 w-auto ${variant === "light" ? "brightness-0 invert" : ""}`}
+        className={`h-16 w-auto lg:h-[76px] ${variant === "light" ? "brightness-0 invert" : ""}`}
       />
     </Link>
   );
