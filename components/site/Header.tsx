@@ -23,8 +23,21 @@ export function Header() {
   const [pathwaysOpen, setPathwaysOpen] = useState(false);
   const [mobilePathwaysOpen, setMobilePathwaysOpen] = useState(false);
   const pathname = usePathname();
+  // Instant feedback: highlight the clicked nav item and show a progress bar
+  // straight away, before the next page has finished loading.
+  const [pendingHref, setPendingHref] = useState<string | null>(null);
+  const current = pendingHref ?? pathname ?? "";
   const isActive = (href: string) =>
-    href === "/" ? pathname === "/" : (pathname ?? "").startsWith(href);
+    href === "/" ? current === "/" : current.startsWith(href);
+
+  const onHeaderClickCapture = (e: React.MouseEvent<HTMLElement>) => {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    const a = (e.target as HTMLElement).closest("a");
+    const href = a?.getAttribute("href");
+    if (!a || !href || !href.startsWith("/") || a.target === "_blank") return;
+    const path = href.split(/[?#]/)[0];
+    if (path !== pathname) setPendingHref(path);
+  };
 
   const dropdownRef = useRef<HTMLLIElement | null>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -38,11 +51,19 @@ export function Header() {
     closeTimer.current = setTimeout(() => setPathwaysOpen(false), 120);
   };
 
-  // Close dropdown when route changes
+  // Close dropdown and clear pending state when route changes
   useEffect(() => {
     setPathwaysOpen(false);
     setMobileOpen(false);
+    setPendingHref(null);
   }, [pathname]);
+
+  // Safety net: never leave the progress bar stuck
+  useEffect(() => {
+    if (!pendingHref) return;
+    const t = setTimeout(() => setPendingHref(null), 10000);
+    return () => clearTimeout(t);
+  }, [pendingHref]);
 
   // Close dropdown on click outside
   useEffect(() => {
@@ -60,7 +81,19 @@ export function Header() {
   }, [pathwaysOpen]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-100 bg-white/95 backdrop-blur">
+    <header
+      onClickCapture={onHeaderClickCapture}
+      className="sticky top-0 z-50 border-b border-slate-100 bg-white/95 backdrop-blur"
+    >
+      {pendingHref && (
+        <div
+          role="progressbar"
+          aria-label="Loading page"
+          className="absolute inset-x-0 bottom-0 h-[3px] translate-y-full overflow-hidden"
+        >
+          <div className="h-full w-1/3 animate-navProgress bg-brand-red" />
+        </div>
+      )}
       <div className="container-x flex h-20 items-center justify-between lg:h-24">
         <Logo />
 
