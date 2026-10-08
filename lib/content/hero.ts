@@ -1,4 +1,4 @@
-import { FREE_ASSESSMENT_URL } from "@/lib/links";
+import { FREE_ASSESSMENT_URL, GOOGLE_REVIEWS_URL } from "@/lib/links";
 import type { HeroContent } from "@/lib/content/types";
 
 const HERO: HeroContent = {
@@ -22,7 +22,7 @@ const HERO: HeroContent = {
   founderQuote: "Your immigration goals, our priority.",
   reviewsCtaLabel: "See our Google Reviews",
   // Client-supplied share.google short link (Comments 2026-10-07, item 16).
-  reviewsCtaHref: "https://share.google/wQnL1oCuOCvkR7jwu",
+  reviewsCtaHref: GOOGLE_REVIEWS_URL,
 };
 
 export async function getHero(): Promise<HeroContent> {

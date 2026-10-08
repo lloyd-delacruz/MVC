@@ -9,6 +9,7 @@ import {
 import { PageHero } from "@/components/ui/PageHero";
 import { BottomCta } from "@/components/ui/BottomCta";
 import { StoriesGallery } from "@/components/sections/StoriesGallery";
+import { GoogleReviewsButton } from "@/components/ui/GoogleReviewsButton";
 import { getTestimonials, getGoogleReviews } from "@/lib/content/testimonials";
 import { buildPageMetadata } from "@/lib/seo";
 
@@ -99,6 +100,11 @@ export default async function SuccessStoriesPage() {
       {/* ───────────────────── Client stories ───────────────────── */}
       <section className="bg-white py-16 lg:py-20">
         <div className="container-x">
+          {/* Client feedback item 16 — Google Reviews button right under the hero */}
+          <div className="mx-auto mb-12 max-w-sm">
+            <GoogleReviewsButton />
+          </div>
+
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-red">
               Approved · In their own words

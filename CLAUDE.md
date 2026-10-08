@@ -197,7 +197,7 @@ To change copy, edit the relevant `lib/content/*.ts` file and reload. Pathways s
 - **Card shadows** — static blue shadow per client: `shadow-card` and `shadow-cardHover` in `tailwind.config.ts` are intentionally identical (`brand.blue` `#1e50b4`), and card borders use `border-brand-blue/20`.
 - **"Free Assessment" buttons** everywhere (header, hero, homepage CTA banner, About, pathway index/category pages, `BottomCta` default) go to the client's Zoho-hosted form, `FREE_ASSESSMENT_URL` in `lib/links.ts` (opens in a new tab). "Free Consultation" buttons still go to `/contact`.
 - **Header logo** uses `public/logo-header.png` — the original `logo.svg` artwork re-stacked with the wordmark enlarged 1.35× (client request), sized to fit the fixed 80/96px header. `logo.svg` itself is untouched.
-- **Google Reviews button** under the homepage hero photo — `reviewsCtaHref` in `lib/content/hero.ts`.
+- **Google Reviews button** (`components/ui/GoogleReviewsButton.tsx`, link `GOOGLE_REVIEWS_URL` in `lib/links.ts`) sits right under the hero on `/success-stories` (where the client marked it) and under the homepage hero photo.
 
 ## Known gaps & placeholders
 
