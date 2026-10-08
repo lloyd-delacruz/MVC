@@ -43,4 +43,4 @@ We've had clients in their fifties land in Canada through alternate streams. The
 
 ## Get assessed
 
-The only way to know what's possible for you, specifically, is a profile assessment. [Book a free 30-minute consultation](/pages/contact.html) and we'll tell you honestly what your strongest path forward looks like — at any age.
+The only way to know what's possible for you, specifically, is a profile assessment. [Book a free 30-minute consultation](https://zcform.com/s4t1S) and we'll tell you honestly what your strongest path forward looks like — at any age.

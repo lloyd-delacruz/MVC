@@ -21,7 +21,7 @@ export function Services({ items }: { items: ServiceItem[] }) {
                 key={service.id}
                 href={service.href}
                 aria-label={`Learn more about ${service.title}`}
-                className="group relative flex flex-col rounded-xl border border-slate-100 bg-white p-5 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-brand-redBorder hover:shadow-cardHover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2"
+                className="group relative flex flex-col rounded-xl border border-brand-blue/20 bg-white p-5 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-brand-redBorder hover:shadow-cardHover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2"
               >
                 <div className="flex items-start gap-3">
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border-2 border-brand-red text-brand-red">

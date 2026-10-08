@@ -41,6 +41,21 @@ const TESTIMONIALS: TestimonialItem[] = [
     featured: true,
   },
   {
+    id: "esquibel",
+    author: "The Esquibel Family",
+    location: "Arrived at YVR, Vancouver",
+    year: "2026",
+    pathway: "Family Reunification",
+    outcome: "Family Reunited in Canada",
+    // Client-supplied testimonial (Comments 2026-10-07, item 17) — verbatim.
+    quote:
+      "Thank you again for all your help MVC Immigration. I truly appreciate it. I can finally sleep well at night. 😊 I hope we get the chance to meet you soon.",
+    imageUrl: "/testimonials/esquibel.jpg",
+    imageAlt:
+      "The Esquibel family with their luggage at Vancouver International Airport (YVR) after arriving in Canada",
+    imagePosition: "object-[center_60%]",
+  },
+  {
     id: "carisse",
     author: "Carisse",
     location: "Philippines",

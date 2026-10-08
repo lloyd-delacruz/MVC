@@ -1,3 +1,4 @@
+import { FREE_ASSESSMENT_URL } from "@/lib/links";
 import {
   CheckCircle2,
   FileText,
@@ -144,7 +145,7 @@ export default function GetStartedPage() {
             lede="Built by a Regulated Canadian Immigration Consultant. When you submit, your answers go straight from your inbox to ours — no third-party trackers, no data brokers."
           />
 
-          <div className="mx-auto mt-12 max-w-2xl rounded-2xl border border-slate-100 bg-cream-50 p-6 shadow-card sm:p-8">
+          <div className="mx-auto mt-12 max-w-2xl rounded-2xl border border-brand-blue/20 bg-cream-50 p-6 shadow-card sm:p-8">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-red">
               Your strongest pathway
             </p>
@@ -170,7 +171,7 @@ export default function GetStartedPage() {
             </ul>
 
             <div className="mt-6 flex flex-wrap gap-3">
-              <Button href="#consultation" variant="primary" trail="calendar">
+              <Button href={FREE_ASSESSMENT_URL} variant="primary" trail="calendar">
                 Book a Free Consultation
               </Button>
               <Button href="#" variant="outline" trail="arrow">
@@ -205,7 +206,7 @@ export default function GetStartedPage() {
             {steps.map((s) => (
               <li
                 key={s.num}
-                className="rounded-2xl border border-slate-100 bg-white p-6 shadow-card sm:p-8"
+                className="rounded-2xl border border-brand-blue/20 bg-white p-6 shadow-card sm:p-8"
               >
                 <div className="flex flex-col gap-5 sm:flex-row">
                   <div className="shrink-0">
@@ -260,7 +261,7 @@ export default function GetStartedPage() {
             {checklist.map(({ icon: Icon, title, description }) => (
               <li
                 key={title}
-                className="flex gap-4 rounded-xl border border-slate-100 bg-white p-5 shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-redBorder hover:shadow-cardHover"
+                className="flex gap-4 rounded-xl border border-brand-blue/20 bg-white p-5 shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-redBorder hover:shadow-cardHover"
               >
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border-2 border-brand-red text-brand-red">
                   <Icon className="h-5 w-5" strokeWidth={1.8} />
@@ -287,7 +288,7 @@ export default function GetStartedPage() {
         title="Ready to start your journey?"
         body="Book a free 15-minute consultation — no obligation."
         buttonText="Book a Free Consultation"
-        buttonHref="/contact"
+        buttonHref={FREE_ASSESSMENT_URL}
       />
     </>
   );

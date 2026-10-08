@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Check, BadgeCheck } from "lucide-react";
+import { GoogleReviewsButton } from "@/components/ui/GoogleReviewsButton";
 import { Button } from "@/components/ui/Button";
 import type { HeroContent } from "@/lib/content/types";
 
@@ -71,8 +72,17 @@ export function Hero({ content }: { content: HeroContent }) {
               </div>
             </div>
           </div>
+
+          {content.reviewsCtaHref && (
+            <GoogleReviewsButton
+              href={content.reviewsCtaHref}
+              label={content.reviewsCtaLabel}
+              className="mt-4"
+            />
+          )}
         </div>
       </div>
     </section>
   );
 }
+

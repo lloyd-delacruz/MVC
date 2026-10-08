@@ -1,3 +1,4 @@
+import { FREE_ASSESSMENT_URL } from "@/lib/links";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -12,6 +13,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
+import { FeatureImage } from "@/components/ui/FeatureImage";
 import { Button } from "@/components/ui/Button";
 import { PATHWAY_CATEGORIES } from "@/lib/pathway-taxonomy";
 import { getServices } from "@/lib/content/services";
@@ -61,12 +63,13 @@ export default async function ServicesPage() {
     <>
       <PageHero
         eyebrow="Our Services"
-        title="Find the right Canadian immigration pathway for your situation."
-        lede="Whether you want to work, study, reunite with family, visit, or settle permanently in Canada, MVC helps you understand your options and choose the next step with confidence."
+        title="Find the right Canadian immigration pathway for you"
+        lede="Whether you want to work, study, reunite with family, visit or settle permanently in Canada, MVC Immigration helps you understand your options and choose the next step with confidence."
       />
 
       {/* Most requested */}
       <section className="bg-white py-16 lg:py-20">
+        <FeatureImage route="/services" className="mb-14" />
         <div className="container-x">
           <div className="mx-auto max-w-4xl text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-red">
@@ -75,10 +78,6 @@ export default async function ServicesPage() {
             <h2 className="headline-serif mt-2 text-balance text-[28px] font-medium leading-tight text-navy-800 sm:text-[38px]">
               Most Requested Services
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-relaxed text-slate-600">
-              Each service page includes key details, eligibility considerations,
-              timelines, and how MVC can help.
-            </p>
           </div>
 
           <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -86,7 +85,7 @@ export default async function ServicesPage() {
               <li key={s.id}>
                 <Link
                   href={s.href}
-                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-brand-redBorder hover:shadow-cardHover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2"
+                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-brand-blue/20 bg-white shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-brand-redBorder hover:shadow-cardHover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2"
                 >
                   <div className="relative aspect-[4/3] w-full overflow-hidden bg-cream-100">
                     {s.imageUrl && (
@@ -184,7 +183,7 @@ export default async function ServicesPage() {
                       <li key={cat.id}>
                         <Link
                           href={`/pathways/${cat.id}`}
-                          className="group flex h-full flex-col rounded-xl border border-slate-100 bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-brand-redBorder hover:shadow-cardHover"
+                          className="group flex h-full flex-col rounded-xl border border-brand-blue/20 bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-brand-redBorder hover:shadow-cardHover"
                         >
                           <div className="flex items-center gap-3">
                             <span className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-brand-red/20 bg-brand-redSoft text-brand-red">
@@ -243,7 +242,7 @@ export default async function ServicesPage() {
             {PROCESS_STEPS.map((step) => (
               <li
                 key={step.n}
-                className="relative rounded-xl border border-slate-100 bg-cream-50/60 p-6"
+                className="relative rounded-xl border border-brand-blue/20 bg-cream-50/60 p-6 shadow-card"
               >
                 <span className="headline-serif block text-[34px] font-medium leading-none text-brand-red">
                   {step.n}
@@ -282,7 +281,7 @@ export default async function ServicesPage() {
               <Button href="/get-started" variant="primary" trail="arrow">
                 Find my pathway
               </Button>
-              <Button href="/contact" variant="outlineLight" trail="calendar">
+              <Button href={FREE_ASSESSMENT_URL} variant="outlineLight" trail="calendar">
                 Book a free assessment
               </Button>
             </div>

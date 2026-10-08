@@ -1,6 +1,8 @@
+import { FREE_ASSESSMENT_URL } from "@/lib/links";
 import Link from "next/link";
 import { CalendarDays, CreditCard, ArrowUpRight, MapPin } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
+import { FeatureImage } from "@/components/ui/FeatureImage";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { BottomCta } from "@/components/ui/BottomCta";
 import { Button } from "@/components/ui/Button";
@@ -36,11 +38,12 @@ export default async function ContactPage() {
     <>
       <PageHero
         eyebrow="Get in Touch"
-        title="Let's talk about your situation"
-        lede="The first step is a conversation — no paperwork, no commitment, no sales pitch."
+        title="We'd love to hear from you"
+        lede="Fill out our assessment form or book a free 15-minute consultation."
       />
 
       <section id="main" className="bg-white py-16 lg:py-20">
+        <FeatureImage route="/contact" className="mb-14" />
         <div className="container-x grid grid-cols-[minmax(0,1fr)] gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-16">
           {/* FORM */}
           <div>
@@ -163,14 +166,8 @@ export default async function ContactPage() {
 
           {/* DETAILS */}
           <aside>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-red">
-              Reach us directly
-            </p>
-            <h2 className="headline-serif mt-2 text-[30px] font-medium leading-tight text-navy-800 sm:text-[34px]">
-              Visit, call, or write
-            </h2>
-
-            <div className="mt-8 divide-y divide-slate-100 rounded-2xl border border-slate-100 bg-white shadow-card">
+            <h2 className="sr-only">Contact details</h2>
+            <div className="divide-y divide-slate-100 rounded-2xl border border-brand-blue/20 bg-white shadow-card">
               {contact.offices.map((office) => {
                 const Icon = resolveIcon(office.iconName);
                 return (
@@ -221,7 +218,7 @@ export default async function ContactPage() {
                 return (
                   <article
                     key={office.id}
-                    className="group flex flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-card transition-shadow duration-300 hover:shadow-cardHover"
+                    className="group flex flex-col overflow-hidden rounded-2xl border border-brand-blue/20 bg-white shadow-card transition-shadow duration-300 hover:shadow-cardHover"
                   >
                     <div className="flex items-start gap-4 p-6">
                       <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-cream-50 text-brand-red">
@@ -276,7 +273,7 @@ export default async function ContactPage() {
             lede="For specific case questions and a binding RCIC opinion, book a paid 1:1 consultation. Pick the format that fits your situation."
           />
 
-          <div className="mx-auto mt-12 max-w-3xl rounded-2xl border border-slate-100 bg-white p-6 shadow-card sm:p-8">
+          <div className="mx-auto mt-12 max-w-3xl rounded-2xl border border-brand-blue/20 bg-white p-6 shadow-card sm:p-8">
             <div className="flex items-start justify-between gap-4 border-b border-slate-100 pb-5">
               <div>
                 <div className="text-[15px] font-semibold text-navy-800">
@@ -300,7 +297,7 @@ export default async function ContactPage() {
                   href={o.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex flex-col rounded-xl border border-slate-100 bg-white p-5 shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-redBorder hover:shadow-cardHover"
+                  className="group flex flex-col rounded-xl border border-brand-blue/20 bg-white p-5 shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-redBorder hover:shadow-cardHover"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <h4 className="headline-serif text-[16px] font-semibold leading-tight text-navy-800">
@@ -377,7 +374,7 @@ export default async function ContactPage() {
         title="Ready to start your journey?"
         body="Book a free 15-minute consultation — no obligation."
         buttonText="Book a Free Consultation"
-        buttonHref={contact.freeConsultationUrl ?? "#consultation"}
+        buttonHref={FREE_ASSESSMENT_URL}
       />
     </>
   );

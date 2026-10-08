@@ -1,3 +1,4 @@
+import { FREE_ASSESSMENT_URL } from "@/lib/links";
 import Image from "next/image";
 import {
   Heart,
@@ -327,7 +328,7 @@ export default function WhyCanadaPage() {
             {stats.map((s) => (
               <div
                 key={s.label}
-                className="rounded-2xl border border-slate-100 bg-white p-6 text-center shadow-card"
+                className="rounded-2xl border border-brand-blue/20 bg-white p-6 text-center shadow-card"
               >
                 <div className="headline-serif text-[36px] font-semibold leading-none text-brand-red sm:text-[40px]">
                   {s.num}
@@ -357,7 +358,7 @@ export default function WhyCanadaPage() {
             {matters.map(({ icon: Icon, image, stat, title, body, list }) => (
               <article
                 key={title}
-                className="group flex flex-col rounded-2xl border border-slate-100 bg-white p-6 shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-redBorder hover:shadow-cardHover sm:p-7"
+                className="group flex flex-col rounded-2xl border border-brand-blue/20 bg-white p-6 shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-redBorder hover:shadow-cardHover sm:p-7"
               >
                 <div className="flex items-start gap-4">
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md border-2 border-brand-red text-brand-red">
@@ -442,7 +443,7 @@ export default function WhyCanadaPage() {
             {cities.map((c) => (
               <article
                 key={c.name}
-                className="group flex flex-col overflow-hidden rounded-2xl border border-slate-100 bg-cream-50 shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-redBorder hover:shadow-cardHover"
+                className="group flex flex-col overflow-hidden rounded-2xl border border-brand-blue/20 bg-cream-50 shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-redBorder hover:shadow-cardHover"
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <Image
@@ -494,7 +495,7 @@ export default function WhyCanadaPage() {
             {seasons.map((s) => (
               <article
                 key={s.key}
-                className="group flex flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:shadow-cardHover"
+                className="group flex flex-col overflow-hidden rounded-2xl border border-brand-blue/20 bg-white shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:shadow-cardHover"
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <Image
@@ -579,7 +580,7 @@ export default function WhyCanadaPage() {
         title="Your story belongs in Canada."
         body="We've helped families from over forty countries plant new roots here. Book a free consultation and we'll help you map yours, step by step."
         buttonText="Book a Free Consultation"
-        buttonHref="/contact"
+        buttonHref={FREE_ASSESSMENT_URL}
       />
     </>
   );

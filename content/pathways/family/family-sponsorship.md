@@ -36,7 +36,7 @@ items:
   - "The sponsor is not bankrupt, not in default on a previous undertaking, and not receiving social assistance (with a limited exception for disability)"
   - "The relationship is genuine and not entered into primarily for immigration purposes"
   - "The sponsored person is not inadmissible on criminal, medical, or security grounds"
-note: "Not sure if you meet the income or relationship requirements? [Book a free eligibility check](/contact) — no obligation."
+note: "Not sure if you meet the income or relationship requirements? [Book a free eligibility check](https://zcform.com/s4t1S) — no obligation."
 
 # How It Works
 heading: "How it works"

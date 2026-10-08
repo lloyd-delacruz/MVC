@@ -1,3 +1,4 @@
+import { FREE_ASSESSMENT_URL } from "@/lib/links";
 import type { TrustBadgeItem, WhyChooseItem, CtaBannerContent } from "@/lib/content/types";
 
 const TRUST_BADGES: TrustBadgeItem[] = [
@@ -17,7 +18,7 @@ const CTA_BANNER: CtaBannerContent = {
   headline: "Your Canadian immigration journey starts with a conversation.",
   body: "Book your free 15-minute assessment and let's review your best next step.",
   buttonLabel: "Book Your Free Assessment",
-  buttonHref: "#book",
+  buttonHref: FREE_ASSESSMENT_URL,
 };
 
 export async function getTrustBadges(): Promise<TrustBadgeItem[]> {

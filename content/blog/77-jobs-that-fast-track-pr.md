@@ -123,4 +123,4 @@ This list updates periodically as BC's labour-market needs shift. What's "priori
 
 If you're a foreign national already working in Canada (or in your home country) in one of these occupations, the BC PNP priority stream may be the most direct route to PR available to you. We can help you assess your eligibility, prepare your file, and submit through this stream — for you and your immediate family.
 
-This pathway works best for those who have completed some education in Canada or in their home country and have a confirmed job offer from a BC-based employer. [Book a free consultation](/pages/contact.html) and we'll assess whether this stream applies to you. Reference: [WelcomeBC's BC PNP overview](https://www.welcomebc.ca/Immigrate-to-B-C/About-The-BC-PNP).
+This pathway works best for those who have completed some education in Canada or in their home country and have a confirmed job offer from a BC-based employer. [Book a free consultation](https://zcform.com/s4t1S) and we'll assess whether this stream applies to you. Reference: [WelcomeBC's BC PNP overview](https://www.welcomebc.ca/Immigrate-to-B-C/About-The-BC-PNP).

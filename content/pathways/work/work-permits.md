@@ -40,7 +40,7 @@ items:
   - "**Sufficient funds** to support yourself (and any accompanying family) during your stay"
   - "Demonstrated **intent to leave at the end of your authorized stay**, or clear eligibility to extend or transition to PR"
   - "Meeting the **occupation requirements** for the role — qualifications, licensing, and any language needs"
-note: "Not sure which work permit category fits you? [Book a free eligibility check](/contact) — no obligation."
+note: "Not sure which work permit category fits you? [Book a free eligibility check](https://zcform.com/s4t1S) — no obligation."
 
 # How It Works
 heading: "How it works"

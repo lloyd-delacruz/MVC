@@ -1,5 +1,6 @@
 "use client";
 
+import { FREE_ASSESSMENT_URL } from "@/lib/links";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -62,7 +63,7 @@ export function StoriesGallery({ stories }: { stories: TestimonialItem[] }) {
               type="button"
               onClick={() => setActive(s)}
               aria-label={`Read ${s.author}'s full story`}
-              className="group flex flex-col overflow-hidden rounded-3xl border border-slate-100 bg-white text-left shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-brand-redBorder hover:shadow-cardHover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2"
+              className="group flex flex-col overflow-hidden rounded-3xl border border-brand-blue/20 bg-white text-left shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-brand-redBorder hover:shadow-cardHover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2"
             >
               <div className="relative aspect-[3/2] w-full overflow-hidden bg-cream-100">
                 <Image
@@ -108,7 +109,7 @@ export function StoriesGallery({ stories }: { stories: TestimonialItem[] }) {
               type="button"
               onClick={() => setActive(s)}
               aria-label={`Read ${s.author}'s full story`}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white text-left shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-brand-redBorder hover:shadow-cardHover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2"
+              className="group flex flex-col overflow-hidden rounded-2xl border border-brand-blue/20 bg-white text-left shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-brand-redBorder hover:shadow-cardHover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2"
             >
               <div className="relative aspect-[4/5] w-full overflow-hidden bg-cream-100">
                 <Image
@@ -196,7 +197,9 @@ export function StoriesGallery({ stories }: { stories: TestimonialItem[] }) {
                 {active.quote}
               </blockquote>
               <Link
-                href="/contact"
+                href={FREE_ASSESSMENT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-7 inline-flex items-center justify-center gap-2 rounded-md bg-brand-red px-5 py-3 text-[13.5px] font-semibold text-white shadow-[0_8px_18px_-8px_rgba(201,31,26,0.55)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-redDark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red focus-visible:ring-offset-2"
               >
                 Start your story

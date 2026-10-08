@@ -1,7 +1,9 @@
+import { FREE_ASSESSMENT_URL } from "@/lib/links";
 import Link from "next/link";
 import { ArrowRight, Calendar } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
 import { BottomCta } from "@/components/ui/BottomCta";
+import { FeatureImage } from "@/components/ui/FeatureImage";
 import { getAllPosts } from "@/lib/content/blog";
 import { buildPageMetadata } from "@/lib/seo";
 
@@ -23,18 +25,18 @@ export default async function BlogPage() {
     <>
       <PageHero
         eyebrow="Insights"
-        title="Immigration insights"
-        lede="Plain-English guides, honest answers, and timely commentary on Canadian immigration — written by regulated consultants who actually work the files."
+        title="Practical advice and immigration updates that could guide you on your immigration journey"
       />
 
       <section className="bg-white py-16 lg:py-20">
+        <FeatureImage route="/blog" className="mb-12" />
         <div className="container-x">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {posts.map((p) => (
               <Link
                 key={p.slug}
                 href={`/blog/${p.slug}`}
-                className="group flex flex-col rounded-2xl border border-slate-100 bg-white p-6 shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-redBorder hover:shadow-cardHover"
+                className="group flex flex-col rounded-2xl border border-brand-blue/20 bg-white p-6 shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:border-brand-redBorder hover:shadow-cardHover"
               >
                 <div className="flex items-center justify-between gap-3">
                   <span className="inline-flex items-center rounded-full bg-brand-redSoft px-2.5 py-1 text-[10.5px] font-semibold uppercase tracking-[0.12em] text-brand-red">
@@ -71,7 +73,7 @@ export default async function BlogPage() {
         title="Got a specific question?"
         body="Book a free 15-minute consultation. We'll give you an honest read on your situation — no obligation."
         buttonText="Book a Free Consultation"
-        buttonHref="/contact"
+        buttonHref={FREE_ASSESSMENT_URL}
       />
     </>
   );

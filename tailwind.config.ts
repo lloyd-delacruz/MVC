@@ -16,6 +16,7 @@ const config: Config = {
           redDark: "#a01612",
           redSoft: "#fef2f1",
           redBorder: "#f3c8c5",
+          blue: "#1e50b4",
         },
         cream: {
           50: "#faf6f0",
@@ -27,8 +28,9 @@ const config: Config = {
         sans: ["var(--font-body)", "DM Sans", "system-ui", "sans-serif"],
       },
       boxShadow: {
-        card: "0 1px 2px rgba(15, 23, 42, 0.04), 0 4px 16px rgba(15, 23, 42, 0.06)",
-        cardHover: "0 4px 8px rgba(15, 23, 42, 0.06), 0 12px 28px rgba(15, 23, 42, 0.1)",
+        card: "0 2px 6px rgba(30, 80, 180, 0.16), 0 8px 24px rgba(30, 80, 180, 0.18)",
+        // Static by client request — identical to `card`, so the shadow does not change on hover.
+        cardHover: "0 2px 6px rgba(30, 80, 180, 0.16), 0 8px 24px rgba(30, 80, 180, 0.18)",
         portrait: "0 30px 60px -20px rgba(10, 20, 40, 0.45)",
       },
       maxWidth: {
@@ -39,9 +41,14 @@ const config: Config = {
           "0%": { opacity: "0", transform: "translateY(12px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
+        navProgress: {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(300%)" },
+        },
       },
       animation: {
         fadeUp: "fadeUp 0.6s ease-out both",
+        navProgress: "navProgress 1s ease-in-out infinite",
       },
     },
   },

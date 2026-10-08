@@ -1,3 +1,4 @@
+import { FREE_ASSESSMENT_URL } from "@/lib/links";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -9,6 +10,7 @@ import {
 import { PageHero } from "@/components/ui/PageHero";
 import { BottomCta } from "@/components/ui/BottomCta";
 import { StoriesGallery } from "@/components/sections/StoriesGallery";
+import { GoogleReviewsButton } from "@/components/ui/GoogleReviewsButton";
 import { getTestimonials, getGoogleReviews } from "@/lib/content/testimonials";
 import { buildPageMetadata } from "@/lib/seo";
 
@@ -99,6 +101,11 @@ export default async function SuccessStoriesPage() {
       {/* ───────────────────── Client stories ───────────────────── */}
       <section className="bg-white py-16 lg:py-20">
         <div className="container-x">
+          {/* Client feedback item 16 — Google Reviews button right under the hero */}
+          <div className="mx-auto mb-12 max-w-sm">
+            <GoogleReviewsButton />
+          </div>
+
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-red">
               Approved · In their own words
@@ -146,7 +153,7 @@ export default async function SuccessStoriesPage() {
             {reviews.map((r) => (
               <figure
                 key={r.id}
-                className="flex flex-col rounded-2xl border border-slate-100 bg-white p-6 shadow-card"
+                className="flex flex-col rounded-2xl border border-brand-blue/20 bg-white p-6 shadow-card"
               >
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy-800 text-[15px] font-semibold text-white">
@@ -209,7 +216,7 @@ export default async function SuccessStoriesPage() {
             {REASSURANCE.map((r) => (
               <div
                 key={r.title}
-                className="flex flex-col items-start gap-3 rounded-2xl border border-slate-100 bg-cream-50 p-6"
+                className="flex flex-col items-start gap-3 rounded-2xl border border-brand-blue/20 bg-cream-50 p-6 shadow-card"
               >
                 <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-redSoft text-brand-red">
                   <r.icon className="h-5 w-5" strokeWidth={1.7} />
@@ -230,7 +237,7 @@ export default async function SuccessStoriesPage() {
         title="Your success story starts with a conversation."
         body="Book a free, no-obligation consultation with a licensed RCIC and find out exactly what your pathway to Canada looks like."
         buttonText="Book a Free Consultation"
-        buttonHref="/contact"
+        buttonHref={FREE_ASSESSMENT_URL}
       />
     </>
   );

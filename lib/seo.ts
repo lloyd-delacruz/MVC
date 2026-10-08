@@ -50,6 +50,13 @@ const SEO: Record<string, SeoMetaContent> = {
       "Express Entry, work permits, study permits, family sponsorship, business immigration, citizenship and more — guided by a Regulated Canadian Immigration Consultant.",
     ogImageUrl: null,
   },
+  "free-assessment": {
+    pageKey: "free-assessment",
+    title: "Free Immigration Assessment",
+    description:
+      "Tell us about your goals, education, work and language skills — a Regulated Canadian Immigration Consultant will review your profile and reply with your options. Free, no obligation.",
+    ogImageUrl: null,
+  },
   "get-started": {
     pageKey: "get-started",
     title: "How to Immigrate to Canada — Find Your Pathway",

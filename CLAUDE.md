@@ -190,6 +190,15 @@ Other helpers:
 
 To change copy, edit the relevant `lib/content/*.ts` file and reload. Pathways still live in `content/pathways/<category>/<slug>.md` and are parsed by `lib/pathways.ts`.
 
+## Client feedback round — 2026-10-07
+
+- **Free assessment form** lives at `/free-assessment` (`components/forms/ZohoAssessmentForm.tsx`). It's a restyled re-implementation of the client's Zoho CRM web-to-lead embed; it POSTs straight to Zoho. Keep every `name` attribute, hidden token input and the two Zoho `<Script>`s exactly as-is or leads stop arriving. No buttons link here any more — see below; the page is kept as an on-site fallback.
+- **Page feature photos** are configured in `lib/content/page-images.ts` and rendered by `components/ui/FeatureImage.tsx` right under the hero (also on `/services`, which the header "Services" menu opens). All current photos are free Unsplash License images — don't add Unsplash+ (`plus.unsplash.com`) photos without a licence. Local images missing from `/public` are skipped automatically.
+- **Card shadows** — static blue shadow per client: `shadow-card` and `shadow-cardHover` in `tailwind.config.ts` are intentionally identical (`brand.blue` `#1e50b4`), and card borders use `border-brand-blue/20`.
+- **"Free Assessment" buttons** everywhere (header, hero, homepage CTA banner, About, pathway index/category pages, `BottomCta` default) go to the client's Zoho-hosted form, `FREE_ASSESSMENT_URL` in `lib/links.ts` (opens in a new tab). So do all "Book a Free Consultation" buttons, the "Start your story" button, and the "Book a free eligibility check / consultation" links inside pathway and blog markdown. Only the paid $250/$350 1:1 consultation cards on `/contact` still go to Calendly.
+- **Header logo** uses `public/logo-header.png` — the original `logo.svg` artwork re-stacked with the wordmark enlarged 1.35× (client request), sized to fit the fixed 80/96px header. `logo.svg` itself is untouched.
+- **Google Reviews button** (`components/ui/GoogleReviewsButton.tsx`, link `GOOGLE_REVIEWS_URL` in `lib/links.ts`) sits right under the hero on `/success-stories` (where the client marked it) and under the homepage hero photo.
+
 ## Known gaps & placeholders
 
 - **Calendly URLs** in `lib/content/contact.ts` are `REPLACE-WITH-MVC-CALENDLY/...` — swap when the client provides them.

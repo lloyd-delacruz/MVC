@@ -1,8 +1,10 @@
+import { FREE_ASSESSMENT_URL } from "@/lib/links";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
 import { BottomCta } from "@/components/ui/BottomCta";
+import { FeatureImage } from "@/components/ui/FeatureImage";
 import {
   PATHWAY_CATEGORIES,
   getPathway,
@@ -43,6 +45,7 @@ export default function CategoryLandingPage({ params }: { params: Params }) {
       />
 
       <section className="bg-white py-16 lg:py-20">
+        <FeatureImage route={`/pathways/${cat.id}`} className="mb-12" />
         <div className="container-x">
           <Link
             href="/pathways"
@@ -57,7 +60,7 @@ export default function CategoryLandingPage({ params }: { params: Params }) {
               <li key={p.slug}>
                 <Link
                   href={`/pathways/${cat.id}/${p.slug}`}
-                  className="group flex h-full flex-col rounded-xl border border-slate-100 bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-brand-redBorder hover:shadow-cardHover"
+                  className="group flex h-full flex-col rounded-xl border border-brand-blue/20 bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-1 hover:border-brand-redBorder hover:shadow-cardHover"
                 >
                   <h3 className="headline-serif text-[20px] font-semibold leading-tight text-navy-800 group-hover:text-brand-red">
                     {p.title}
@@ -80,7 +83,7 @@ export default function CategoryLandingPage({ params }: { params: Params }) {
         title="Not sure which pathway is right for you?"
         body="Book a free 15-minute consultation. We’ll review your situation and tell you the strongest path forward — honestly."
         buttonText="Book a Free Assessment"
-        buttonHref="/contact"
+        buttonHref={FREE_ASSESSMENT_URL}
       />
     </>
   );

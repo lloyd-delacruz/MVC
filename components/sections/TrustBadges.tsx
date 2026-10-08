@@ -13,7 +13,7 @@ export function TrustBadges({ badges }: { badges: TrustBadgeItem[] }) {
   return (
     <section className="bg-white pb-14">
       <div className="container-x">
-        <div className="grid gap-6 rounded-2xl border border-slate-100 bg-white px-6 py-8 shadow-card sm:grid-cols-2 lg:grid-cols-4 lg:gap-4 lg:px-8">
+        <div className="grid gap-6 rounded-2xl border border-brand-blue/20 bg-white px-6 py-8 shadow-card sm:grid-cols-2 lg:grid-cols-4 lg:gap-4 lg:px-8">
           {badges.map((b, i) => {
             const Icon = resolveIcon(b.iconName);
             return (

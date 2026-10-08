@@ -52,7 +52,7 @@ items:
   - "Sufficient **settlement funds** (unless you have a valid Canadian job offer or are already working in Canada)"
   - "No **criminal or medical inadmissibility** to Canada"
   - "**CRS score competitive** with recent draws (typically 470+ for all-program draws, lower for category-based draws)"
-note: "Not sure if you qualify? [Book a free eligibility check](/pages/contact.html) — no obligation."
+note: "Not sure if you qualify? [Book a free eligibility check](https://zcform.com/s4t1S) — no obligation."
 
 # How It Works
 heading: "How it works"

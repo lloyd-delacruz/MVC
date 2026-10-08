@@ -1,3 +1,4 @@
+import { FREE_ASSESSMENT_URL, GOOGLE_REVIEWS_URL } from "@/lib/links";
 import type { HeroContent } from "@/lib/content/types";
 
 const HERO: HeroContent = {
@@ -11,7 +12,7 @@ const HERO: HeroContent = {
     "Practical, Honest Guidance",
   ],
   primaryCtaLabel: "Book a Free Assessment",
-  primaryCtaHref: "/contact",
+  primaryCtaHref: FREE_ASSESSMENT_URL,
   secondaryCtaLabel: "Explore Immigration Pathways",
   secondaryCtaHref: "/pathways",
   imageUrl: "/team/yaniv.jpg",
@@ -19,6 +20,9 @@ const HERO: HeroContent = {
   founderName: "Yaniv Babani",
   founderTitle: "Founder & RCIC (RCIC: #R519412)",
   founderQuote: "Your immigration goals, our priority.",
+  reviewsCtaLabel: "See our Google Reviews",
+  // Client-supplied share.google short link (Comments 2026-10-07, item 16).
+  reviewsCtaHref: GOOGLE_REVIEWS_URL,
 };
 
 export async function getHero(): Promise<HeroContent> {
