@@ -1,5 +1,6 @@
 "use client";
 
+import { FREE_ASSESSMENT_URL } from "@/lib/links";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -182,7 +183,7 @@ export function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <Button href="/free-assessment" variant="primary" trail="calendar">
+          <Button href={FREE_ASSESSMENT_URL} variant="primary" trail="calendar">
             Book a Free Assessment
           </Button>
         </div>
@@ -283,7 +284,7 @@ export function Header() {
               ),
             )}
             <div className="pt-3">
-              <Button href="/free-assessment" variant="primary" trail="calendar" className="w-full">
+              <Button href={FREE_ASSESSMENT_URL} variant="primary" trail="calendar" className="w-full">
                 Book a Free Assessment
               </Button>
             </div>

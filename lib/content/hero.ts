@@ -1,3 +1,4 @@
+import { FREE_ASSESSMENT_URL } from "@/lib/links";
 import type { HeroContent } from "@/lib/content/types";
 
 const HERO: HeroContent = {
@@ -11,7 +12,7 @@ const HERO: HeroContent = {
     "Practical, Honest Guidance",
   ],
   primaryCtaLabel: "Book a Free Assessment",
-  primaryCtaHref: "/free-assessment",
+  primaryCtaHref: FREE_ASSESSMENT_URL,
   secondaryCtaLabel: "Explore Immigration Pathways",
   secondaryCtaHref: "/pathways",
   imageUrl: "/team/yaniv.jpg",

@@ -1,3 +1,4 @@
+import { FREE_ASSESSMENT_URL } from "@/lib/links";
 import { Button } from "@/components/ui/Button";
 
 interface BottomCtaProps {
@@ -11,7 +12,7 @@ export function BottomCta({
   title = "Ready to start your journey?",
   body = "Book a free 15-minute consultation and let's explore your best pathway together.",
   buttonText = "Book a Free Assessment",
-  buttonHref = "/free-assessment",
+  buttonHref = FREE_ASSESSMENT_URL,
 }: BottomCtaProps) {
   return (
     <section className="bg-cream-50">

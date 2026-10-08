@@ -1,3 +1,4 @@
+import { FREE_ASSESSMENT_URL } from "@/lib/links";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -82,7 +83,7 @@ export default function CategoryLandingPage({ params }: { params: Params }) {
         title="Not sure which pathway is right for you?"
         body="Book a free 15-minute consultation. We’ll review your situation and tell you the strongest path forward — honestly."
         buttonText="Book a Free Assessment"
-        buttonHref="/free-assessment"
+        buttonHref={FREE_ASSESSMENT_URL}
       />
     </>
   );

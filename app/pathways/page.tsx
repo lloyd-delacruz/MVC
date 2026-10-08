@@ -1,3 +1,4 @@
+import { FREE_ASSESSMENT_URL } from "@/lib/links";
 import Link from "next/link";
 import { ArrowRight, ChevronRight } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
@@ -112,7 +113,7 @@ export default function PathwaysIndexPage() {
         title="Not sure which pathway is right for you?"
         body="Book a free 15-minute consultation. We’ll review your situation and tell you the strongest path forward — honestly."
         buttonText="Book a Free Assessment"
-        buttonHref="/free-assessment"
+        buttonHref={FREE_ASSESSMENT_URL}
       />
     </>
   );
