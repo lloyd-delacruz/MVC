@@ -6,3 +6,9 @@ export const FREE_ASSESSMENT_URL = "https://zcform.com/s4t1S";
 
 /** Client's Google Reviews link (share.google short link from the client). */
 export const GOOGLE_REVIEWS_URL = "https://share.google/wQnL1oCuOCvkR7jwu";
+
+/**
+ * Elfsight Google Reviews widget (live reviews from the client's Google profile).
+ * Share link: https://f017233a0b924c2cbeb7b4d512781aa4.elf.site
+ */
+export const ELFSIGHT_REVIEWS_WIDGET_ID = "f017233a-0b92-4c2c-beb7-b4d512781aa4";

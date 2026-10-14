@@ -3,7 +3,7 @@ import type { ContactContent } from "@/lib/content/types";
 
 const CONTACT: ContactContent = {
   phone: "+1 (778) 288 7388",
-  email: "info@myvisaforcanada.com",
+  email: "info@myvisa4canada.com",
   addressLine: "Burnaby, British Columbia, Canada",
   offices: [
     {
