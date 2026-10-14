@@ -9,26 +9,11 @@ import { Button } from "@/components/ui/Button";
 import { resolveIcon } from "@/lib/icons";
 import { getContact } from "@/lib/content/contact";
 import { buildPageMetadata } from "@/lib/seo";
+import { EmailPopover } from "@/components/ui/EmailPopover";
 
 export function generateMetadata() {
   return buildPageMetadata("contact");
 }
-
-const pathwayOptions = [
-  { value: "", label: "Select a pathway…" },
-  { value: "express-entry", label: "Express Entry" },
-  { value: "provincial-nominee", label: "Provincial Nominee Program" },
-  { value: "family-sponsorship", label: "Family Sponsorship" },
-  { value: "work-permit", label: "Work Permit" },
-  { value: "study-permit", label: "Study Permit" },
-  { value: "visitor-visa", label: "Visitor Visa" },
-  { value: "not-sure", label: "Not sure yet" },
-];
-
-const inputClass =
-  "w-full rounded-md border border-slate-200 bg-white px-3.5 py-2.5 text-[14px] text-navy-800 placeholder:text-slate-400 outline-none transition focus:border-brand-red focus:ring-2 focus:ring-brand-red/15";
-const labelClass =
-  "block text-[12.5px] font-semibold uppercase tracking-[0.12em] text-navy-800";
 
 export default async function ContactPage() {
   const contact = await getContact();
@@ -45,7 +30,7 @@ export default async function ContactPage() {
       <section id="main" className="bg-white py-16 lg:py-20">
         <FeatureImage route="/contact" className="mb-14" />
         <div className="container-x grid grid-cols-[minmax(0,1fr)] gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-16">
-          {/* FORM */}
+          {/* EMAIL CTA (client prefers direct email over a web form) */}
           <div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-brand-red">
               Send us a message
@@ -54,114 +39,28 @@ export default async function ContactPage() {
               Send us a message
             </h2>
             <p className="mt-3 text-[14.5px] leading-relaxed text-slate-500">
-              Tell us a little about your situation. We usually respond within 1 business day.
+              Tell us a little about your situation by email. We usually respond within 1 business day.
+            </p>
+            <p className="mt-2 text-[14.5px] leading-relaxed text-slate-500">
+              Helpful to include: your full name, phone number, the country you&rsquo;re applying
+              from, the pathway you&rsquo;re interested in, and any specific questions.
             </p>
 
-            <form className="mt-8 grid gap-5">
-              <div className="grid gap-5 sm:grid-cols-2">
-                <div>
-                  <label htmlFor="name" className={labelClass}>
-                    Full Name <span className="text-brand-red">*</span>
-                  </label>
-                  <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    required
-                    autoComplete="name"
-                    className={`${inputClass} mt-2`}
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className={labelClass}>
-                    Email Address <span className="text-brand-red">*</span>
-                  </label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    autoComplete="email"
-                    className={`${inputClass} mt-2`}
-                  />
-                </div>
-              </div>
+            <div className="mt-7">
+              <EmailPopover email={contact.email} />
+            </div>
 
-              <div className="grid gap-5 sm:grid-cols-2">
-                <div>
-                  <label htmlFor="phone" className={labelClass}>
-                    Phone Number
-                  </label>
-                  <input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    autoComplete="tel"
-                    placeholder="+1 (___) ___-____"
-                    className={`${inputClass} mt-2`}
-                  />
-                </div>
-                <div>
-                  <label htmlFor="country" className={labelClass}>
-                    Country You&rsquo;re Applying From
-                  </label>
-                  <input
-                    id="country"
-                    name="country"
-                    type="text"
-                    autoComplete="country-name"
-                    className={`${inputClass} mt-2`}
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="pathway" className={labelClass}>
-                  Pathway You&rsquo;re Interested In
-                </label>
-                <select id="pathway" name="pathway" className={`${inputClass} mt-2`}>
-                  {pathwayOptions.map((o) => (
-                    <option key={o.value} value={o.value}>
-                      {o.label}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="message" className={labelClass}>
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  placeholder="Briefly describe your situation, timeline, and any specific questions."
-                  className={`${inputClass} mt-2 resize-y`}
-                />
-              </div>
-
-              <p className="text-[12px] leading-relaxed text-slate-500">
-                Your information is kept confidential and used only to respond to your inquiry.
-                We do not share your data with third parties. See our{" "}
-                <Link
-                  href="/privacy"
-                  className="text-brand-red underline underline-offset-4 hover:text-brand-redDark"
-                >
-                  Privacy Policy
-                </Link>
-                .
-              </p>
-
-              <div className="pt-2">
-                <button
-                  type="submit"
-                  className="inline-flex items-center justify-center rounded-md bg-brand-red px-6 py-3 text-[13.5px] font-semibold text-white shadow-[0_8px_18px_-8px_rgba(201,31,26,0.55)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-redDark"
-                >
-                  Send Message
-                </button>
-              </div>
-            </form>
+            <p className="mt-7 text-[12px] leading-relaxed text-slate-500">
+              Your information is kept confidential and used only to respond to your inquiry.
+              We do not share your data with third parties. See our{" "}
+              <Link
+                href="/privacy"
+                className="text-brand-red underline underline-offset-4 hover:text-brand-redDark"
+              >
+                Privacy Policy
+              </Link>
+              .
+            </p>
           </div>
 
           {/* DETAILS */}

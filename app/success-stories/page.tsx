@@ -1,9 +1,12 @@
-import { FREE_ASSESSMENT_URL } from "@/lib/links";
-import Link from "next/link";
+import {
+  FREE_ASSESSMENT_URL,
+  GOOGLE_REVIEWS_URL,
+  ELFSIGHT_REVIEWS_WIDGET_ID,
+} from "@/lib/links";
+import Script from "next/script";
 import {
   ArrowRight,
   ShieldCheck,
-  Star,
   HeartHandshake,
   MessageSquareQuote,
 } from "lucide-react";
@@ -11,7 +14,7 @@ import { PageHero } from "@/components/ui/PageHero";
 import { BottomCta } from "@/components/ui/BottomCta";
 import { StoriesGallery } from "@/components/sections/StoriesGallery";
 import { GoogleReviewsButton } from "@/components/ui/GoogleReviewsButton";
-import { getTestimonials, getGoogleReviews } from "@/lib/content/testimonials";
+import { getTestimonials } from "@/lib/content/testimonials";
 import { buildPageMetadata } from "@/lib/seo";
 
 export function generateMetadata() {
@@ -36,53 +39,23 @@ const REASSURANCE = [
   },
 ];
 
-function Stars({ className = "h-4 w-4" }: { className?: string }) {
-  return (
-    <span className="inline-flex items-center gap-0.5" aria-hidden>
-      {Array.from({ length: 5 }).map((_, i) => (
-        <Star key={i} className={`${className} fill-amber-400 text-amber-400`} />
-      ))}
-    </span>
-  );
-}
-
 export default async function SuccessStoriesPage() {
-  const [stories, reviews] = await Promise.all([
-    getTestimonials(),
-    getGoogleReviews(),
-  ]);
+  const stories = await getTestimonials();
 
-  // JSON-LD: aggregate rating + individual reviews for rich results.
+  // JSON-LD: client stories as reviews. Google reviews are shown live via the
+  // Elfsight widget below, so they're not duplicated here.
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     name: "My Visa For Canada (MVC) Immigration Firm",
     description:
       "Regulated Canadian Immigration Consultant (RCIC) in Vancouver, BC helping families, students, and workers immigrate to Canada.",
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "5.0",
-      reviewCount: String(stories.length + reviews.length),
-      bestRating: "5",
-    },
-    review: [
-      ...stories.map((s) => ({
+    review: stories.map((s) => ({
         "@type": "Review",
         author: { "@type": "Person", name: s.author },
         reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
         reviewBody: s.quote,
       })),
-      ...reviews.map((r) => ({
-        "@type": "Review",
-        author: { "@type": "Person", name: r.author },
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue: String(r.rating),
-          bestRating: "5",
-        },
-        reviewBody: r.text,
-      })),
-    ],
   };
 
   return (
@@ -131,75 +104,23 @@ export default async function SuccessStoriesPage() {
         </div>
       </section>
 
-      {/* ───────────────────── Verified Google reviews ───────────────────── */}
+      {/* ───────────────────── Verified Google reviews (live, via Elfsight) ───────────────────── */}
       <section id="reviews" className="scroll-mt-20 bg-cream-50 py-16 lg:py-20">
         <div className="container-x">
-          <div className="flex flex-col items-center gap-4 text-center">
-            <div className="inline-flex items-center gap-2.5 rounded-full bg-white px-4 py-2 shadow-card">
-              <span className="headline-serif text-[18px] font-semibold text-navy-800">
-                5.0
-              </span>
-              <Stars />
-              <span className="text-[12.5px] font-medium text-slate-500">
-                Verified Google reviews
-              </span>
-            </div>
-            <h2 className="headline-serif text-[28px] font-medium leading-tight text-navy-800 sm:text-[34px]">
-              What clients say about working with us
-            </h2>
-          </div>
-
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {reviews.map((r) => (
-              <figure
-                key={r.id}
-                className="flex flex-col rounded-2xl border border-brand-blue/20 bg-white p-6 shadow-card"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy-800 text-[15px] font-semibold text-white">
-                    {r.initial}
-                  </div>
-                  <div>
-                    <figcaption className="text-[14px] font-semibold text-navy-800">
-                      {r.author}
-                    </figcaption>
-                    <p className="text-[11.5px] text-slate-400">{r.date}</p>
-                  </div>
-                  <svg
-                    className="ml-auto h-5 w-5"
-                    viewBox="0 0 24 24"
-                    aria-hidden
-                  >
-                    <path
-                      fill="#4285F4"
-                      d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1Z"
-                    />
-                    <path
-                      fill="#34A853"
-                      d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23Z"
-                    />
-                    <path
-                      fill="#FBBC05"
-                      d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.06H2.18a11 11 0 0 0 0 9.88l3.66-2.84Z"
-                    />
-                    <path
-                      fill="#EA4335"
-                      d="M12 4.75c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 1.46 14.97.5 12 .5A11 11 0 0 0 2.18 7.06l3.66 2.84C6.71 6.68 9.14 4.75 12 4.75Z"
-                    />
-                  </svg>
-                </div>
-                <Stars className="mt-4 h-4 w-4" />
-                <blockquote className="mt-3 text-[13.5px] leading-relaxed text-slate-600">
-                  &ldquo;{r.text}&rdquo;
-                </blockquote>
-              </figure>
-            ))}
-          </div>
+          <div
+            className={`elfsight-app-${ELFSIGHT_REVIEWS_WIDGET_ID} min-h-[480px]`}
+            data-elfsight-app-lazy
+          />
+          <Script
+            src="https://static.elfsight.com/platform/platform.js"
+            strategy="lazyOnload"
+          />
 
           <div className="mt-9 text-center">
-            {/* TODO: point href at the client's real Google Business reviews URL */}
             <a
-              href="#"
+              href={GOOGLE_REVIEWS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-navy-800 underline underline-offset-4 transition-colors hover:text-brand-red"
             >
               See all reviews on Google
