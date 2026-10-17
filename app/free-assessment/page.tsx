@@ -1,10 +1,10 @@
 import { Clock, ShieldCheck, UserCheck } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
 import { ZohoAssessmentForm } from "@/components/forms/ZohoAssessmentForm";
-import { buildPageMetadata } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 
 export function generateMetadata() {
-  return buildPageMetadata("free-assessment");
+  return pageMetadata("/free-assessment");
 }
 
 const promises = [

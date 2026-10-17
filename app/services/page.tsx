@@ -17,10 +17,10 @@ import { FeatureImage } from "@/components/ui/FeatureImage";
 import { Button } from "@/components/ui/Button";
 import { PATHWAY_CATEGORIES } from "@/lib/pathway-taxonomy";
 import { getServices } from "@/lib/content/services";
-import { buildPageMetadata } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 
 export function generateMetadata() {
-  return buildPageMetadata("services");
+  return pageMetadata("/services");
 }
 
 const CATEGORY_ICONS: Record<string, typeof Stamp> = {

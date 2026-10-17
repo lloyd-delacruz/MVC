@@ -1,7 +1,7 @@
 export function LanguageChips({ languages }: { languages: string[] }) {
   return (
     <div className="mt-6 border-t border-slate-100 pt-5">
-      <p className="text-[10.5px] font-semibold uppercase tracking-[0.18em] text-slate-400">
+      <p className="text-[10.5px] font-semibold uppercase tracking-[0.18em] text-slate-500">
         Languages spoken
       </p>
       <div className="mt-2.5 flex flex-wrap gap-1.5">

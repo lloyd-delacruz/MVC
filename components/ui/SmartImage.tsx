@@ -19,10 +19,10 @@ function unsplashLoader({ src, width, quality }: { src: string; width: number; q
   return url.toString();
 }
 
-export function SmartImage(props: ImageProps) {
+export function SmartImage({ alt, ...props }: ImageProps) {
   const src = typeof props.src === "string" ? props.src : "";
   if (UNSPLASH.test(src)) {
-    return <Image {...props} loader={unsplashLoader} />;
+    return <Image alt={alt} {...props} loader={unsplashLoader} />;
   }
-  return <Image {...props} />;
+  return <Image alt={alt} {...props} />;
 }

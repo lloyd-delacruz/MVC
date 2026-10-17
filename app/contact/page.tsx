@@ -8,11 +8,11 @@ import { BottomCta } from "@/components/ui/BottomCta";
 import { Button } from "@/components/ui/Button";
 import { resolveIcon } from "@/lib/icons";
 import { getContact } from "@/lib/content/contact";
-import { buildPageMetadata } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 import { EmailPopover } from "@/components/ui/EmailPopover";
 
 export function generateMetadata() {
-  return buildPageMetadata("contact");
+  return pageMetadata("/contact");
 }
 
 export default async function ContactPage() {
@@ -263,7 +263,7 @@ export default async function ContactPage() {
             for a quick discovery call — we&rsquo;ll tell you whether a 1:1 consultation is the right next step.
           </p>
 
-          <p className="mx-auto mt-3 max-w-2xl text-center text-[11.5px] leading-relaxed text-slate-400">
+          <p className="mx-auto mt-3 max-w-2xl text-center text-[11.5px] leading-relaxed text-slate-500">
             Consultation fees are non-refundable but are credited toward your retainer if you choose to engage MVC for full representation.
           </p>
         </div>

@@ -199,10 +199,21 @@ To change copy, edit the relevant `lib/content/*.ts` file and reload. Pathways s
 - **Header logo** uses `public/logo-header.png` — the original `logo.svg` artwork re-stacked with the wordmark enlarged 1.35× (client request), sized to fit the fixed 80/96px header. `logo.svg` itself is untouched.
 - **Google Reviews button** (`components/ui/GoogleReviewsButton.tsx`, link `GOOGLE_REVIEWS_URL` in `lib/links.ts`) sits right under the hero on `/success-stories` (where the client marked it) and under the homepage hero photo.
 
+## SEO, indexing & launch (2026-10-17)
+
+See `docs/launch/README.md` for the full runbook. Rules to keep:
+
+- **Production URL** is `https://mvcimmigration.com` (`lib/site.ts`). Never hard-code another host.
+- **New indexable page?** Add it to `PAGE_SEO` in `lib/seo.ts` (title ≈60 chars, description ≤160, facts only) and to `STATIC_PATHS` in `app/sitemap.ts`. Use `pageMetadata(path)` in the route. Pathways/blog posts are picked up automatically.
+- **Indexing** is decided by `isIndexableBuild()` (VERCEL_ENV=production) plus `middleware.ts` (noindex header on any non-canonical host). Don't add `noindex` anywhere else, and don't block preview hosts in robots.txt.
+- **Old URLs**: add mappings to `lib/legacy-redirects.ts` (+ `docs/launch/redirect-map.csv`), not to `next.config.mjs` — the middleware merges www/slash/legacy into one 301.
+- **JSON-LD** only from `lib/schema.ts`, only with facts visible on the site. No review/rating markup (self-serving reviews aren't eligible).
+- **GA4** loads only in production on the canonical host (`NEXT_PUBLIC_GA_MEASUREMENT_ID`). Never send form contents or contact details in events.
+
 ## Known gaps & placeholders
 
 - **Calendly URLs** in `lib/content/contact.ts` are `REPLACE-WITH-MVC-CALENDLY/...` — swap when the client provides them.
-- **Contact form** is markup-only (no submit handler). Wire to Formspree, Resend, or similar before launch.
+- **Contact page** uses an email CTA (`EmailPopover`) instead of a web form, at the client's request. Enquiries go through the Zoho-hosted assessment form.
 - **Consultant photo backdrop** — Yaniv's photo (`/public/team/yaniv.png`) has a transparent/white cutout; the warm-brown studio backdrop from the reference screenshot is achieved via the `bg-[#8a6f5d]` on the wrapper div behind the image. If client provides a version with the brown backdrop baked in, drop the wrapper bg.
 - **Team photos** in `public/team/` include faces not currently surfaced in `lib/content/team.ts` — add them when desired.
 - **Stray duplicate:** `lib/content/hero 2.ts` is an editor-created duplicate of `hero.ts` — safe to delete; nothing imports it.

@@ -2,9 +2,9 @@ import { FREE_ASSESSMENT_URL, GOOGLE_REVIEWS_URL } from "@/lib/links";
 import type { HeroContent } from "@/lib/content/types";
 
 const HERO: HeroContent = {
-  eyebrow: "Regulated Canadian Immigration Consultant",
+  eyebrow: "Regulated Canadian Immigration Consultant in Burnaby, BC",
   headline: "Get clear, honest guidance for your Canadian immigration journey.",
-  dek: "We help families, workers, students, and businesses understand their Canadian immigration options with clear, personalized advice.",
+  dek: "From our office in Burnaby, BC, we help families, workers, students, and businesses across Metro Vancouver and around the world understand their Canadian immigration options with clear, personalized advice.",
   guarantees: [
     "RCIC Licensed & Regulated",
     "Personalized Case Review",

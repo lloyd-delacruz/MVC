@@ -122,11 +122,16 @@ export async function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="container-x flex flex-col items-center justify-between gap-2 py-5 text-xs text-slate-500 sm:flex-row">
+        <div className="container-x flex flex-col items-center justify-between gap-2 py-5 text-xs text-slate-400 sm:flex-row">
           <p>
             &copy; {new Date().getFullYear()} MVC Immigration Firm. All rights reserved.
           </p>
-          <p>RCIC #R519412</p>
+          <p className="flex items-center gap-4">
+            <Link href="/privacy" className="hover:text-white">
+              Privacy Policy
+            </Link>
+            <span>RCIC #R519412</span>
+          </p>
         </div>
       </div>
     </footer>

@@ -53,6 +53,7 @@ export function Hero({ content }: { content: HeroContent }) {
               width={568}
               height={596}
               className="h-[420px] w-full object-cover object-[center_20%] sm:h-[460px]"
+              sizes="(min-width: 1024px) 520px, (min-width: 640px) 90vw, 100vw"
               priority
             />
             <div className="absolute bottom-3 left-3 right-3 sm:right-auto sm:max-w-[260px]">

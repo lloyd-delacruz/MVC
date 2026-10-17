@@ -13,10 +13,10 @@ import {
 import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { BottomCta } from "@/components/ui/BottomCta";
-import { buildPageMetadata } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 
 export function generateMetadata() {
-  return buildPageMetadata("why-canada");
+  return pageMetadata("/why-canada");
 }
 
 const stats = [
@@ -336,7 +336,7 @@ export default function WhyCanadaPage() {
                 <div className="mt-3 text-[13px] leading-snug text-navy-800">
                   {s.label}
                 </div>
-                <div className="mt-2 text-[10.5px] uppercase tracking-[0.12em] text-slate-400">
+                <div className="mt-2 text-[10.5px] uppercase tracking-[0.12em] text-slate-500">
                   {s.source}
                 </div>
               </div>
