@@ -5,10 +5,10 @@ import { PageHero } from "@/components/ui/PageHero";
 import { BottomCta } from "@/components/ui/BottomCta";
 import { FeatureImage } from "@/components/ui/FeatureImage";
 import { getAllPosts } from "@/lib/content/blog";
-import { buildPageMetadata } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 
 export function generateMetadata() {
-  return buildPageMetadata("blog");
+  return pageMetadata("/blog");
 }
 
 function formatDate(date: string) {

@@ -1,5 +1,8 @@
 import { FREE_ASSESSMENT_URL } from "@/lib/links";
 import Link from "next/link";
+import { PAGE_SEO, buildMetadata, pageMetadata } from "@/lib/seo";
+import { breadcrumbList } from "@/lib/schema";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
@@ -20,10 +23,10 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: Params }) {
   const cat = PATHWAY_CATEGORIES.find((c) => c.id === params.category);
   if (!cat) return {};
-  return {
-    title: cat.label,
-    description: cat.description,
-  };
+  const path = `/pathways/${cat.id}`;
+  return PAGE_SEO[path]
+    ? pageMetadata(path)
+    : buildMetadata(path, { title: `${cat.label} | MVC Immigration`, description: cat.description });
 }
 
 export default function CategoryLandingPage({ params }: { params: Params }) {
@@ -38,6 +41,13 @@ export default function CategoryLandingPage({ params }: { params: Params }) {
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbList([
+          { name: "Home", path: "/" },
+          { name: "Immigration Pathways", path: "/pathways" },
+          { name: cat.label, path: `/pathways/${cat.id}` },
+        ])}
+      />
       <PageHero
         eyebrow="Immigration Pathways"
         title={cat.label}

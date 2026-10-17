@@ -154,3 +154,9 @@
   .prose-mvc h2 { font-size: calc(26px * var(--ts)); }
   .prose-mvc h3 { font-size: calc(20px * var(--ts)); }
 }
+
+/* WCAG AA: slate-500 on the cream section background is 4.42:1 (needs 4.5).
+   Nudge it a shade darker only inside cream sections — visually identical. */
+.bg-cream-50 .text-slate-500 {
+  color: #5b6577;
+}

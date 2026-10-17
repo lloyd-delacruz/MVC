@@ -14,6 +14,10 @@ import {
   type QualifyGroup,
 } from "@/lib/pathways";
 import { renderBlock, renderInline } from "@/lib/markdown";
+import { PAGE_SEO, buildMetadata, clampDescription, pageMetadata } from "@/lib/seo";
+import { breadcrumbList } from "@/lib/schema";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { PATHWAY_CATEGORIES } from "@/lib/pathway-taxonomy";
 
 type Params = { category: string; slug: string };
 
@@ -28,11 +32,14 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: { params: Params }) {
   const p = getPathway(params.slug);
-  if (!p) return {};
-  return {
-    title: p.title,
-    description: p.description,
-  };
+  if (!p || categoryForSlug(params.slug) !== params.category) return {};
+  const path = `/pathways/${params.category}/${params.slug}`;
+  return PAGE_SEO[path]
+    ? pageMetadata(path)
+    : buildMetadata(path, {
+        title: `${p.title} | MVC Immigration`,
+        description: clampDescription(p.description),
+      });
 }
 
 export default function PathwayPage({ params }: { params: Params }) {
@@ -40,8 +47,18 @@ export default function PathwayPage({ params }: { params: Params }) {
   const data = getPathway(params.slug);
   if (!data) notFound();
 
+  const cat = PATHWAY_CATEGORIES.find((c) => c.id === params.category);
+
   return (
     <>
+      <JsonLd
+        data={breadcrumbList([
+          { name: "Home", path: "/" },
+          { name: "Immigration Pathways", path: "/pathways" },
+          ...(cat ? [{ name: cat.label, path: `/pathways/${cat.id}` }] : []),
+          { name: data.title, path: `/pathways/${params.category}/${params.slug}` },
+        ])}
+      />
       <PageHero
         eyebrow={data.hero.eyebrow}
         title={data.hero.title}
@@ -460,10 +477,10 @@ function DisclaimerBlock({
     <section className="border-t border-slate-100 bg-white py-10 lg:py-12">
       <div className="container-x">
         <div className="mx-auto max-w-3xl">
-          <h2 className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-400">
+          <h2 className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">
             {heading}
           </h2>
-          <div className="mt-3 text-[12px] leading-relaxed text-slate-400">
+          <div className="mt-3 text-[12px] leading-relaxed text-slate-500">
             {renderBlock(content)}
           </div>
         </div>

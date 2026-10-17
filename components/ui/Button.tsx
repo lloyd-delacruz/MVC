@@ -13,7 +13,7 @@ interface ButtonProps {
 }
 
 const base =
-  "group inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-[13.5px] font-semibold transition-all duration-200 whitespace-nowrap";
+  "group inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-[13.5px] font-semibold transition-all duration-200 whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red";
 
 const styles: Record<Variant, string> = {
   primary:
@@ -21,7 +21,7 @@ const styles: Record<Variant, string> = {
   outline:
     "border border-navy-800/15 bg-white text-navy-800 hover:border-navy-800/40 hover:-translate-y-0.5",
   outlineLight:
-    "border border-white/30 bg-transparent text-white hover:bg-white/10",
+    "border border-white/30 bg-transparent text-white hover:bg-white/10 focus-visible:outline-white",
 };
 
 export function Button({

@@ -1,0 +1,151 @@
+old_url,new_url,response,reason,verification
+https://mvcimmigration.com/about-us/,https://mvcimmigration.com/about,301,Same service/page on the new site,Passed
+https://mvcimmigration.com/how-to-get-started/,https://mvcimmigration.com/get-started,301,Same service/page on the new site,Passed
+https://mvcimmigration.com/assessment/,https://mvcimmigration.com/free-assessment,301,Same service/page on the new site,Passed
+https://mvcimmigration.com/reviews/,https://mvcimmigration.com/success-stories,301,Reviews page → Success Stories,Passed
+https://mvcimmigration.com/immigrate/,https://mvcimmigration.com/pathways/permanent-residence,301,Same service/page on the new site,Passed
+https://mvcimmigration.com/immigrate/express-entry-system/,https://mvcimmigration.com/pathways/permanent-residence/express-entry,301,Same service/page on the new site,Passed
+https://mvcimmigration.com/immigrate/express-entry-system/canadian-experience-class-cec/,https://mvcimmigration.com/pathways/permanent-residence/canadian-experience-class,301,Same service/page on the new site,Passed
+https://mvcimmigration.com/immigrate/express-entry-system/federal-skilled-worker-skill-trades-worker/,https://mvcimmigration.com/pathways/permanent-residence/federal-skilled-worker,301,Same service/page on the new site,Passed
+https://mvcimmigration.com/immigrate/provincial-nominee-programpnp/,https://mvcimmigration.com/pathways/permanent-residence/provincial-nominee,301,Same service/page on the new site,Passed
+https://mvcimmigration.com/immigrate/family-sponsorship-immigration-consultant-vancouver/,https://mvcimmigration.com/pathways/family/family-sponsorship,301,Same service/page on the new site,Passed
+https://mvcimmigration.com/immigrate/canadian-citizenship/,https://mvcimmigration.com/pathways/citizenship/canadian-citizenship,301,Same service/page on the new site,Passed
+https://mvcimmigration.com/bc-pnp-entrepreneur-program/,https://mvcimmigration.com/pathways/business,301,Same service/page on the new site,Passed
+https://mvcimmigration.com/business/,https://mvcimmigration.com/pathways/business,301,Same service/page on the new site,Passed
+https://mvcimmigration.com/study/,https://mvcimmigration.com/pathways/study,301,Same service/page on the new site,Passed
+https://mvcimmigration.com/study/study-permit-program/,https://mvcimmigration.com/pathways/study/study-permits,301,Same service/page on the new site,Passed
+https://mvcimmigration.com/study/partner-schools/,https://mvcimmigration.com/pathways/study/partner-schools,301,Same service/page on the new site,Passed
+https://mvcimmigration.com/study/post-graduation-work-permit-program/,https://mvcimmigration.com/pathways/work/work-permits,301,Retired PGWP/SOWP page → Work Permits (both are work permits),Passed
+https://mvcimmigration.com/study/spousal-open-work-permit-program/,https://mvcimmigration.com/pathways/work/work-permits,301,Retired PGWP/SOWP page → Work Permits (both are work permits),Passed
+https://mvcimmigration.com/work/,https://mvcimmigration.com/pathways/work,301,Same service/page on the new site,Passed
+https://mvcimmigration.com/work/lmia-work-permit/,https://mvcimmigration.com/pathways/work/work-permits,301,Same service/page on the new site,Passed
+https://mvcimmigration.com/work/international-experience-canada-iec/,https://mvcimmigration.com/pathways/work/iec,301,Same service/page on the new site,Passed
+https://mvcimmigration.com/work/caregiver-program/,https://mvcimmigration.com/pathways/work/caregiver-program,301,Same service/page on the new site,Passed
+https://mvcimmigration.com/adrienne-omega/,https://mvcimmigration.com/about,301,Team member bio page → team section on About,Passed
+https://mvcimmigration.com/carisse-solatorio/,https://mvcimmigration.com/about,301,Team member bio page → team section on About,Passed
+https://mvcimmigration.com/khristinne-araneta/,https://mvcimmigration.com/about,301,Team member bio page → team section on About,Passed
+https://mvcimmigration.com/marianne-fulguirinas/,https://mvcimmigration.com/about,301,Team member bio page → team section on About,Passed
+https://mvcimmigration.com/michelle-rose-gallemit/,https://mvcimmigration.com/about,301,Team member bio page → team section on About,Passed
+https://mvcimmigration.com/michelle-rose-gallemit%ef%bf%bc/,https://mvcimmigration.com/about,301,Team member bio page → team section on About,Passed
+https://mvcimmigration.com/nico-pelayo/,https://mvcimmigration.com/about,301,Team member bio page → team section on About,Passed
+https://mvcimmigration.com/yaniv-babani/,https://mvcimmigration.com/about,301,Team member bio page → team section on About,Passed
+https://mvcimmigration.com/landing/,,410 Gone,Page-builder/test page with no public value,Passed
+https://mvcimmigration.com/new-one/,,410 Gone,Page-builder/test page with no public value,Passed
+https://mvcimmigration.com/test/,,410 Gone,Page-builder/test page with no public value,Passed
+https://mvcimmigration.com/am-i-too-old-to-immigrate-to-canada/,https://mvcimmigration.com/blog/am-i-too-old-to-immigrate,301,Same article migrated to the new blog,Passed
+https://mvcimmigration.com/become-a-pr-much-faster-through-these-77-jobs/,https://mvcimmigration.com/blog/77-jobs-that-fast-track-pr,301,Same article migrated to the new blog,Passed
+https://mvcimmigration.com/busted-dont-believe-these-canadian-immigration-myths/,https://mvcimmigration.com/blog/immigration-myths-busted,301,Same article migrated to the new blog,Passed
+https://mvcimmigration.com/show-money-or-settlement-funds/,https://mvcimmigration.com/blog/settlement-funds-explained,301,Same article migrated to the new blog,Passed
+https://mvcimmigration.com/the-most-underrated-immigration-pathway-explained/,https://mvcimmigration.com/blog/canadas-underrated-pathway,301,Same article migrated to the new blog,Passed
+https://mvcimmigration.com/top-3-mistakes-in-canadian-immigration/,https://mvcimmigration.com/blog/top-3-immigration-mistakes,301,Same article migrated to the new blog,Passed
+https://mvcimmigration.com/which-canadian-province-should-i-immigrate-to/,https://mvcimmigration.com/blog/which-canadian-province-is-right,301,Same article migrated to the new blog,Passed
+https://mvcimmigration.com/why-ielts-scores-are-so-important/,https://mvcimmigration.com/blog/ielts-scores-matter,301,Same article migrated to the new blog,Passed
+https://mvcimmigration.com/why-you-should-hire-an-immigration-consultant/,https://mvcimmigration.com/blog/when-hiring-a-consultant-pays-off,301,Same article migrated to the new blog,Passed
+https://mvcimmigration.com/bc-pnp-changes-2026/,https://mvcimmigration.com/pathways/permanent-residence/provincial-nominee,301,News/blog post with no migrated copy → closest page with the same intent,Passed
+https://mvcimmigration.com/study-permit-inside-canada-2026-can-visitors-workers-or-students-apply-without-leaving-canada/,https://mvcimmigration.com/pathways/study/study-permits,301,News/blog post with no migrated copy → closest page with the same intent,Passed
+https://mvcimmigration.com/study-in-canada-no-need-for-ielts/,https://mvcimmigration.com/pathways/study/study-permits,301,News/blog post with no migrated copy → closest page with the same intent,Passed
+https://mvcimmigration.com/international-experience-class-or-working-holiday-visa-is-now-open-for-2021/,https://mvcimmigration.com/pathways/work/iec,301,News/blog post with no migrated copy → closest page with the same intent,Passed
+https://mvcimmigration.com/immigrate-to-canada-in-2021/,https://mvcimmigration.com/get-started,301,News/blog post with no migrated copy → closest page with the same intent,Passed
+https://mvcimmigration.com/what-makes-mvc-immigration-consulting-stand-out/,https://mvcimmigration.com/about,301,News/blog post with no migrated copy → closest page with the same intent,Passed
+https://mvcimmigration.com/51-most-child-friendly-cities-in-canada/,https://mvcimmigration.com/why-canada,301,Life-in-Canada article → Why Canada page (same intent),Passed
+https://mvcimmigration.com/most-canadians-happy-globe-survey-finds/,https://mvcimmigration.com/why-canada,301,Life-in-Canada article → Why Canada page (same intent),Passed
+https://mvcimmigration.com/canada-tops-us-as-most-attractive-destination-for-foreign-workers/,https://mvcimmigration.com/why-canada,301,Life-in-Canada article → Why Canada page (same intent),Passed
+https://mvcimmigration.com/a-new-ranking-is-giving-canadas-approach-to-immigrants-top-marks-with-a-notable-exception/,https://mvcimmigration.com/why-canada,301,Life-in-Canada article → Why Canada page (same intent),Passed
+https://mvcimmigration.com/latest-changes-in-canadian-immigration-a-pathway-for-future-immigrants-workers-and-students/,https://mvcimmigration.com/blog,301,News/blog post with no migrated copy → closest page with the same intent,Passed
+https://mvcimmigration.com/announcing-the-new-website/,,410 Gone,Dated news/announcement with no current equivalent page,Passed
+https://mvcimmigration.com/how-covid-19-affected-canadian-immigration/,,410 Gone,Outdated COVID-19 news; no current equivalent,Passed
+https://mvcimmigration.com/how-covid-19-has-affected-canadian-immigration-part-ii/,,410 Gone,Outdated COVID-19 news; no current equivalent,Passed
+https://mvcimmigration.com/canadian-passport-ranks-among-the-most-powerful-in-the-world-for-2022/,,410 Gone,Dated news/announcement with no current equivalent page,Passed
+https://mvcimmigration.com/affordable-living-for-b-c-as-per-2022-economic-plan/,,410 Gone,Dated news/announcement with no current equivalent page,Passed
+https://mvcimmigration.com/in-demand-jobs-for-2022-british-columbia-canada/,,410 Gone,Dated news/announcement with no current equivalent page,Passed
+https://mvcimmigration.com/atlantic-immigration-pilot-program-aipp-in-2021/,,410 Gone,Dated news/announcement with no current equivalent page,Passed
+https://mvcimmigration.com/new-public-policy-for-permanent-residency-in-canada-fastest-pathway/,,410 Gone,Dated news/announcement with no current equivalent page,Passed
+https://mvcimmigration.com/beginning-next-year-highly-skilled-immigrants-will-have-a-new-path-to-remaining-in-newfoundland-and-labrador/,,410 Gone,Dated news/announcement with no current equivalent page,Passed
+https://mvcimmigration.com/canada-proposes-enabling-temporary-residents-to-become-citizens/,,410 Gone,Dated news/announcement with no current equivalent page,Passed
+https://mvcimmigration.com/finding-a-job-in-canada/,,410 Gone,Dated news/announcement with no current equivalent page,Passed
+https://mvcimmigration.com/category/express-entry/,https://mvcimmigration.com/pathways/permanent-residence/express-entry,301,Category archive → closest topical page,Passed
+https://mvcimmigration.com/category/express-entry-canada/,https://mvcimmigration.com/pathways/permanent-residence/express-entry,301,Category archive → closest topical page,Passed
+https://mvcimmigration.com/category/federal-skilled-worker/,https://mvcimmigration.com/pathways/permanent-residence/federal-skilled-worker,301,Category archive → closest topical page,Passed
+https://mvcimmigration.com/category/federal-skilled-trades/,https://mvcimmigration.com/pathways/permanent-residence/federal-skilled-trades,301,Category archive → closest topical page,Passed
+https://mvcimmigration.com/category/family-sponsorship/,https://mvcimmigration.com/pathways/family/family-sponsorship,301,Category archive → closest topical page,Passed
+https://mvcimmigration.com/category/sponsorship-visa/,https://mvcimmigration.com/pathways/family/family-sponsorship,301,Category archive → closest topical page,Passed
+https://mvcimmigration.com/category/bc-pnp-immigration-consultant/,https://mvcimmigration.com/pathways/permanent-residence/provincial-nominee,301,Category archive → closest topical page,Passed
+https://mvcimmigration.com/category/bc-provincial-nominee-program/,https://mvcimmigration.com/pathways/permanent-residence/provincial-nominee,301,Category archive → closest topical page,Passed
+https://mvcimmigration.com/category/lmia/,https://mvcimmigration.com/pathways/work/work-permits,301,Category archive → closest topical page,Passed
+https://mvcimmigration.com/category/work-permit/,https://mvcimmigration.com/pathways/work/work-permits,301,Category archive → closest topical page,Passed
+https://mvcimmigration.com/category/work-visa/,https://mvcimmigration.com/pathways/work/work-permits,301,Category archive → closest topical page,Passed
+https://mvcimmigration.com/category/workingholidayvisa/,https://mvcimmigration.com/pathways/work/iec,301,Category archive → closest topical page,Passed
+https://mvcimmigration.com/category/study-in-canada/,https://mvcimmigration.com/pathways/study/study-permits,301,Category archive → closest topical page,Passed
+https://mvcimmigration.com/category/study-permit/,https://mvcimmigration.com/pathways/study/study-permits,301,Category archive → closest topical page,Passed
+https://mvcimmigration.com/category/studyabroad/,https://mvcimmigration.com/pathways/study/study-permits,301,Category archive → closest topical page,Passed
+https://mvcimmigration.com/category/visitor-visa/,https://mvcimmigration.com/pathways/visit/visitor-visas,301,Category archive → closest topical page,Passed
+https://mvcimmigration.com/category/canadian-tourist-visa/,https://mvcimmigration.com/pathways/visit/visitor-visas,301,Category archive → closest topical page,Passed
+https://mvcimmigration.com/category/life-in-canada/,https://mvcimmigration.com/why-canada,301,Category archive → closest topical page,Passed
+https://mvcimmigration.com/category/covid-19/,,410 Gone,Outdated COVID-19 news; no current equivalent,Passed
+https://mvcimmigration.com/sitemap_index.xml,https://mvcimmigration.com/sitemap.xml,301,Old WordPress sitemap → new XML sitemap,Passed
+https://mvcimmigration.com/wp-sitemap.xml,https://mvcimmigration.com/sitemap.xml,301,Old WordPress sitemap → new XML sitemap,Passed
+https://mvcimmigration.com/page-sitemap.xml,https://mvcimmigration.com/sitemap.xml,301,Old WordPress sitemap → new XML sitemap,Passed
+https://mvcimmigration.com/post-sitemap.xml,https://mvcimmigration.com/sitemap.xml,301,Old WordPress sitemap → new XML sitemap,Passed
+https://mvcimmigration.com/category-sitemap.xml,https://mvcimmigration.com/sitemap.xml,301,Old WordPress sitemap → new XML sitemap,Passed
+https://mvcimmigration.com/feed/,,410 Gone,WordPress RSS feed no longer exists,Passed
+https://mvcimmigration.com/comments/feed/,,410 Gone,WordPress RSS feed no longer exists,Passed
+https://mvcimmigration.com/pages/home/,https://mvcimmigration.com/,301,Old Webs.com page (still in Google) → same topic on new site,Passed
+https://mvcimmigration.com/pages/about-mvc-immigration-consulting/,https://mvcimmigration.com/about,301,Old Webs.com page (still in Google) → same topic on new site,Passed
+https://mvcimmigration.com/pages/contact-immigration-consultant-vancouver-canada/,https://mvcimmigration.com/contact,301,Old Webs.com page (still in Google) → same topic on new site,Passed
+https://mvcimmigration.com/pages/assessment/,https://mvcimmigration.com/free-assessment,301,Old Webs.com page (still in Google) → same topic on new site,Passed
+https://mvcimmigration.com/pages/how-to-get-started/,https://mvcimmigration.com/get-started,301,Old Webs.com page (still in Google) → same topic on new site,Passed
+https://mvcimmigration.com/pages/how-to-get-started/assessment-form/,https://mvcimmigration.com/free-assessment,301,Old Webs.com page (still in Google) → same topic on new site,Passed
+https://mvcimmigration.com/pages/how-to-get-started/assessment-form-spanish/,https://mvcimmigration.com/free-assessment,301,Old Webs.com page (still in Google) → same topic on new site,Passed
+https://mvcimmigration.com/pages/how-to-get-started/faq/,https://mvcimmigration.com/faq,301,Old Webs.com page (still in Google) → same topic on new site,Passed
+https://mvcimmigration.com/pages/reviews/,https://mvcimmigration.com/success-stories,301,Old Webs.com page (still in Google) → same topic on new site,Passed
+https://mvcimmigration.com/pages/why-canada/,https://mvcimmigration.com/why-canada,301,Old Webs.com page (still in Google) → same topic on new site,Passed
+https://mvcimmigration.com/pages/immigrate/,https://mvcimmigration.com/pathways,301,Old Webs.com page (still in Google) → same topic on new site,Passed
+https://mvcimmigration.com/pages/immigrate-to-canada/,https://mvcimmigration.com/pathways,301,Old Webs.com page (still in Google) → same topic on new site,Passed
+https://mvcimmigration.com/pages/immigrate/immigrate-to-canada/,https://mvcimmigration.com/pathways,301,Old Webs.com page (still in Google) → same topic on new site,Passed
+https://mvcimmigration.com/pages/immigrate/express-entry-system/,https://mvcimmigration.com/pathways/permanent-residence/express-entry,301,Old Webs.com page (still in Google) → same topic on new site,Passed
+https://mvcimmigration.com/pages/immigrate/express-entry-system/canada-express-entry/,https://mvcimmigration.com/pathways/permanent-residence/express-entry,301,Old Webs.com page (still in Google) → same topic on new site,Passed
+https://mvcimmigration.com/pages/immigrate/express-entry-system/canadian-experience-class-program/,https://mvcimmigration.com/pathways/permanent-residence/canadian-experience-class,301,Old Webs.com page (still in Google) → same topic on new site,Passed
+https://mvcimmigration.com/pages/immigrate/express-entry-system/canadian-federal-skilled-worker-program/,https://mvcimmigration.com/pathways/permanent-residence/federal-skilled-worker,301,Old Webs.com page (still in Google) → same topic on new site,Passed
+https://mvcimmigration.com/pages/immigrate/bc-provincial-nominee-program/,https://mvcimmigration.com/pathways/permanent-residence/provincial-nominee,301,Old Webs.com page (still in Google) → same topic on new site,Passed
+https://mvcimmigration.com/pages/immigrate/canada-family-sponsorship/,https://mvcimmigration.com/pathways/family/family-sponsorship,301,Old Webs.com page (still in Google) → same topic on new site,Passed
+https://mvcimmigration.com/pages/immigrate/canadian-citizenship/,https://mvcimmigration.com/pathways/citizenship/canadian-citizenship,301,Old Webs.com page (still in Google) → same topic on new site,Passed
+https://mvcimmigration.com/pages/bc-pnp-entrepreneur-program/,https://mvcimmigration.com/pathways/business,301,Old Webs.com page (still in Google) → same topic on new site,Passed
+https://mvcimmigration.com/pages/study/,https://mvcimmigration.com/pathways/study,301,Old Webs.com page (still in Google) → same topic on new site,Passed
+https://mvcimmigration.com/pages/study-permit-canada/,https://mvcimmigration.com/pathways/study/study-permits,301,Old Webs.com page (still in Google) → same topic on new site,Passed
+https://mvcimmigration.com/pages/study/canada-study-permit-program/,https://mvcimmigration.com/pathways/study/study-permits,301,Old Webs.com page (still in Google) → same topic on new site,Passed
+https://mvcimmigration.com/pages/study/partner-schools/,https://mvcimmigration.com/pathways/study/partner-schools,301,Old Webs.com page (still in Google) → same topic on new site,Passed
+https://mvcimmigration.com/pages/study/post-graduation-work-permit-program-canada/,https://mvcimmigration.com/pathways/work/work-permits,301,Old Webs.com page (still in Google) → same topic on new site,Passed
+https://mvcimmigration.com/pages/study/spousal-open-work-permit-program-canada/,https://mvcimmigration.com/pathways/work/work-permits,301,Old Webs.com page (still in Google) → same topic on new site,Passed
+https://mvcimmigration.com/pages/work/,https://mvcimmigration.com/pathways/work,301,Old Webs.com page (still in Google) → same topic on new site,Passed
+https://mvcimmigration.com/pages/work-permit-canada/,https://mvcimmigration.com/pathways/work/work-permits,301,Old Webs.com page (still in Google) → same topic on new site,Passed
+https://mvcimmigration.com/pages/work/work-permit-canada/,https://mvcimmigration.com/pathways/work/work-permits,301,Old Webs.com page (still in Google) → same topic on new site,Passed
+https://mvcimmigration.com/pages/work/labour-market-impact-assessment-work-permit/,https://mvcimmigration.com/pathways/work/work-permits,301,Old Webs.com page (still in Google) → same topic on new site,Passed
+https://mvcimmigration.com/pages/work/canada-caregiver-program/,https://mvcimmigration.com/pathways/work/caregiver-program,301,Old Webs.com page (still in Google) → same topic on new site,Passed
+https://mvcimmigration.com/pages/work/canadian-international-experience/,https://mvcimmigration.com/pathways/work/iec,301,Old Webs.com page (still in Google) → same topic on new site,Passed
+https://mvcimmigration.com/blogs/vancouver-immigration-consultant-blog/,https://mvcimmigration.com/blog,301,Old blog/tag/review page → closest section,Passed
+https://mvcimmigration.com/blogs/vancouver-immigration-consultant-blog/477209-why-ielts-scores-are-so-important/,https://mvcimmigration.com/blog/ielts-scores-matter,301,"Same article on the old Webs.com blog, migrated",Passed
+https://mvcimmigration.com/blogs/vancouver-immigration-consultant-blog/655118-why-you-should-hire-an-immigration-consultant/,https://mvcimmigration.com/blog/when-hiring-a-consultant-pays-off,301,"Same article on the old Webs.com blog, migrated",Passed
+https://mvcimmigration.com/blogs/vancouver-immigration-consultant-blog/774656-show-money-or-settlement-funds/,https://mvcimmigration.com/blog/settlement-funds-explained,301,"Same article on the old Webs.com blog, migrated",Passed
+https://mvcimmigration.com/blogs/vancouver-immigration-consultant-blog/765027-study-in-canada---no-need-for-ielts/,https://mvcimmigration.com/pathways/study/study-permits,301,News/blog post with no migrated copy → closest page with the same intent,Passed
+https://mvcimmigration.com/blogs/vancouver-immigration-consultant-blog/658158-atlantic-immigration-pilot-program--aipp--in-2021/,,410 Gone,Dated news/announcement with no current equivalent page,Passed
+https://mvcimmigration.com/blogs/vancouver-immigration-consultant-blog/665867-new-public-policy-for-permanent-residency-in-canada--fastest-pathway/,,410 Gone,Dated news/announcement with no current equivalent page,Passed
+https://mvcimmigration.com/blogs/vancouver-immigration-consultant-blog/477159-new-website-under-construction/,,410 Gone,Dated news/announcement with no current equivalent page,Passed
+https://mvcimmigration.com/blogs/vancouver-immigration-consultant-blog/477200-announcing-the-new-website/,,410 Gone,Dated news/announcement with no current equivalent page,Passed
+https://mvcimmigration.com/blogs/vancouver-immigration-consultant-blog/811329-finding-a-job-in-canada/,,410 Gone,Dated news/announcement with no current equivalent page,Passed
+https://mvcimmigration.com/blogs/vancouver-immigration-consultant-blog/832397-canadian-passport-ranks-among-the-most-powerful-in-the-world-for-2022/,,410 Gone,Dated news/announcement with no current equivalent page,Passed
+https://mvcimmigration.com/blogs/vancouver-immigration-consultant-blog/848304-affordable-living-for-b-c--as-per-2022-economic-plan/,,410 Gone,Dated news/announcement with no current equivalent page,Passed
+https://mvcimmigration.com/blogs/google-reviews/,https://mvcimmigration.com/success-stories,301,Reviews page → Success Stories,Passed
+https://mvcimmigration.com/blogs/reviews/,https://mvcimmigration.com/success-stories,301,Reviews page → Success Stories,Passed
+https://mvcimmigration.com/pages/meet-the-team/*,https://mvcimmigration.com/about,301,Old team bio pages → team section on About,Passed (sampled)
+https://mvcimmigration.com/blogs/google-reviews/*,https://mvcimmigration.com/success-stories,301,Old individual review posts → Success Stories,Passed (sampled)
+https://mvcimmigration.com/blogs/reviews/*,https://mvcimmigration.com/success-stories,301,Old individual review posts → Success Stories,Passed (sampled)
+https://mvcimmigration.com/blogs/vancouver-immigration-consultant-blog/tagged/*,https://mvcimmigration.com/blog,301,Old blog tag archives → blog index,Passed (sampled)
+https://mvcimmigration.com/category/*,https://mvcimmigration.com/blog,301,Remaining general category archives → blog index,Passed (sampled)
+https://mvcimmigration.com/author/*,,410 Gone,Author archives have no equivalent,Passed (sampled)
+https://mvcimmigration.com/wp-content/*,,410 Gone,WordPress uploads/plugins. Pages under it return 410; image/CSS/JS files return 404 (served as static-file misses),Passed (sampled)
+https://mvcimmigration.com/wp-includes/*,,410 Gone,"WordPress system path (admin, API, login) — no public equivalent",Passed (sampled)
+https://mvcimmigration.com/wp-admin*,,410 Gone,"WordPress system path (admin, API, login) — no public equivalent",Passed (sampled)
+https://mvcimmigration.com/wp-json*,,410 Gone,"WordPress system path (admin, API, login) — no public equivalent",Passed (sampled)
+https://mvcimmigration.com/wp-login.php*,,410 Gone,"WordPress system path (admin, API, login) — no public equivalent",Passed (sampled)
+https://mvcimmigration.com/xmlrpc.php*,,410 Gone,"WordPress system path (admin, API, login) — no public equivalent",Passed (sampled)
+https://mvcimmigration.com/lost-your-status-in-canada-what-you-can-do-in-2026/,,404 (pending),"Recent 2026 post with no equivalent. Recommend migrating it to /blog, then add a 301.",Passed (returns 404)

@@ -15,10 +15,10 @@ import { BottomCta } from "@/components/ui/BottomCta";
 import { StoriesGallery } from "@/components/sections/StoriesGallery";
 import { GoogleReviewsButton } from "@/components/ui/GoogleReviewsButton";
 import { getTestimonials } from "@/lib/content/testimonials";
-import { buildPageMetadata } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 
 export function generateMetadata() {
-  return buildPageMetadata("success-stories");
+  return pageMetadata("/success-stories");
 }
 
 const REASSURANCE = [
@@ -42,29 +42,12 @@ const REASSURANCE = [
 export default async function SuccessStoriesPage() {
   const stories = await getTestimonials();
 
-  // JSON-LD: client stories as reviews. Google reviews are shown live via the
-  // Elfsight widget below, so they're not duplicated here.
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    name: "My Visa For Canada (MVC) Immigration Firm",
-    description:
-      "Regulated Canadian Immigration Consultant (RCIC) in Vancouver, BC helping families, students, and workers immigrate to Canada.",
-    review: stories.map((s) => ({
-        "@type": "Review",
-        author: { "@type": "Person", name: s.author },
-        reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-        reviewBody: s.quote,
-      })),
-  };
-
+  // No review/rating JSON-LD here on purpose: testimonials published by the
+  // business itself are "self-serving" reviews, which Google does not allow in
+  // LocalBusiness/Organization markup, and the star values were not shown on
+  // the page. Site-wide business markup lives in lib/schema.ts.
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-
       {/* ───────────────────── Hero — standard PageHero, matches other pages ───────────────────── */}
       <PageHero
         eyebrow="Reviews · Success Stories"
@@ -96,7 +79,7 @@ export default async function SuccessStoriesPage() {
             <StoriesGallery stories={stories} />
           </div>
 
-          <p className="mx-auto mt-10 max-w-2xl text-center text-[12px] leading-relaxed text-slate-400">
+          <p className="mx-auto mt-10 max-w-2xl text-center text-[12px] leading-relaxed text-slate-500">
             Photos and stories shared with each client&apos;s permission. Every case is
             unique — past results don&apos;t guarantee future outcomes, which always
             depend on your individual circumstances.

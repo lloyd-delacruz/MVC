@@ -7,6 +7,9 @@ import { getAllPosts, getPost } from "@/lib/content/blog";
 import { BottomCta } from "@/components/ui/BottomCta";
 import { FeatureImage } from "@/components/ui/FeatureImage";
 import type { Metadata } from "next";
+import { buildMetadata, clampDescription } from "@/lib/seo";
+import { blogPosting, breadcrumbList } from "@/lib/schema";
+import { JsonLd } from "@/components/seo/JsonLd";
 
 interface PageProps {
   params: { slug: string };
@@ -19,20 +22,18 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const post = await getPost(params.slug);
   if (!post) return { title: "Article not found" };
-  const title = post.seoTitle || post.title;
-  const description = post.seoDescription || post.dek;
-  const ogImage = post.ogImageUrl || post.coverImageUrl;
-  return {
+  const base = post.seoTitle || post.title;
+  // Keep titles near 60 characters: add the brand only when it fits.
+  const title = base.length <= 44 ? `${base} | MVC Immigration` : base;
+  const description = clampDescription(post.seoDescription || post.dek);
+  const ogImage = post.ogImageUrl || post.coverImageUrl || undefined;
+  return buildMetadata(`/blog/${post.slug}`, {
     title,
     description,
-    openGraph: { title, description, ...(ogImage ? { images: [ogImage] } : {}) },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      ...(ogImage ? { images: [ogImage] } : {}),
-    },
-  };
+    image: ogImage,
+    type: "article",
+    publishedTime: post.date || undefined,
+  });
 }
 
 function formatDate(date: string) {
@@ -61,6 +62,22 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   return (
     <>
+      <JsonLd
+        data={blogPosting({
+          slug: post.slug,
+          title: post.title,
+          description: clampDescription(post.dek),
+          date: post.date,
+          author: post.author,
+        })}
+      />
+      <JsonLd
+        data={breadcrumbList([
+          { name: "Home", path: "/" },
+          { name: "Immigration Insights", path: "/blog" },
+          { name: post.title, path: `/blog/${post.slug}` },
+        ])}
+      />
       {/* Article hero */}
       <section className="bg-white pt-12 pb-8 lg:pt-16 lg:pb-10">
         <div className="container-x">

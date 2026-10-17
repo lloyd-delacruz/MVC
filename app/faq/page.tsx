@@ -4,10 +4,10 @@ import { PageHero } from "@/components/ui/PageHero";
 import { BottomCta } from "@/components/ui/BottomCta";
 import { getFaqs } from "@/lib/content/faqs";
 import { FAQ_CATEGORIES } from "@/lib/faq-categories";
-import { buildPageMetadata } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 
 export function generateMetadata() {
-  return buildPageMetadata("faq");
+  return pageMetadata("/faq");
 }
 
 export default async function FaqPage() {
@@ -33,7 +33,7 @@ export default async function FaqPage() {
                     <h2 className="headline-serif text-[22px] font-medium leading-tight text-navy-800 sm:text-[26px]">
                       {cat.label}
                     </h2>
-                    <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">
+                    <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
                       {catItems.length} question{catItems.length === 1 ? "" : "s"}
                     </span>
                   </div>

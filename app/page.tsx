@@ -1,4 +1,5 @@
 import { Hero } from "@/components/sections/Hero";
+import { pageMetadata } from "@/lib/seo";
 import { TrustBadges } from "@/components/sections/TrustBadges";
 import { Services } from "@/components/sections/Services";
 import { WhyChoose } from "@/components/sections/WhyChoose";
@@ -12,6 +13,10 @@ import {
   getWhyChoose,
   getCtaBanner,
 } from "@/lib/content/homepage-extras";
+
+export function generateMetadata() {
+  return pageMetadata("/");
+}
 
 export default async function HomePage() {
   const [hero, services, team, trustBadges, whyChoose, cta] = await Promise.all([

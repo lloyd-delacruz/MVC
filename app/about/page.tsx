@@ -10,10 +10,10 @@ import { TeamGallery } from "@/components/sections/TeamGallery";
 import { LanguageChips } from "@/components/ui/LanguageChips";
 import { getAbout } from "@/lib/content/about";
 import { getTeam } from "@/lib/content/team";
-import { buildPageMetadata } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 
 export function generateMetadata() {
-  return buildPageMetadata("about");
+  return pageMetadata("/about");
 }
 
 const ACCOLADES: Accolade[] = [
@@ -74,6 +74,23 @@ const ACCOLADES: Accolade[] = [
   },
 ];
 
+// Facts from lib/content/team.ts (languages per team member) and the contact
+// page (Philippines office). Describes language availability, not nationality.
+const LANGUAGE_SUPPORT = [
+  {
+    title: "Hebrew-speaking RCIC",
+    body: "Yaniv advises clients directly in Hebrew, including people moving to Canada from Israel, as well as in English and Spanish.",
+  },
+  {
+    title: "Tagalog & Cebuano support",
+    body: "Our case team at our Philippines office in Cebu supports Filipino clients in Tagalog and Cebuano, with every file reviewed by Yaniv.",
+  },
+  {
+    title: "English & Spanish",
+    body: "Consultations are available in English and Spanish — online by video call, or in person at our Burnaby office by appointment.",
+  },
+];
+
 export default async function AboutPage() {
   const [about, team] = await Promise.all([getAbout(), getTeam()]);
   const founder = team.find((m) => m.id === "yaniv");
@@ -88,11 +105,11 @@ export default async function AboutPage() {
         className="border-b border-slate-100 bg-white py-12 lg:py-16"
       >
         <div className="container-x">
-          <p className="text-center text-[10.5px] font-semibold uppercase tracking-[0.18em] text-slate-400">
+          <p className="text-center text-[10.5px] font-semibold uppercase tracking-[0.18em] text-slate-500">
             Recognition &amp; accreditation
           </p>
           <AccoladesGallery accolades={ACCOLADES} />
-          <p className="mt-7 text-center text-[12.5px] text-slate-400">
+          <p className="mt-7 text-center text-[12.5px] text-slate-500">
             Click any badge to learn more.
           </p>
         </div>
@@ -169,9 +186,46 @@ export default async function AboutPage() {
 
           <TeamGallery members={teamRest} />
 
-          <p className="mt-10 text-center text-[12.5px] text-slate-400">
+          <p className="mt-10 text-center text-[12.5px] text-slate-500">
             Click any photo to read the full bio.
           </p>
+        </div>
+      </section>
+
+      <section
+        id="languages"
+        aria-labelledby="languages-heading"
+        className="scroll-mt-24 bg-white py-16 lg:py-20"
+      >
+        <div className="container-x">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="text-[11.5px] font-semibold uppercase tracking-[0.22em] text-brand-red">
+              Languages we speak
+            </p>
+            <h2
+              id="languages-heading"
+              className="headline-serif mt-3 text-[30px] font-medium leading-[1.15] text-navy-800 sm:text-[38px]"
+            >
+              Immigration advice in your language.
+            </h2>
+            <p className="mt-4 text-[15px] leading-relaxed text-slate-500">
+              Every file is reviewed personally by Yaniv. Our team can explain each step in the
+              language you&rsquo;re most comfortable with.
+            </p>
+          </div>
+          <ul className="mx-auto mt-10 grid max-w-5xl gap-5 md:grid-cols-3">
+            {LANGUAGE_SUPPORT.map((item) => (
+              <li
+                key={item.title}
+                className="rounded-xl border border-brand-blue/20 bg-white p-6 shadow-card"
+              >
+                <h3 className="headline-serif text-[20px] font-semibold leading-tight text-navy-800">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-[14px] leading-relaxed text-slate-500">{item.body}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

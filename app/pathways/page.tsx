@@ -1,5 +1,6 @@
 import { FREE_ASSESSMENT_URL } from "@/lib/links";
 import Link from "next/link";
+import { pageMetadata } from "@/lib/seo";
 import { ArrowRight, ChevronRight } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
 import { BottomCta } from "@/components/ui/BottomCta";
@@ -9,11 +10,9 @@ import {
   getAllPathways,
 } from "@/lib/pathways";
 
-export const metadata = {
-  title: "Immigration Pathways",
-  description:
-    "Every Canadian immigration pathway we handle — Express Entry, PNP, work permits, study permits, family sponsorship, citizenship, and BC PNP entrepreneur streams.",
-};
+export function generateMetadata() {
+  return pageMetadata("/pathways");
+}
 
 export default function PathwaysIndexPage() {
   const all = getAllPathways();
